@@ -107,10 +107,9 @@
   <div class="ede-strip" id="edeStrip"></div>
 </header>
 
-<div class="upload-bar">
-  <span class="txt"><b>Fuente de datos</b> — este panel lee automáticamente el archivo <span class="mono">datos.json</span> publicado en el repositorio de GitHub. Para actualizar los datos, edita ese JSON y súbelo (commit) al repo; todos los que abran este link verán la versión nueva.</span>
-  <button class="btn-file" id="btnRecargar" type="button" style="border:none;">🔄 Recargar datos</button>
-  <span id="syncStatus" style="font-size:12px;color:var(--text-dim);"></span>
+<div style="display:none;">
+  <button id="btnRecargar" type="button"></button>
+  <span id="syncStatus"></span>
 </div>
 
 <div class="filter-bar" id="filterBar">
@@ -123,8 +122,16 @@
     <button class="filter-btn" id="btnAgenteFilter" type="button">Agente: Todos ▾</button>
     <div class="filter-panel" id="panelAgente"></div>
   </div>
+  <div class="filter-group">
+    <button class="filter-btn" id="btnMesFilter" type="button">Mes: Todos ▾</button>
+    <div class="filter-panel" id="panelMes"></div>
+  </div>
+  <div class="filter-group">
+    <button class="filter-btn" id="btnSemanaFilter" type="button">Semana: Todas ▾</button>
+    <div class="filter-panel" id="panelSemana"></div>
+  </div>
   <button class="filter-clear" id="btnClearFilters" type="button">Limpiar filtros</button>
-  <span class="filter-note">El filtro de Agente solo afecta los indicadores de la sección 01/03 (la hoja "Detalle" no registra agente).</span>
+  <span class="filter-note">El filtro de Agente y Semana solo afecta los indicadores de la sección 01/03 (la hoja "Detalle" no registra agente ni fecha).</span>
 </div>
 
 <div class="kpis" id="kpiRow"></div>
@@ -135,7 +142,7 @@
     <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
     <div class="card"><h3>Puntaje Final promedio por Asesor</h3><div class="chart-wrap"><canvas id="chPuntajeAsesor"></canvas></div></div>
   </div>
-  <div class="card" style="margin-top:16px;"><h3>Evolución del Puntaje Final por mes de evaluación</h3><div class="chart-wrap short"><canvas id="chPuntajeFecha"></canvas></div></div>
+  <div class="card" style="margin-top:16px;"><h3>Evolución del Puntaje Final por semana</h3><div class="chart-wrap short"><canvas id="chPuntajeFecha"></canvas></div></div>
 </section>
 
 <section>
@@ -152,7 +159,7 @@
     </div>
     <div class="card"><h3>Por Asesor</h3><div class="chart-wrap"><canvas id="chAsesor"></canvas></div></div>
   </div>
-  <div class="card" style="margin-top:16px;"><h3>Evolución del PEC por fecha de evaluación</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
+  <div class="card" style="margin-top:16px;"><h3>Evolución del PEC por semana</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
 </section>
 
 <section>
@@ -330,6 +337,20 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   const byFecha = groupAvg(resumenNorm, "Fecha", ["PEC"]);
   const pecPorFecha = fechas.map(f=> (byFecha[f] ? byFecha[f].PEC : 0));
 
+  // Tendencia semanal (usa la misma numeración "Semana N" que el filtro de arriba,
+  // contada desde el inicio de operaciones el 20 de julio de 2026).
+  const resumenConSemana = resumenNorm
+    .map(r=>({...r, SemanaInfo: getSemanaInfo(r.Fecha)}))
+    .filter(r=>r.SemanaInfo);
+  const numerosSemana = uniq(resumenConSemana.map(r=>r.SemanaInfo.numSemana)).sort((a,b)=>a-b);
+  const semanasLabelsCortos = numerosSemana.map(n=>'Sem '+n);
+  const semanasLabelsCompletos = {};
+  resumenConSemana.forEach(r=>{ semanasLabelsCompletos[r.SemanaInfo.numSemana] = r.SemanaInfo.label; });
+  const resumenPorNumSemana = resumenConSemana.map(r=>({...r, Semana: r.SemanaInfo.numSemana}));
+  const bySemana = groupAvg(resumenPorNumSemana, "Semana", ["PEC","Puntaje"]);
+  const pecPorSemana = numerosSemana.map(n=> (bySemana[n] ? bySemana[n].PEC : 0));
+  const puntajePorSemana = numerosSemana.map(n=> (bySemana[n] ? bySemana[n].Puntaje : 0));
+
   function cumplimiento(rows){
     const SI = rows.filter(r=>r.Evaluacion === "SI").length;
     const NO = rows.filter(r=>r.Evaluacion === "NO").length;
@@ -352,8 +373,6 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   const resumenConMes = resumenNorm.map(r=>({...r, Mes: mesKey(r.Fecha)}));
   const meses = uniq(resumenConMes.map(r=>r.Mes)).sort();
   const mesesLabels = meses.map(mesLabelFromKey);
-  const byMesPuntaje = groupAvg(resumenConMes, "Mes", ["Puntaje"]);
-  const puntajePorMes = meses.map(m=> (byMesPuntaje[m] ? byMesPuntaje[m].Puntaje : 0));
   const puntajeGeneral = avg(resumenNorm.map(r=>r.Puntaje).filter(v=>!isNaN(v)));
 
   const faltasPorEdeMap = {};
@@ -365,7 +384,8 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
     edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha,
     categorias, cumplimientoCategoria, cumplimientoCategoriaEde,
     faltasPorEde: faltasPorEdeMap,
-    puntajePorEde, puntajePorAsesor, mesesLabels, puntajePorMes, puntajeGeneral,
+    puntajePorEde, puntajePorAsesor, mesesLabels, puntajeGeneral,
+    semanasLabelsCortos, semanasLabelsCompletos, numerosSemana, pecPorSemana, puntajePorSemana,
     nResumen: resumenNorm.length, nDetalle: detalleNorm.length
   };
 }
@@ -437,8 +457,8 @@ function renderAll(DATA){
 
   charts.push(new Chart(document.getElementById('chFecha'), {
     type:'bar',
-    data:{ labels: DATA.fechas, datasets:[{ label:'PEC', data: DATA.pecPorFecha, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:40 }]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:pctAxis(), x:catAxis() } }
+    data:{ labels: DATA.semanasLabelsCortos, datasets:[{ label:'PEC', data: DATA.pecPorSemana, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:40 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:pctAxis(), x:catAxis() } }
   }));
 
   charts.push(new Chart(document.getElementById('chCatGeneral'), {
@@ -488,8 +508,8 @@ function renderAll(DATA){
 
   charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
     type:'bar',
-    data:{ labels: DATA.mesesLabels, datasets:[{ label:'Puntaje Final', data: DATA.puntajePorMes, backgroundColor:COLORS.amber, borderRadius:4, maxBarThickness:40 }]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
+    data:{ labels: DATA.semanasLabelsCortos, datasets:[{ label:'Puntaje Final', data: DATA.puntajePorSemana, backgroundColor:COLORS.amber, borderRadius:4, maxBarThickness:40 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
 }
 
@@ -497,6 +517,37 @@ function renderAll(DATA){
 let RAW = { resumenNorm: SAMPLE_RESUMEN_NORM, detalleNorm: SAMPLE_DETALLE_NORM };
 let selectedEdes = new Set();
 let selectedAgentes = new Set();
+let selectedSemanas = new Set();
+let selectedMeses = new Set(); // claves tipo "2026-07"
+
+const MESES_ES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+function getMesInfo(fechaStr){
+  if(!fechaStr) return null;
+  const fecha = new Date(fechaStr + 'T00:00:00');
+  if(isNaN(fecha)) return null;
+  const key = fecha.getFullYear() + '-' + String(fecha.getMonth()+1).padStart(2,'0');
+  const label = MESES_ES[fecha.getMonth()].charAt(0).toUpperCase() + MESES_ES[fecha.getMonth()].slice(1) + ' ' + fecha.getFullYear();
+  return { key, label };
+}
+
+// Semanas operativas: Semana 1 = 20 al 26 de julio de 2026 (inicio de operaciones), y así sucesivamente (bloques de 7 días).
+const INICIO_OPERACIONES = new Date('2026-07-20T00:00:00');
+
+function getSemanaInfo(fechaStr){
+  if(!fechaStr) return null;
+  const fecha = new Date(fechaStr + 'T00:00:00');
+  if(isNaN(fecha)) return null;
+  const diffDias = Math.floor((fecha - INICIO_OPERACIONES) / (1000*60*60*24));
+  if(diffDias < 0) return null; // fechas previas al inicio de operaciones no se agrupan
+  const numSemana = Math.floor(diffDias / 7) + 1;
+  const inicioSemana = new Date(INICIO_OPERACIONES);
+  inicioSemana.setDate(inicioSemana.getDate() + (numSemana-1)*7);
+  const finSemana = new Date(inicioSemana);
+  finSemana.setDate(finSemana.getDate() + 6);
+  const fmt = (d)=> d.toLocaleDateString('es-PE', {day:'2-digit', month:'short'});
+  return { numSemana, label: `Semana ${numSemana} (${fmt(inicioSemana)} – ${fmt(finSemana)})` };
+}
 
 function agenteEdeMap(){
   const map = {};
@@ -535,6 +586,45 @@ function refreshAgentPanel(){
   renderFilterPanel('panelAgente', agentes, selectedAgentes, ()=>{ updateFilterButtons(); applyFiltersAndRender(); });
 }
 
+function renderMesPanel(){
+  const mesMap = new Map(); // key "2026-07" -> label
+  RAW.resumenNorm.forEach(r=>{
+    const info = getMesInfo(r.Fecha);
+    if(info) mesMap.set(info.key, info.label);
+  });
+  const clavesOrdenadas = [...mesMap.keys()].sort();
+  const labels = clavesOrdenadas.map(k=>mesMap.get(k));
+  const selectedLabels = new Set([...selectedMeses].map(k=>mesMap.get(k)).filter(Boolean));
+  renderFilterPanel('panelMes', labels, selectedLabels, ()=>{
+    selectedMeses = new Set(clavesOrdenadas.filter(k=>selectedLabels.has(mesMap.get(k))));
+    updateFilterButtons();
+    refreshSemanaPanel();
+    applyFiltersAndRender();
+  });
+}
+
+function refreshSemanaPanel(){
+  const semanaMap = new Map(); // numSemana -> label
+  RAW.resumenNorm.forEach(r=>{
+    if(selectedMeses.size>0){
+      const mesInfo = getMesInfo(r.Fecha);
+      if(!mesInfo || !selectedMeses.has(mesInfo.key)) return;
+    }
+    const info = getSemanaInfo(r.Fecha);
+    if(info) semanaMap.set(info.numSemana, info.label);
+  });
+  const numerosOrdenados = [...semanaMap.keys()].sort((a,b)=>a-b);
+  const labels = numerosOrdenados.map(n=>semanaMap.get(n));
+  // descarta de la selección las semanas que ya no aplican al mes elegido
+  [...selectedSemanas].forEach(n=>{ if(!numerosOrdenados.includes(n)) selectedSemanas.delete(n); });
+  const selectedLabels = new Set([...selectedSemanas].map(n=>semanaMap.get(n)).filter(Boolean));
+  renderFilterPanel('panelSemana', labels, selectedLabels, ()=>{
+    selectedSemanas = new Set(numerosOrdenados.filter(n=>selectedLabels.has(semanaMap.get(n))));
+    updateFilterButtons();
+    applyFiltersAndRender();
+  });
+}
+
 function populateFilters(){
   const edes = uniq(RAW.resumenNorm.map(r=>r.EDE)).sort();
   renderFilterPanel('panelEde', edes, selectedEdes, ()=>{
@@ -543,32 +633,43 @@ function populateFilters(){
     applyFiltersAndRender();
   });
   refreshAgentPanel();
+  renderMesPanel();
+  refreshSemanaPanel();
   updateFilterButtons();
 }
 
 function updateFilterButtons(){
   const btnEde = document.getElementById('btnEdeFilter');
   const btnAg = document.getElementById('btnAgenteFilter');
+  const btnMes = document.getElementById('btnMesFilter');
+  const btnSem = document.getElementById('btnSemanaFilter');
   btnEde.textContent = 'EDE: ' + (selectedEdes.size ? selectedEdes.size + ' seleccionada(s)' : 'Todas') + ' ▾';
   btnAg.textContent = 'Agente: ' + (selectedAgentes.size ? selectedAgentes.size + ' seleccionado(s)' : 'Todos') + ' ▾';
+  btnMes.textContent = 'Mes: ' + (selectedMeses.size ? selectedMeses.size + ' seleccionado(s)' : 'Todos') + ' ▾';
+  btnSem.textContent = 'Semana: ' + (selectedSemanas.size ? selectedSemanas.size + ' seleccionada(s)' : 'Todas') + ' ▾';
   btnEde.classList.toggle('active', selectedEdes.size>0);
   btnAg.classList.toggle('active', selectedAgentes.size>0);
+  btnMes.classList.toggle('active', selectedMeses.size>0);
+  btnSem.classList.toggle('active', selectedSemanas.size>0);
 }
 
 function applyFiltersAndRender(){
   const resumenF = RAW.resumenNorm.filter(r=>
     (selectedEdes.size===0 || selectedEdes.has(r.EDE)) &&
-    (selectedAgentes.size===0 || selectedAgentes.has(r.Asesor))
+    (selectedAgentes.size===0 || selectedAgentes.has(r.Asesor)) &&
+    (selectedMeses.size===0 || (()=>{ const info=getMesInfo(r.Fecha); return info && selectedMeses.has(info.key); })()) &&
+    (selectedSemanas.size===0 || (()=>{ const info=getSemanaInfo(r.Fecha); return info && selectedSemanas.has(info.numSemana); })())
   );
   // Si la hoja "Detalle" trae columna Asesor la usamos; si no, el filtro de agente
-  // no puede aplicarse a esos gráficos (solo se filtra por EDE).
+  // no puede aplicarse a esos gráficos (solo se filtra por EDE). La hoja "Detalle"
+  // tampoco trae fecha, así que los filtros de Mes y Semana no pueden aplicarse ahí.
   const detalleTieneAsesor = RAW.detalleNorm.some(r=> r.Asesor!==null && r.Asesor!==undefined && r.Asesor!=="");
   const detalleF = RAW.detalleNorm.filter(r=>
     (selectedEdes.size===0 || selectedEdes.has(r.EDE)) &&
     (!detalleTieneAsesor || selectedAgentes.size===0 || selectedAgentes.has(r.Asesor))
   );
   const noteEl = document.querySelector('.filter-note');
-  if(noteEl) noteEl.style.display = detalleTieneAsesor ? "none" : "";
+  if(noteEl) noteEl.style.display = (detalleTieneAsesor && selectedSemanas.size===0 && selectedMeses.size===0) ? "none" : "";
   const DATA = buildDataFromNormRows(resumenF, detalleF);
   renderAll(DATA);
 }
@@ -577,22 +678,44 @@ function applyFiltersAndRender(){
 document.getElementById('btnEdeFilter').addEventListener('click', (e)=>{
   e.stopPropagation();
   document.getElementById('panelAgente').classList.remove('open');
+  document.getElementById('panelMes').classList.remove('open');
+  document.getElementById('panelSemana').classList.remove('open');
   document.getElementById('panelEde').classList.toggle('open');
 });
 document.getElementById('btnAgenteFilter').addEventListener('click', (e)=>{
   e.stopPropagation();
   document.getElementById('panelEde').classList.remove('open');
+  document.getElementById('panelMes').classList.remove('open');
+  document.getElementById('panelSemana').classList.remove('open');
   document.getElementById('panelAgente').classList.toggle('open');
+});
+document.getElementById('btnMesFilter').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  document.getElementById('panelEde').classList.remove('open');
+  document.getElementById('panelAgente').classList.remove('open');
+  document.getElementById('panelSemana').classList.remove('open');
+  document.getElementById('panelMes').classList.toggle('open');
+});
+document.getElementById('btnSemanaFilter').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  document.getElementById('panelEde').classList.remove('open');
+  document.getElementById('panelAgente').classList.remove('open');
+  document.getElementById('panelMes').classList.remove('open');
+  document.getElementById('panelSemana').classList.toggle('open');
 });
 document.addEventListener('click', ()=>{
   document.getElementById('panelEde').classList.remove('open');
   document.getElementById('panelAgente').classList.remove('open');
+  document.getElementById('panelMes').classList.remove('open');
+  document.getElementById('panelSemana').classList.remove('open');
 });
 document.querySelectorAll('.filter-panel').forEach(p=> p.addEventListener('click', e=>e.stopPropagation()));
 
 document.getElementById('btnClearFilters').addEventListener('click', ()=>{
   selectedEdes.clear();
   selectedAgentes.clear();
+  selectedMeses.clear();
+  selectedSemanas.clear();
   populateFilters();
   applyFiltersAndRender();
 });
@@ -624,6 +747,8 @@ async function cargarDesdeGitHub(){
     RAW = norm;
     selectedEdes.clear();
     selectedAgentes.clear();
+    selectedMeses.clear();
+    selectedSemanas.clear();
     populateFilters();
     applyFiltersAndRender();
     const fecha = json.updatedAt ? new Date(json.updatedAt).toLocaleString('es-PE') : "";
