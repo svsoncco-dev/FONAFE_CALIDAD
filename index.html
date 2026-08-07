@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel de Calidad — Campaña FONAFE</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#F4F6FA;
+    --panel:#FFFFFF;
+    --panel-border:#DCE1EA;
+    --text:#2B3168;
+    --text-dim:#7A8296;
+    --teal:#1CADE4;    /* celeste de marca - indicador principal */
+    --amber:#0B5F7D;   /* teal oscuro - tercer indicador */
+    --violet:#2B3168;  /* azul marino de marca - segundo indicador */
+    --rose:#D64550;    /* rojo de alerta - faltas graves */
+    --grid: rgba(43,49,104,0.08);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 28px 32px 60px;
+  }
+  .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+  header{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:22px; border-bottom:1px solid var(--panel-border); padding-bottom:18px;}
+  .eyebrow{ color:var(--teal); font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:11px; margin:0 0 6px;}
+  h1{ margin:0; font-size:26px; font-weight:700; color:#2B3168;}
+  .sub{ color:var(--text-dim); font-size:13px; margin-top:6px;}
+
+  .ede-strip{ display:flex; gap:8px; flex-wrap:wrap; }
+  .ede-chip{ display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--panel-border); border-radius:999px; padding:6px 12px 6px 8px; box-shadow:0 1px 2px rgba(43,43,42,0.05);}
+  .dot{ width:9px; height:9px; border-radius:50%; background:var(--violet); }
+  .dot.warn{ background:var(--teal);}
+  .dot.bad{ background:var(--rose);}
+  .ede-chip .name{ font-size:12px; font-weight:700;}
+  .ede-chip .val{ font-size:11px; color:var(--text-dim);}
+
+  .rank-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+  .rank-list li{ display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:8px; background:var(--panel); border:1px solid var(--panel-border);}
+  .rank-list .pos{ font-size:11px; font-weight:800; width:18px; text-align:center; color:var(--text-dim);}
+  .rank-list .name{ flex:1; font-size:12px; font-weight:700;}
+  .rank-list .val{ font-size:12px; font-weight:700;}
+  .rank-list.top .val{ color:var(--teal);}
+  .rank-list.bottom .val{ color:var(--rose);}
+  .rank-title{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); margin:0 0 8px;}
+
+  .filter-bar{ display:flex; align-items:center; gap:10px; background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:12px 16px; margin-bottom:16px; box-shadow:0 1px 3px rgba(43,43,42,0.06); flex-wrap:wrap;}
+  .filter-bar .flabel{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-dim); font-weight:700; margin-right:2px;}
+  .filter-group{ position:relative; }
+  .filter-btn{ background:var(--bg); border:1px solid var(--panel-border); color:var(--text); font-size:12px; font-weight:600; padding:8px 12px; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .filter-btn:hover{ border-color:var(--teal); }
+  .filter-btn.active{ border-color:var(--teal); color:var(--teal); background:#E6F6FC; }
+  .filter-panel{ display:none; position:absolute; top:calc(100% + 6px); left:0; min-width:220px; max-height:260px; overflow-y:auto; background:var(--panel); border:1px solid var(--panel-border); border-radius:10px; box-shadow:0 6px 18px rgba(43,43,42,0.12); padding:8px; z-index:20;}
+  .filter-panel.open{ display:block; }
+  .filter-opt{ display:flex; align-items:center; gap:8px; font-size:12px; padding:5px 6px; border-radius:6px; cursor:pointer; }
+  .filter-opt:hover{ background:var(--bg); }
+  .filter-opt input{ accent-color:var(--teal); }
+  .filter-empty{ font-size:12px; color:var(--text-dim); padding:6px; }
+  .filter-hint{ font-size:10px; color:var(--text-dim); padding:6px 6px 2px; border-top:1px solid var(--panel-border); margin-top:4px;}
+  .filter-clear{ background:none; border:none; color:var(--teal); font-size:12px; font-weight:700; cursor:pointer; padding:6px 4px; }
+  .filter-clear:hover{ text-decoration:underline; }
+  .filter-note{ font-size:11px; color:var(--text-dim); flex:1; min-width:180px; text-align:right; }
+
+  .upload-bar{ display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:14px 16px; margin-bottom:22px; box-shadow:0 1px 3px rgba(43,43,42,0.06); flex-wrap:wrap;}
+  .upload-bar .txt{ font-size:12px; color:var(--text-dim); flex:1; min-width:200px;}
+  .upload-bar .txt b{ color:var(--text); }
+  .btn-file{ position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:8px; background:var(--teal); color:#fff; font-size:12px; font-weight:700; padding:9px 16px; border-radius:8px; cursor:pointer; border:none;}
+  .btn-file input{ position:absolute; inset:0; opacity:0; cursor:pointer; }
+
+  .kpis{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin:0 0 30px;}
+  .kpi{ background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:16px 18px; box-shadow:0 1px 3px rgba(43,43,42,0.06);}
+  .kpi .label{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-dim); font-weight:700;}
+  .kpi .value{ font-size:32px; font-weight:700; margin-top:6px;}
+  .kpi .value.teal{color:var(--teal);} .kpi .value.violet{color:var(--violet);}
+  .kpi .value.amber{color:var(--amber);} .kpi .value.rose{color:var(--rose);}
+
+  section{ margin-bottom:34px; }
+  .section-title{ display:flex; align-items:baseline; gap:10px; margin-bottom:14px;}
+  .section-title .idx{ font-family: ui-monospace, monospace; color:var(--text-dim); font-size:12px;}
+  .section-title h2{ font-size:16px; margin:0; font-weight:700; color:#2B3168;}
+
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;}
+  @media(max-width:900px){ .grid2,.grid3,.kpis{grid-template-columns:1fr;} }
+
+  .card{ background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:16px 16px 8px; box-shadow:0 1px 3px rgba(43,43,42,0.06);}
+  .card h3{ margin:0 0 10px; font-size:13px; color:var(--text); font-weight:600;}
+  .card .note{ font-size:11px; color:var(--text-dim); margin-top:6px;}
+  .chart-wrap{ position:relative; width:100%; height:260px; }
+  .chart-wrap.tall{ height:300px; }
+  .chart-wrap.short{ height:210px; }
+
+  footer{ margin-top:20px; color:var(--text-dim); font-size:11px; border-top:1px solid var(--panel-border); padding-top:14px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <p class="eyebrow">Aseguramiento de Calidad · Contact Center</p>
+    <h1>Campaña FONAFE — Panel de Evaluaciones</h1>
+    <p class="sub" id="subLine">Consolidado de muestra · 1 EDE cargada · datos tomados del JSON del repositorio</p>
+  </div>
+  <div class="ede-strip" id="edeStrip"></div>
+</header>
+
+<div class="upload-bar">
+  <span class="txt"><b>Fuente de datos</b> — este panel lee automáticamente el archivo <span class="mono">datos.json</span> publicado en el repositorio de GitHub. Para actualizar los datos, edita ese JSON y súbelo (commit) al repo; todos los que abran este link verán la versión nueva.</span>
+  <button class="btn-file" id="btnRecargar" type="button" style="border:none;">🔄 Recargar datos</button>
+  <span id="syncStatus" style="font-size:12px;color:var(--text-dim);"></span>
+</div>
+
+<div class="filter-bar" id="filterBar">
+  <span class="flabel">Filtrar por</span>
+  <div class="filter-group">
+    <button class="filter-btn" id="btnEdeFilter" type="button">EDE: Todas ▾</button>
+    <div class="filter-panel" id="panelEde"></div>
+  </div>
+  <div class="filter-group">
+    <button class="filter-btn" id="btnAgenteFilter" type="button">Agente: Todos ▾</button>
+    <div class="filter-panel" id="panelAgente"></div>
+  </div>
+  <button class="filter-clear" id="btnClearFilters" type="button">Limpiar filtros</button>
+  <span class="filter-note">El filtro de Agente solo afecta los indicadores de la sección 01/03 (la hoja "Detalle" no registra agente).</span>
+</div>
+
+<div class="kpis" id="kpiRow"></div>
+
+<section>
+  <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
+  <div class="grid2">
+    <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
+    <div class="card"><h3>Puntaje Final promedio por Asesor</h3><div class="chart-wrap"><canvas id="chPuntajeAsesor"></canvas></div></div>
+  </div>
+  <div class="card" style="margin-top:16px;"><h3>Evolución del Puntaje Final por mes de evaluación</h3><div class="chart-wrap short"><canvas id="chPuntajeFecha"></canvas></div></div>
+</section>
+
+<section>
+  <div class="section-title"><span class="idx">02</span><h2>Indicadores PEC / PECUF / PECNEG / PECUM</h2></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Por EDE</h3>
+      <div class="grid2" style="gap:10px;">
+        <div><p class="note" style="margin:0 0 4px;">PEC</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePEC"></canvas></div></div>
+        <div><p class="note" style="margin:0 0 4px;">PECUF</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUF"></canvas></div></div>
+        <div><p class="note" style="margin:0 0 4px;">PECNEG</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECNEG"></canvas></div></div>
+        <div><p class="note" style="margin:0 0 4px;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
+      </div>
+    </div>
+    <div class="card"><h3>Por Asesor</h3><div class="chart-wrap"><canvas id="chAsesor"></canvas></div></div>
+  </div>
+  <div class="card" style="margin-top:16px;"><h3>Evolución del PEC por fecha de evaluación</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
+</section>
+
+<section>
+  <div class="section-title"><span class="idx">03</span><h2>Cumplimiento por Categoría</h2></div>
+  <div class="grid2">
+    <div class="card"><h3>% Cumplimiento por Categoría</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
+    <div class="card"><h3>% Cumplimiento por Categoría y EDE</h3><div class="chart-wrap tall"><canvas id="chCatEde"></canvas></div></div>
+  </div>
+
+</section>
+
+<section>
+  <div class="section-title"><span class="idx">04</span><h2>Indicadores complementarios</h2></div>
+  <div class="card"><h3>Faltas Graves por EDE</h3><div class="chart-wrap"><canvas id="chFaltas"></canvas></div></div>
+  <div class="card" style="margin-top:16px;">
+    <h3>Ranking de Asesores por Puntaje</h3>
+    <div class="grid2">
+      <div>
+        <p class="rank-title">Mejor puntaje</p>
+        <ul class="rank-list top" id="rankTop"></ul>
+      </div>
+      <div>
+        <p class="rank-title">Menor puntaje</p>
+        <ul class="rank-list bottom" id="rankBottom"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</footer>
+
+<script>
+const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
+Chart.defaults.color = COLORS.text;
+Chart.defaults.font.size = 11;
+Chart.defaults.borderColor = COLORS.grid;
+
+function pctAxis(){ return { min:0, max:1, ticks:{ callback:v=>Math.round(v*100)+"%" }, grid:{color:COLORS.grid} }; }
+function catAxis(){ return { grid:{display:false} }; }
+
+// ------- datos de muestra, como filas "crudas" (equivalentes a Resumen General / Detalle) -------
+// Se guardan como filas y no como agregados para que los filtros de EDE/Agente también
+// funcionen sobre la demo, con el mismo pipeline que usa el archivo real.
+const SAMPLE_RESUMEN_NORM = [
+  {EDE:"ELSE", Asesor:"EDDY QUEZADA", Fecha:"2026-07-25", TipoLlamada:"DENUNCIAS", Puntaje:10, PEC:1.0, PECUF:1.0, PECNEG:1.0, PECUM:1.0, FaltaGrave:null},
+  {EDE:"ELSE", Asesor:"RYAN FLORES",  Fecha:"2026-07-28", TipoLlamada:"CONSULTAS", Puntaje:10, PEC:1.0, PECUF:1.0, PECNEG:1.0, PECUM:1.0, FaltaGrave:null}
+];
+function expandRows(defs, ede){
+  const rows = [];
+  defs.forEach(d=>{ for(let i=0;i<d.count;i++) rows.push({EDE:ede, Categoria:d.categoria, Atributo:d.atributo, Evaluacion:d.evaluacion||"SI"}); });
+  return rows;
+}
+const SAMPLE_DETALLE_NORM = expandRows([
+  {categoria:"Actitud de Servicio",     atributo:"PECUF", count:7},
+  {categoria:"Actitud de Servicio",     atributo:"NONE",  count:1},
+  {categoria:"Sondeo de Necesidades",   atributo:"PECUF", count:6},
+  {categoria:"Registro SIELSE",         atributo:"PECNEG",count:4},
+  {categoria:"Registro SIELSE",         atributo:"PECUM", count:7},
+  {categoria:"Información Final",       atributo:"PECUM", count:6},
+  {categoria:"Imagen Corporativa",      atributo:"PECNEG",count:10},
+  {categoria:"Orientación Solución",    atributo:"PECNEG",count:10},
+  {categoria:"Cumplimiento Normativo",  atributo:"PECNEG",count:11}
+], "ELSE");
+
+// ------- utilidades para procesar un archivo .xlsx real -------
+function toPct(v){
+  if(v===null || v===undefined || v==="") return null;
+  if(typeof v === "number") return v > 1 ? v/100 : v; // por si viene 0-1 o 0-100
+  const n = parseFloat(String(v).replace("%","").trim());
+  return isNaN(n) ? null : n/100;
+}
+function uniq(arr){ return [...new Set(arr.filter(v=>v!==null && v!==undefined && v!==""))]; }
+function toDateSafe(v){
+  if(v===null||v===undefined||v==="") return null;
+  if(v instanceof Date) return isNaN(v) ? null : v;
+  if(typeof v === "number"){ // serial de fecha de Excel (epoch 1899-12-30)
+    const d = new Date(Math.round((v - 25569) * 86400 * 1000));
+    return isNaN(d) ? null : d;
+  }
+  const s = String(v).trim();
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if(m) return new Date(Number(m[1]), Number(m[2])-1, Number(m[3]));
+  const d = new Date(s);
+  return isNaN(d) ? null : d;
+}
+const MES_LABEL = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+function mesKey(v){
+  const d = toDateSafe(v);
+  return d ? d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0") : null;
+}
+function mesLabelFromKey(k){
+  const [y,m] = k.split("-");
+  return MES_LABEL[Number(m)-1] + " " + y;
+}
+function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
+
+function groupAvg(items, groupField, valueFields){
+  const buckets = {};
+  items.forEach(it=>{
+    const g = it[groupField];
+    if(g===null||g===undefined||g==="") return;
+    if(!buckets[g]) buckets[g] = {};
+    valueFields.forEach(f=>{
+      if(!buckets[g][f]) buckets[g][f] = [];
+      const v = it[f];
+      if(v!==null && v!==undefined && !isNaN(v)) buckets[g][f].push(v);
+    });
+  });
+  const out = {};
+  Object.keys(buckets).forEach(g=>{
+    out[g] = {};
+    valueFields.forEach(f=> out[g][f] = avg(buckets[g][f]));
+  });
+  return out;
+}
+
+function normalizeData(json){
+  const resumenRows = json["Resumen General"];
+  const detalleRows = json["Detalle"];
+  if(!Array.isArray(resumenRows) || !Array.isArray(detalleRows)){
+    throw new Error('El JSON debe tener las claves "Resumen General" y "Detalle", cada una como lista de filas. Claves encontradas: ' + Object.keys(json).join(", "));
+  }
+
+  // columnas requeridas: si falta alguna, avisamos con un mensaje claro en vez de fallar más adelante
+  const reqResumen = ["EDE","Asesor","Fecha Evaluación","Tipo de Llamada","Puntaje Final (/10)","PEC (%)","PECUF (%)","PECNEG (%)","PECUM (%)"];
+  const reqDetalle = ["EDE","Categoría","Atributo","Evaluación"];
+  const colsResumen = resumenRows.length ? Object.keys(resumenRows[0]) : [];
+  const colsDetalle = detalleRows.length ? Object.keys(detalleRows[0]) : [];
+  const faltanResumen = reqResumen.filter(c=>!colsResumen.includes(c));
+  const faltanDetalle = reqDetalle.filter(c=>!colsDetalle.includes(c));
+  if(faltanResumen.length) throw new Error('Faltan columnas en "Resumen General": ' + faltanResumen.join(", "));
+  if(faltanDetalle.length) throw new Error('Faltan columnas en "Detalle": ' + faltanDetalle.join(", "));
+
+  const resumenNorm = resumenRows
+    .map(r=>({
+      EDE: r["EDE"],
+      Asesor: r["Asesor"],
+      Fecha: r["Fecha Evaluación"],
+      TipoLlamada: r["Tipo de Llamada"],
+      Puntaje: Number(r["Puntaje Final (/10)"]),
+      PEC: toPct(r["PEC (%)"]),
+      PECUF: toPct(r["PECUF (%)"]),
+      PECNEG: toPct(r["PECNEG (%)"]),
+      PECUM: toPct(r["PECUM (%)"]),
+      FaltaGrave: r["Falta Grave"]
+    }))
+    .filter(r=> r.EDE!==null && r.EDE!==undefined && r.EDE!=="" ); // descarta filas vacías al final de la hoja
+
+  const detalleNorm = detalleRows
+    .map(r=>({
+      EDE: r["EDE"],
+      Asesor: r["Asesor"] !== undefined ? r["Asesor"] : null, // algunas plantillas sí incluyen Asesor en Detalle
+      Categoria: r["Categoría"],
+      Atributo: r["Atributo"],
+      Evaluacion: r["Evaluación"]
+    }))
+    .filter(r=> r.EDE!==null && r.EDE!==undefined && r.EDE!=="" );
+
+  return { resumenNorm, detalleNorm };
+}
+
+// Calcula todos los indicadores del panel a partir de filas ya normalizadas
+// (y ya filtradas por EDE/Agente, si corresponde).
+function buildDataFromNormRows(resumenNorm, detalleNorm){
+  const edes = uniq(resumenNorm.map(r=>r.EDE));
+  const asesores = uniq(resumenNorm.map(r=>r.Asesor));
+  const fechas = uniq(resumenNorm.map(r=>r.Fecha)).sort();
+  const categorias = uniq(detalleNorm.map(r=>r.Categoria));
+
+  const valueFields = ["PEC","PECUF","PECNEG","PECUM"];
+  const overall = {};
+  valueFields.forEach(f=> overall[f] = avg(resumenNorm.map(r=>r[f]).filter(v=>v!==null)));
+  const byEde = groupAvg(resumenNorm, "EDE", valueFields);
+  const byAsesor = groupAvg(resumenNorm, "Asesor", valueFields);
+  const byFecha = groupAvg(resumenNorm, "Fecha", ["PEC"]);
+  const pecPorFecha = fechas.map(f=> (byFecha[f] ? byFecha[f].PEC : 0));
+
+  function cumplimiento(rows){
+    const SI = rows.filter(r=>r.Evaluacion === "SI").length;
+    const NO = rows.filter(r=>r.Evaluacion === "NO").length;
+    return (SI+NO) > 0 ? SI/(SI+NO) : 0;
+  }
+  const cumplimientoCategoria = categorias.map(c=> cumplimiento(detalleNorm.filter(r=>r.Categoria===c)));
+  const cumplimientoCategoriaEde = {};
+  edes.forEach(e=>{
+    cumplimientoCategoriaEde[e] = categorias.map(c=> cumplimiento(detalleNorm.filter(r=>r.Categoria===c && r.EDE===e)));
+  });
+
+  const puntajePorEde = edes.map(e=>{
+    const vals = resumenNorm.filter(r=>r.EDE===e).map(r=>r.Puntaje).filter(v=>!isNaN(v));
+    return avg(vals);
+  });
+  const puntajePorAsesor = asesores.map(a=>{
+    const vals = resumenNorm.filter(r=>r.Asesor===a).map(r=>r.Puntaje).filter(v=>!isNaN(v));
+    return avg(vals);
+  });
+  const resumenConMes = resumenNorm.map(r=>({...r, Mes: mesKey(r.Fecha)}));
+  const meses = uniq(resumenConMes.map(r=>r.Mes)).sort();
+  const mesesLabels = meses.map(mesLabelFromKey);
+  const byMesPuntaje = groupAvg(resumenConMes, "Mes", ["Puntaje"]);
+  const puntajePorMes = meses.map(m=> (byMesPuntaje[m] ? byMesPuntaje[m].Puntaje : 0));
+  const puntajeGeneral = avg(resumenNorm.map(r=>r.Puntaje).filter(v=>!isNaN(v)));
+
+  const faltasPorEdeMap = {};
+  edes.forEach(e=>{
+    faltasPorEdeMap[e] = resumenNorm.filter(r=>r.EDE===e && r.FaltaGrave!==null && r.FaltaGrave!==undefined && r.FaltaGrave!=="").length;
+  });
+
+  return {
+    edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha,
+    categorias, cumplimientoCategoria, cumplimientoCategoriaEde,
+    faltasPorEde: faltasPorEdeMap,
+    puntajePorEde, puntajePorAsesor, mesesLabels, puntajePorMes, puntajeGeneral,
+    nResumen: resumenNorm.length, nDetalle: detalleNorm.length
+  };
+}
+
+// ------- render (crea/recrea todos los gráficos a partir de DATA) -------
+let charts = [];
+function destroyCharts(){ charts.forEach(c=>c.destroy()); charts = []; }
+
+function renderAll(DATA){
+  destroyCharts();
+
+  document.getElementById('subLine').textContent = DATA.nResumen>0
+    ? `Consolidado cargado · ${DATA.edes.length} EDE(s) · ${DATA.nResumen} evaluaciones · ${DATA.nDetalle} ítems evaluados`
+    : `Sin resultados para los filtros seleccionados.`;
+
+  const kpiRow = document.getElementById('kpiRow');
+  const kpiDefs = [["PEC","teal"],["PECUF","violet"],["PECNEG","amber"],["PECUM","rose"]];
+  kpiRow.innerHTML = kpiDefs.map(([k,c])=>`
+    <div class="kpi">
+      <div class="label">${k} promedio</div>
+      <div class="value ${c}">${Math.round(DATA.overall[k]*100)}%</div>
+    </div>`).join("")
+    + `<div class="kpi">
+      <div class="label">Puntaje Final promedio</div>
+      <div class="value teal">${DATA.puntajeGeneral.toFixed(1)}<span style="font-size:16px;color:var(--text-dim);">/10</span></div>
+    </div>`;
+
+  const strip = document.getElementById('edeStrip');
+  strip.innerHTML = DATA.edes.map(e=>{
+    const v = DATA.byEde[e].PEC;
+    const cls = v>=0.9 ? "" : v>=0.75 ? "warn" : "bad";
+    return `<div class="ede-chip"><span class="dot ${cls}"></span><span class="name">${e}</span><span class="val mono">${Math.round(v*100)}%</span></div>`;
+  }).join("");
+
+  function grouped4(ctxId, labels, byGroupObj, groupKeys){
+    const c = new Chart(document.getElementById(ctxId), {
+      type:'bar',
+      data:{
+        labels: groupKeys,
+        datasets: labels.map((k,i)=>({
+          label:k,
+          data: groupKeys.map(g=>byGroupObj[g][k]),
+          backgroundColor:[COLORS.teal,COLORS.violet,COLORS.amber,COLORS.rose][i],
+          borderRadius:4, maxBarThickness:26
+        }))
+      },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom', labels:{boxWidth:10}}}, scales:{ y:pctAxis(), x:catAxis()} }
+    });
+    charts.push(c);
+  }
+
+  function singleIndicator(ctxId, key, color){
+    const c = new Chart(document.getElementById(ctxId), {
+      type:'bar',
+      data:{
+        labels: DATA.edes,
+        datasets:[{ data: DATA.edes.map(g=>DATA.byEde[g][key]), backgroundColor:color, borderRadius:4, maxBarThickness:26 }]
+      },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:pctAxis(), x:catAxis() } }
+    });
+    charts.push(c);
+  }
+  singleIndicator('chEdePEC', 'PEC', COLORS.teal);
+  singleIndicator('chEdePECUF', 'PECUF', COLORS.violet);
+  singleIndicator('chEdePECNEG', 'PECNEG', COLORS.amber);
+  singleIndicator('chEdePECUM', 'PECUM', COLORS.rose);
+
+  grouped4('chAsesor', ["PEC","PECUF","PECNEG","PECUM"], DATA.byAsesor, DATA.asesores);
+
+  charts.push(new Chart(document.getElementById('chFecha'), {
+    type:'bar',
+    data:{ labels: DATA.fechas, datasets:[{ label:'PEC', data: DATA.pecPorFecha, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:40 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:pctAxis(), x:catAxis() } }
+  }));
+
+  charts.push(new Chart(document.getElementById('chCatGeneral'), {
+    type:'bar',
+    data:{ labels: DATA.categorias, datasets:[{ data: DATA.cumplimientoCategoria, backgroundColor:COLORS.violet, borderRadius:4 }]},
+    options:{ responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:pctAxis(), y:{grid:{display:false}} } }
+  }));
+
+  charts.push(new Chart(document.getElementById('chCatEde'), {
+    type:'bar',
+    data:{
+      labels: DATA.categorias,
+      datasets: DATA.edes.map((e,i)=>({ label:e, data: DATA.cumplimientoCategoriaEde[e], backgroundColor:[COLORS.teal,COLORS.violet,COLORS.amber,COLORS.rose,COLORS.gray,"#6FCBEE","#173F52"][i%7], borderRadius:4 }))
+    },
+    options:{ responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{legend:{position:'bottom'}}, scales:{ x:pctAxis(), y:{grid:{display:false}} } }
+  }));
+
+  charts.push(new Chart(document.getElementById('chFaltas'), {
+    type:'bar',
+    data:{ labels: DATA.edes, datasets:[{ data: DATA.edes.map(e=>DATA.faltasPorEde[e]), backgroundColor:COLORS.rose, borderRadius:4, maxBarThickness:50 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{beginAtZero:true, ticks:{stepSize:1}, grid:{color:COLORS.grid}}, x:catAxis() } }
+  }));
+
+  const asesoresOrdenados = DATA.asesores
+    .map((a,i)=>({ nombre:a, puntaje:DATA.puntajePorAsesor[i] }))
+    .filter(r=>!isNaN(r.puntaje))
+    .sort((a,b)=> b.puntaje - a.puntaje);
+  const top10 = asesoresOrdenados.slice(0,10);
+  const bottom10 = asesoresOrdenados.slice(-10).reverse().filter(r=>!top10.includes(r));
+  function rankLi(r,i){
+    return `<li><span class="pos">${i+1}</span><span class="name">${r.nombre}</span><span class="val mono">${r.puntaje.toFixed(1)}</span></li>`;
+  }
+  document.getElementById('rankTop').innerHTML = top10.map(rankLi).join("");
+  document.getElementById('rankBottom').innerHTML = bottom10.map((r,i)=>rankLi(r,i)).join("");
+
+  charts.push(new Chart(document.getElementById('chPuntajeEde'), {
+    type:'bar',
+    data:{ labels: DATA.edes, datasets:[{ data: DATA.puntajePorEde, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:50 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
+  }));
+
+  charts.push(new Chart(document.getElementById('chPuntajeAsesor'), {
+    type:'bar',
+    data:{ labels: DATA.asesores, datasets:[{ data: DATA.puntajePorAsesor, backgroundColor:COLORS.violet, borderRadius:4, maxBarThickness:50 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
+  }));
+
+  charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
+    type:'bar',
+    data:{ labels: DATA.mesesLabels, datasets:[{ label:'Puntaje Final', data: DATA.puntajePorMes, backgroundColor:COLORS.amber, borderRadius:4, maxBarThickness:40 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
+  }));
+}
+
+// ------- filtros por EDE y Agente -------
+let RAW = { resumenNorm: SAMPLE_RESUMEN_NORM, detalleNorm: SAMPLE_DETALLE_NORM };
+let selectedEdes = new Set();
+let selectedAgentes = new Set();
+
+function agenteEdeMap(){
+  const map = {};
+  RAW.resumenNorm.forEach(r=>{
+    if(!r.Asesor) return;
+    if(!map[r.Asesor]) map[r.Asesor] = new Set();
+    if(r.EDE) map[r.Asesor].add(r.EDE);
+  });
+  return map;
+}
+
+function renderFilterPanel(panelId, options, selectedSet, onChange){
+  const panel = document.getElementById(panelId);
+  panel.innerHTML = (options.length ? options.map(o=>`
+    <label class="filter-opt">
+      <input type="checkbox" value="${o}" ${selectedSet.has(o)?"checked":""}>
+      <span>${o}</span>
+    </label>`).join("") : '<div class="filter-empty">Sin opciones</div>')
+    + '<div class="filter-hint">Sin selección = se muestran todas</div>';
+  panel.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    cb.addEventListener('change', ()=>{
+      if(cb.checked) selectedSet.add(cb.value); else selectedSet.delete(cb.value);
+      onChange();
+    });
+  });
+}
+
+function refreshAgentPanel(){
+  const map = agenteEdeMap();
+  let agentes = Object.keys(map);
+  if(selectedEdes.size>0){
+    agentes = agentes.filter(a=>[...map[a]].some(e=>selectedEdes.has(e)));
+  }
+  agentes.sort();
+  [...selectedAgentes].forEach(a=>{ if(!agentes.includes(a)) selectedAgentes.delete(a); });
+  renderFilterPanel('panelAgente', agentes, selectedAgentes, ()=>{ updateFilterButtons(); applyFiltersAndRender(); });
+}
+
+function populateFilters(){
+  const edes = uniq(RAW.resumenNorm.map(r=>r.EDE)).sort();
+  renderFilterPanel('panelEde', edes, selectedEdes, ()=>{
+    updateFilterButtons();
+    refreshAgentPanel();
+    applyFiltersAndRender();
+  });
+  refreshAgentPanel();
+  updateFilterButtons();
+}
+
+function updateFilterButtons(){
+  const btnEde = document.getElementById('btnEdeFilter');
+  const btnAg = document.getElementById('btnAgenteFilter');
+  btnEde.textContent = 'EDE: ' + (selectedEdes.size ? selectedEdes.size + ' seleccionada(s)' : 'Todas') + ' ▾';
+  btnAg.textContent = 'Agente: ' + (selectedAgentes.size ? selectedAgentes.size + ' seleccionado(s)' : 'Todos') + ' ▾';
+  btnEde.classList.toggle('active', selectedEdes.size>0);
+  btnAg.classList.toggle('active', selectedAgentes.size>0);
+}
+
+function applyFiltersAndRender(){
+  const resumenF = RAW.resumenNorm.filter(r=>
+    (selectedEdes.size===0 || selectedEdes.has(r.EDE)) &&
+    (selectedAgentes.size===0 || selectedAgentes.has(r.Asesor))
+  );
+  // Si la hoja "Detalle" trae columna Asesor la usamos; si no, el filtro de agente
+  // no puede aplicarse a esos gráficos (solo se filtra por EDE).
+  const detalleTieneAsesor = RAW.detalleNorm.some(r=> r.Asesor!==null && r.Asesor!==undefined && r.Asesor!=="");
+  const detalleF = RAW.detalleNorm.filter(r=>
+    (selectedEdes.size===0 || selectedEdes.has(r.EDE)) &&
+    (!detalleTieneAsesor || selectedAgentes.size===0 || selectedAgentes.has(r.Asesor))
+  );
+  const noteEl = document.querySelector('.filter-note');
+  if(noteEl) noteEl.style.display = detalleTieneAsesor ? "none" : "";
+  const DATA = buildDataFromNormRows(resumenF, detalleF);
+  renderAll(DATA);
+}
+
+// abrir/cerrar los paneles de filtro
+document.getElementById('btnEdeFilter').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  document.getElementById('panelAgente').classList.remove('open');
+  document.getElementById('panelEde').classList.toggle('open');
+});
+document.getElementById('btnAgenteFilter').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  document.getElementById('panelEde').classList.remove('open');
+  document.getElementById('panelAgente').classList.toggle('open');
+});
+document.addEventListener('click', ()=>{
+  document.getElementById('panelEde').classList.remove('open');
+  document.getElementById('panelAgente').classList.remove('open');
+});
+document.querySelectorAll('.filter-panel').forEach(p=> p.addEventListener('click', e=>e.stopPropagation()));
+
+document.getElementById('btnClearFilters').addEventListener('click', ()=>{
+  selectedEdes.clear();
+  selectedAgentes.clear();
+  populateFilters();
+  applyFiltersAndRender();
+});
+
+// ------- carga de datos desde el JSON publicado en GitHub -------
+// 1) Sube tu archivo "datos.json" (con las claves "Resumen General" y "Detalle",
+//    mismas columnas que usabas en el Excel) a un repositorio de GitHub.
+// 2) Reemplaza la URL de abajo por el link "raw" de ese archivo, por ejemplo:
+//    https://raw.githubusercontent.com/TU-USUARIO/TU-REPO/main/datos.json
+// 3) Cada vez que actualices y subas (commit) el JSON al repo, quien abra este
+//    dashboard (o le dé clic a "Recargar datos") verá la versión más reciente.
+const JSON_URL = "https://raw.githubusercontent.com/svsoncco-dev/FONAFE_CALIDAD/main/datos.json";
+
+const syncEl = document.getElementById('syncStatus');
+
+async function cargarDesdeGitHub(){
+  try{
+    syncEl.textContent = "Cargando datos desde GitHub…";
+    // se agrega ?t=timestamp para evitar que el navegador o GitHub muestren una copia en caché desactualizada
+    const res = await fetch(JSON_URL + "?t=" + Date.now());
+    if(!res.ok){
+      throw new Error("No se pudo obtener el archivo (HTTP " + res.status + "). Revisa que la URL sea correcta y el repositorio sea público.");
+    }
+    const json = await res.json();
+    const norm = normalizeData(json);
+    if(norm.resumenNorm.length===0){
+      throw new Error('"Resumen General" no tiene filas de datos.');
+    }
+    RAW = norm;
+    selectedEdes.clear();
+    selectedAgentes.clear();
+    populateFilters();
+    applyFiltersAndRender();
+    const fecha = json.updatedAt ? new Date(json.updatedAt).toLocaleString('es-PE') : "";
+    document.getElementById('footerNote').textContent =
+      'Panel generado a partir de "' + (json.fileName || "datos.json") + '"' + (fecha ? " · actualizado " + fecha : "") + '. Se actualiza automáticamente al editar el JSON en GitHub.';
+    syncEl.textContent = "✓ Datos cargados desde GitHub" + (fecha ? " (" + fecha + ")" : "");
+  }catch(err){
+    console.error("Error cargando datos desde GitHub:", err);
+    syncEl.textContent = "⚠ " + err.message + " — mostrando datos de muestra.";
+  }
+}
+
+document.getElementById('btnRecargar').addEventListener('click', cargarDesdeGitHub);
+
+populateFilters();
+applyFiltersAndRender();
+cargarDesdeGitHub();
+</script>
+</body>
+</html>

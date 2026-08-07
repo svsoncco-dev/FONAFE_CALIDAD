@@ -1,0 +1,13 @@
+{
+  "fileName": "consolidado_agosto_2026.json",
+  "updatedAt": "2026-08-07",
+  "Resumen General": [
+    { "EDE": "ELSE", "Asesor": "EDDY QUEZADA", "Fecha Evaluación": "2026-07-25", "Tipo de Llamada": "DENUNCIAS", "Puntaje Final (/10)": 10, "PEC (%)": 100, "PECUF (%)": 100, "PECNEG (%)": 100, "PECUM (%)": 100, "Falta Grave": null },
+    { "EDE": "ELSE", "Asesor": "RYAN FLORES", "Fecha Evaluación": "2026-07-28", "Tipo de Llamada": "CONSULTAS", "Puntaje Final (/10)": 10, "PEC (%)": 100, "PECUF (%)": 100, "PECNEG (%)": 100, "PECUM (%)": 100, "Falta Grave": null }
+  ],
+  "Detalle": [
+    { "EDE": "ELSE", "Asesor": "EDDY QUEZADA", "Categoría": "Actitud de Servicio", "Atributo": "PECUF", "Evaluación": "SI" },
+    { "EDE": "ELSE", "Asesor": "RYAN FLORES", "Categoría": "Sondeo de Necesidades", "Atributo": "PECUF", "Evaluación": "SI" },
+    { "EDE": "ELSE", "Asesor": "EDDY QUEZADA", "Categoría": "Registro SIELSE", "Atributo": "PECNEG", "Evaluación": "NO" }
+  ]
+}
