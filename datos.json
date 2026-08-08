@@ -37,6 +37,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "87.5%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Fecha Evaluación": "2026-07-22",
+      "Tipo de Llamada": "LLAMADA OSINERGMIN",
+      "Puntaje Final (/10)": 0,
+      "PEC (%)": "0.0%",
+      "PECUF (%)": "0.0%",
+      "PECNEG (%)": "0.0%",
+      "PECUM (%)": "0.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -721,7 +734,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELUC_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-07-22_14xxivq",
+      "EDE": "ELUC",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
     }
   ],
-  "updatedAt": "2026-08-08T14:35:17.784Z"
+  "updatedAt": "2026-08-08T14:42:28.532Z"
 }
