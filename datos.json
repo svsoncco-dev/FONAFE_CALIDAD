@@ -1,924 +1,271 @@
-{
-  "fileName": "consolidado_evaluaciones_2026-08-05.json",
-  "updatedAt": "2026-08-07",
-  "Resumen General": [
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Fecha Evaluación": "2026-07-28",
-      "Tipo de Llamada": "DENUNCIAS",
-      "Puntaje Final (/10)": 10,
-      "PEC (%)": "100.0%",
-      "PECUF (%)": "100.0%",
-      "PECNEG (%)": "100.0%",
-      "PECUM (%)": "100.0%",
-      "Falta Grave": null
+[
+  {
+    "ficha": "Evaluación de Calidad de Llamada Telefónica",
+    "generado": "2026-08-08T13:41:41.715Z",
+    "datosGenerales": {
+      "f_evaluador": "AMBAR CASTRO",
+      "f_asesor": "DAYANA MIJAYA RIVERA GOYA",
+      "f_atc": "SELLO",
+      "f_fechareg": "2026-07-20",
+      "f_fechaeval": "2026-07-20",
+      "f_telefono": "999999999",
+      "f_suministro": "7371",
+      "f_tipo": "CONSULTAS",
+      "f_motivo": "cliente se comunica para indicar que desde hace una hora no cuenta con luz",
+      "f_petitorio": "consulta corte no programado",
+      "f_falta": "",
+      "f_faltacomentario": "",
+      "f_feedback": "Muy buena llamada, continuemos así con nuestra gestión."
     },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Fecha Evaluación": "2026-07-25",
-      "Tipo de Llamada": "CONSULTAS",
-      "Puntaje Final (/10)": 5,
-      "PEC (%)": "48.3%",
-      "PECUF (%)": "80.0%",
-      "PECNEG (%)": "25.0%",
-      "PECUM (%)": "36.4%",
-      "Falta Grave": null
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Fecha Evaluación": "2026-07-25",
-      "Tipo de Llamada": "CONSULTAS",
-      "Puntaje Final (/10)": 10,
-      "PEC (%)": "100.0%",
-      "PECUF (%)": "100.0%",
-      "PECNEG (%)": "100.0%",
-      "PECUM (%)": "100.0%",
-      "Falta Grave": null
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Fecha Evaluación": "2026-07-25",
-      "Tipo de Llamada": "CONSULTAS",
-      "Puntaje Final (/10)": 10,
-      "PEC (%)": "100.0%",
-      "PECUF (%)": "100.0%",
-      "PECNEG (%)": "100.0%",
-      "PECUM (%)": "100.0%",
-      "Falta Grave": null
+    "evaluacion": [
+      {
+        "bloque": "Evaluación de la calidad de la atención telefónica",
+        "categorias": [
+          {
+            "categoria": "Actitud de Servicio",
+            "max": 8,
+            "items": [
+              {
+                "atributo": "PECUF",
+                "descripcion": "Saludar según protocolo",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Identificación del asesor hacia el usuario",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Mostrar tono de voz adecuado",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Mostrar amabilidad y empatía durante toda la atención",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Muestra interés y disposición para atender el requerimiento",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Pedir disculpas por el malestar ocasionado",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "NONE",
+                "descripcion": "Solicita y agradece tiempos de espera",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Saludo de despedida y buenos deseos",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          },
+          {
+            "categoria": "Sondeo de Necesidades",
+            "max": 3,
+            "items": [
+              {
+                "atributo": "PECUF",
+                "descripcion": "Identificar la necesidad del cliente, realizando preguntas de sondeo.",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Consulta si cliente cuenta o no con el servicio",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUF",
+                "descripcion": "Solicita datos del usuario",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          },
+          {
+            "categoria": "Registro correcto y completo de la ATC en el SIELSE",
+            "max": 11,
+            "items": [
+              {
+                "atributo": "PECUM",
+                "descripcion": "Número de suministro",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Nombre del usuario",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "DNI del usuario",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Confirmar con el usuario los datos del suministro (a nombre de quien se encuentra, dirección del suministro y SER al que pertenece)",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Solicitar número de teléfono y correo electrónico",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Solicita motivo de llamada",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Asigna tipificación correcta",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Redacta petitorio de acuerdo a la tipificación de atención",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Lee al usuario el petitorio registrado",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Realizar la pregunta de conformidad de manera correcta u consulta adicional, sobre lo registrado",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Sin fallas ortográficas y/o redacción incoherente",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          },
+          {
+            "categoria": "Información Final brindada al usuario",
+            "max": 4,
+            "items": [
+              {
+                "atributo": "PECUM",
+                "descripcion": "Informar al usuario las acciones a efectuar o efectuadas para la atención de su requerimiento",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Informar tiempo estimado o plazo de atención del requerimiento",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Indica corte Programado/no programado",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECUM",
+                "descripcion": "Informar código de llamada (correlativo del sistema comercial)",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          },
+          {
+            "categoria": "Imagen Corporativa",
+            "max": 1,
+            "items": [
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Evita comentarios negativos en contra de la EDE",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          },
+          {
+            "categoria": "Orientación hacia la Solución de Problemas",
+            "max": 1,
+            "items": [
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Se orienta hacia la solución del problema brindando alternativas.",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bloque": "Cumplimiento Normativo",
+        "categorias": [
+          {
+            "categoria": "Cumplimiento Normativo",
+            "max": 3,
+            "items": [
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Identificación de la Normativa según tipología de atención",
+                "evaluacion": "NO AMERITA",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Conocimiento del plazo de atención según cada normativa",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              },
+              {
+                "atributo": "PECNEG",
+                "descripcion": "Procedimiento o gestión a realizarse por tipo de atención (Reclamo / Denuncia / Solicitudes / Consulta)",
+                "evaluacion": "SI",
+                "hallazgo": ""
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "puntuacionFinal": 10,
+    "puntuacionSobre": 30,
+    "puntosObtenidos": 30,
+    "puntosMaximoEfectivo": 30,
+    "indicadores": {
+      "PEC": "100,0%",
+      "PECUF": "100,0%",
+      "PECNEG": "100,0%",
+      "PECUM": "100,0%"
     }
-  ],
-  "Detalle": [
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "NONE",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Imagen Corporativa",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Orientación hacia la Solución de Problemas",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO AMERITA"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "EDDY QUEZADA",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "NONE",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Imagen Corporativa",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Orientación hacia la Solución de Problemas",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO AMERITA"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "BRIGITTE FLORES",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "NONE",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Imagen Corporativa",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Orientación hacia la Solución de Problemas",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO AMERITA"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "SEAL",
-      "Asesor": "ROXANA HUESEMBE",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "NONE",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Actitud de Servicio",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Sondeo de Necesidades",
-      "Atributo": "PECUF",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Información Final brindada al usuario",
-      "Atributo": "PECUM",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Imagen Corporativa",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Orientación hacia la Solución de Problemas",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "NO AMERITA"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    },
-    {
-      "EDE": "ELSE",
-      "Asesor": "RYAN FLORES",
-      "Categoría": "Cumplimiento Normativo",
-      "Atributo": "PECNEG",
-      "Evaluación": "SI"
-    }
-  ]
-}
+  }
+]
