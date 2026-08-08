@@ -24,6 +24,19 @@
       "PECNEG (%)": "50.0%",
       "PECUM (%)": "50.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Fecha Evaluación": "2026-07-20",
+      "Tipo de Llamada": "CONSULTAS",
+      "Puntaje Final (/10)": 9.2,
+      "PEC (%)": "91.7%",
+      "PECUF (%)": "90.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "87.5%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -460,7 +473,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "SEAL_ELVIRA_MEDINA_SÁNCHEZ_2026-07-20_juneig",
+      "EDE": "SEAL",
+      "Asesor": "ELVIRA MEDINA SÁNCHEZ",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
     }
   ],
-  "updatedAt": "2026-08-08T14:06:17.166Z"
+  "updatedAt": "2026-08-08T14:34:24.850Z"
 }
