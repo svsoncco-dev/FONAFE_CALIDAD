@@ -12,6 +12,18 @@
       "PECNEG (%)": "100,0%",
       "PECUM (%)": "100,0%",
       "Falta Grave": ""
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Fecha Evaluación": "2026-07-20",
+      "Tipo de Llamada": "CONSULTAS",
+      "Puntaje Final (/10)": 7.4,
+      "PEC (%)": "72.2%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "50.0%",
+      "PECUM (%)": "50.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -231,7 +243,224 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "EDE": "SEAL",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
     }
   ],
-  "updatedAt": "2026-08-08T13:56:47.384Z"
+  "updatedAt": "2026-08-08T14:06:17.166Z"
 }
