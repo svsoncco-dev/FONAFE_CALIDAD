@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Panel de Calidad — Campaña FONAFE</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
   :root{
     --bg:#F4F6FA;
@@ -64,6 +65,10 @@
   .filter-clear:hover{ text-decoration:underline; }
   .filter-note{ font-size:11px; color:var(--text-dim); flex:1; min-width:180px; text-align:right; }
 
+  .export-btn{ display:inline-flex; align-items:center; gap:6px; background:#1F7A3D; color:#fff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer; border:none; white-space:nowrap;}
+  .export-btn:hover{ background:#186531; }
+  .export-btn:disabled{ opacity:.6; cursor:default; }
+
   .upload-bar{ display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:14px 16px; margin-bottom:22px; box-shadow:0 1px 3px rgba(43,43,42,0.06); flex-wrap:wrap;}
   .upload-bar .txt{ font-size:12px; color:var(--text-dim); flex:1; min-width:200px;}
   .upload-bar .txt b{ color:var(--text); }
@@ -104,7 +109,10 @@
     <h1>Campaña FONAFE — Panel de Evaluaciones</h1>
     <p class="sub" id="subLine">Consolidado de muestra · 1 EDE cargada · datos tomados del JSON del repositorio</p>
   </div>
-  <div class="ede-strip" id="edeStrip"></div>
+  <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+    <div class="ede-strip" id="edeStrip"></div>
+    <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
+  </div>
 </header>
 
 <div style="display:none;">
@@ -515,6 +523,10 @@ function renderAll(DATA){
 
 // ------- filtros por EDE y Agente -------
 let RAW = { resumenNorm: SAMPLE_RESUMEN_NORM, detalleNorm: SAMPLE_DETALLE_NORM };
+// Último JSON crudo cargado desde GitHub (tal cual, con las mismas columnas de
+// datos.json) — se usa para la exportación a Excel, para que el archivo
+// descargado sea idéntico a la fuente, sin pasar por la normalización interna.
+let LAST_RAW_JSON = null;
 let selectedEdes = new Set();
 let selectedAgentes = new Set();
 let selectedSemanas = new Set();
@@ -720,6 +732,37 @@ document.getElementById('btnClearFilters').addEventListener('click', ()=>{
   applyFiltersAndRender();
 });
 
+// ------- exportar a Excel -------
+// Descarga un .xlsx con dos hojas ("Resumen General" y "Detalle"), tal cual
+// están en datos.json (mismas columnas y valores, sin normalizar), usando el
+// último JSON cargado desde GitHub.
+function exportarExcel(){
+  const btn = document.getElementById('btnExportExcel');
+  if(!LAST_RAW_JSON){
+    alert('Todavía no se han cargado datos desde GitHub. Espera a que termine de cargar e inténtalo de nuevo.');
+    return;
+  }
+  const original = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Generando…';
+  try{
+    const wb = XLSX.utils.book_new();
+    const wsResumen = XLSX.utils.json_to_sheet(LAST_RAW_JSON["Resumen General"] || []);
+    const wsDetalle = XLSX.utils.json_to_sheet(LAST_RAW_JSON["Detalle"] || []);
+    XLSX.utils.book_append_sheet(wb, wsResumen, "Resumen General");
+    XLSX.utils.book_append_sheet(wb, wsDetalle, "Detalle");
+    const fecha = new Date().toISOString().slice(0,10);
+    XLSX.writeFile(wb, `evaluaciones_calidad_${fecha}.xlsx`);
+  }catch(err){
+    console.error("Error exportando a Excel:", err);
+    alert('No se pudo generar el Excel: ' + err.message);
+  }finally{
+    btn.disabled = false;
+    btn.textContent = original;
+  }
+}
+document.getElementById('btnExportExcel').addEventListener('click', exportarExcel);
+
 // ------- carga de datos desde el JSON publicado en GitHub -------
 // 1) Sube tu archivo "datos.json" (con las claves "Resumen General" y "Detalle",
 //    mismas columnas que usabas en el Excel) a un repositorio de GitHub.
@@ -745,6 +788,7 @@ async function cargarDesdeGitHub(){
       throw new Error('"Resumen General" no tiene filas de datos.');
     }
     RAW = norm;
+    LAST_RAW_JSON = json;
     selectedEdes.clear();
     selectedAgentes.clear();
     selectedMeses.clear();
