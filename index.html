@@ -67,8 +67,8 @@
   .filter-clear:hover{ text-decoration:underline; }
   .filter-note{ font-size:11px; color:var(--text-dim); flex:1; min-width:180px; text-align:right; }
 
-  .export-btn{ display:inline-flex; align-items:center; gap:6px; background:#1F7A3D; color:#fff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer; border:none; white-space:nowrap;}
-  .export-btn:hover{ background:#186531; }
+  .export-btn{ display:inline-flex; align-items:center; gap:6px; background:#3C7A5B; color:#fff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer; border:none; white-space:nowrap;}
+  .export-btn:hover{ background:#305F47; }
   .export-btn:disabled{ opacity:.6; cursor:default; }
 
   .upload-bar{ display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:14px 16px; margin-bottom:22px; box-shadow:0 1px 3px rgba(43,43,42,0.06); flex-wrap:wrap;}
@@ -101,7 +101,9 @@
   .chart-wrap.tall{ height:300px; }
   .chart-wrap.short{ height:210px; }
 
-  footer{ margin-top:20px; color:var(--text-dim); font-size:11px; border-top:1px solid var(--panel-border); padding-top:14px;}
+  footer{ margin-top:20px; color:var(--text-dim); font-size:11px; border-top:1px solid var(--panel-border); padding-top:14px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
+  footer p{ margin:0 0 4px; }
+  footer code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:var(--bg); border:1px solid var(--panel-border); border-radius:4px; padding:1px 5px; color:var(--text);}
 </style>
 </head>
 <body>
@@ -197,11 +199,10 @@
   <div class="card"><h3>Faltas Graves por EDE</h3><div class="chart-wrap"><canvas id="chFaltas"></canvas></div></div>
 </section>
 
-<footer id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</footer>
-
-<div style="display:flex; justify-content:flex-end; margin-top:20px;">
+<footer>
+  <div id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</div>
   <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
-</div>
+</footer>
 
 <script>
 const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
@@ -982,10 +983,15 @@ async function cargarDesdeGitHub(){
     selectedSemanas.clear();
     populateFilters();
     applyFiltersAndRender();
-    const fecha = json.updatedAt ? new Date(json.updatedAt).toLocaleString('es-PE') : "";
-    document.getElementById('footerNote').textContent =
-      'Panel generado a partir de "' + (json.fileName || "datos.json") + '"' + (fecha ? " · actualizado " + fecha : "") + '. Se actualiza automáticamente al editar el JSON en GitHub.';
-    syncEl.textContent = "✓ Datos cargados desde GitHub" + (fecha ? " (" + fecha + ")" : "");
+    const fechaObj = json.updatedAt ? new Date(json.updatedAt) : null;
+    const fechaFmt = fechaObj
+      ? fechaObj.toLocaleDateString('es-PE', {day:'numeric', month:'short', year:'numeric'}) + ' · ' + fechaObj.toLocaleTimeString('es-PE', {hour:'numeric', minute:'2-digit'})
+      : '';
+    document.getElementById('footerNote').innerHTML =
+      `<p>Fuente de datos: <code>${json.fileName || "datos.json"}</code></p>` +
+      (fechaFmt ? `<p>Última actualización: ${fechaFmt}</p>` : '') +
+      `<p>Los datos se actualizan automáticamente al modificar el archivo fuente.</p>`;
+    syncEl.textContent = "✓ Datos cargados desde GitHub" + (fechaFmt ? " (" + fechaFmt + ")" : "");
   }catch(err){
     console.error("Error cargando datos desde GitHub:", err);
     syncEl.textContent = "⚠ " + err.message + " — mostrando datos de muestra.";
