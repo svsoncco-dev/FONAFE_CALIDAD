@@ -284,6 +284,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Fecha Evaluación": "2026-08-09",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 9.7,
+      "PEC (%)": "96.6%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "87.5%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -5680,7 +5693,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_HUGO_PIERRE_VILCHEZ_ROJAS_2026-08-09_uzqds6",
+      "EDE": "ADINELSA",
+      "Asesor": "HUGO PIERRE VILCHEZ ROJAS",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T23:22:31.397Z"
+  "updatedAt": "2026-08-09T23:24:46.352Z"
 }
