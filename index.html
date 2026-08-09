@@ -173,8 +173,12 @@
 <section>
   <div class="section-title"><span class="idx">03</span><h2>Cumplimiento por Categoría</h2></div>
   <div class="grid2">
-    <div class="card"><h3>% Cumplimiento por Categoría</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
-    <div class="card"><h3>% Cumplimiento por Categoría y EDE</h3><div class="chart-wrap tall"><canvas id="chCatEde"></canvas></div></div>
+    <div class="card"><h3>% Cumplimiento por Categoría por EDE</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
+    <div class="card">
+      <h3>% Cumplimiento por Categoría por Agente</h3>
+      <div class="chart-wrap tall"><canvas id="chCatEde"></canvas></div>
+      <p class="note" id="catGroupNote"></p>
+    </div>
   </div>
 
 </section>
@@ -370,6 +374,21 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
     cumplimientoCategoriaEde[e] = categorias.map(c=> cumplimiento(detalleNorm.filter(r=>r.Categoria===c && r.EDE===e)));
   });
 
+  // Cumplimiento por categoría y agente. Como puede haber muchos agentes,
+  // se muestran como máximo 12: los seleccionados en el filtro "Agente" si
+  // hay alguno elegido, o si no, los 12 con más ítems evaluados.
+  const agentesConDetalle = uniq(detalleNorm.map(r=>r.Asesor));
+  const countDetallePorAgente = {};
+  agentesConDetalle.forEach(a=>{ countDetallePorAgente[a] = detalleNorm.filter(r=>r.Asesor===a).length; });
+  const agentesOrdenados = [...agentesConDetalle].sort((a,b)=> countDetallePorAgente[b]-countDetallePorAgente[a]);
+  const agentesCat = (typeof selectedAgentes !== 'undefined' && selectedAgentes.size>0)
+    ? agentesOrdenados.filter(a=>selectedAgentes.has(a))
+    : agentesOrdenados.slice(0,12);
+  const cumplimientoCategoriaAgente = {};
+  agentesCat.forEach(a=>{
+    cumplimientoCategoriaAgente[a] = categorias.map(c=> cumplimiento(detalleNorm.filter(r=>r.Categoria===c && r.Asesor===a)));
+  });
+
   const puntajePorEde = edes.map(e=>{
     const vals = resumenNorm.filter(r=>r.EDE===e).map(r=>r.Puntaje).filter(v=>!isNaN(v));
     return avg(vals);
@@ -391,6 +410,8 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   return {
     edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha,
     categorias, cumplimientoCategoria, cumplimientoCategoriaEde,
+    agentesCat, cumplimientoCategoriaAgente,
+    totalAgentesConDetalle: agentesConDetalle.length,
     faltasPorEde: faltasPorEdeMap,
     puntajePorEde, puntajePorAsesor, mesesLabels, puntajeGeneral,
     semanasLabelsCortos, semanasLabelsCompletos, numerosSemana, pecPorSemana, puntajePorSemana,
@@ -471,15 +492,25 @@ function renderAll(DATA){
 
   charts.push(new Chart(document.getElementById('chCatGeneral'), {
     type:'bar',
-    data:{ labels: DATA.categorias, datasets:[{ data: DATA.cumplimientoCategoria, backgroundColor:COLORS.violet, borderRadius:4 }]},
-    options:{ responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:pctAxis(), y:{grid:{display:false}} } }
+    data:{
+      labels: DATA.categorias,
+      datasets: DATA.edes.map((e,i)=>({ label:e, data: DATA.cumplimientoCategoriaEde[e], backgroundColor:[COLORS.teal,COLORS.violet,COLORS.amber,COLORS.rose,COLORS.gray,"#6FCBEE","#173F52"][i%7], borderRadius:4 }))
+    },
+    options:{ responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{legend:{position:'bottom'}}, scales:{ x:pctAxis(), y:{grid:{display:false}} } }
   }));
 
+  const catPalette = [COLORS.teal,COLORS.violet,COLORS.amber,COLORS.rose,COLORS.gray,"#6FCBEE","#173F52","#8E44AD","#16A085","#D68910","#2C3E50","#C0392B"];
+  const catNoteEl = document.getElementById('catGroupNote');
+  if(DATA.totalAgentesConDetalle > DATA.agentesCat.length){
+    catNoteEl.textContent = `Mostrando ${DATA.agentesCat.length} de ${DATA.totalAgentesConDetalle} agentes. Usa el filtro "Agente" arriba para elegir cuáles ver.`;
+  } else {
+    catNoteEl.textContent = '';
+  }
   charts.push(new Chart(document.getElementById('chCatEde'), {
     type:'bar',
     data:{
       labels: DATA.categorias,
-      datasets: DATA.edes.map((e,i)=>({ label:e, data: DATA.cumplimientoCategoriaEde[e], backgroundColor:[COLORS.teal,COLORS.violet,COLORS.amber,COLORS.rose,COLORS.gray,"#6FCBEE","#173F52"][i%7], borderRadius:4 }))
+      datasets: DATA.agentesCat.map((a,i)=>({ label:a, data: DATA.cumplimientoCategoriaAgente[a], backgroundColor:catPalette[i%catPalette.length], borderRadius:4 }))
     },
     options:{ responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{legend:{position:'bottom'}}, scales:{ x:pctAxis(), y:{grid:{display:false}} } }
   }));
