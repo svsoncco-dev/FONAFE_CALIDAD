@@ -26,11 +26,11 @@
   }
   .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
-  header{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:22px; border-bottom:1px solid var(--panel-border); padding-bottom:18px;}
+  header{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:16px; border-bottom:1px solid var(--panel-border); padding-bottom:18px;}
   .eyebrow{ color:var(--teal); font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:11px; margin:0 0 6px;}
   h1{ margin:0; font-size:26px; font-weight:700; color:#2B3168;}
   .sub{ color:var(--text-dim); font-size:13px; margin-top:6px;}
-  .brand-logo{ height:34px; width:auto; opacity:.82; flex-shrink:0; align-self:flex-start; margin-top:2px;}
+  .brand-logo{ height:42px; width:auto; opacity:.9; flex-shrink:0;}
 
   .ede-strip{ display:flex; gap:8px; flex-wrap:wrap; }
   .ede-chip{ display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--panel-border); border-radius:999px; padding:6px 12px 6px 8px; box-shadow:0 1px 2px rgba(43,43,42,0.05);}
@@ -110,11 +110,13 @@
     <h1>Campaña FONAFE — Panel de Evaluaciones</h1>
     <p class="sub" id="subLine">Consolidado de muestra · 1 EDE cargada · datos tomados del JSON del repositorio</p>
   </div>
-  <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-    <div class="ede-strip" id="edeStrip"></div>
-    <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
+  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
     <img class="brand-logo" src="logo.png" alt="Contact Americas">
+    <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
   </div>
+</header>
+
+<div class="ede-strip" id="edeStrip" style="margin-bottom:16px;"></div>
 </header>
 
 <div style="display:none;">
