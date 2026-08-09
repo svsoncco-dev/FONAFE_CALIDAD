@@ -141,6 +141,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "80.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Fecha Evaluación": "2026-07-27",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 9.3,
+      "PEC (%)": "93.1%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "81.8%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -2809,7 +2822,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_KHEYLA_EVELYN_GUTIÉRREZ_ARTEAGA_DE_ADCO_2026-07-27_1rjks99",
+      "EDE": "ADINELSA",
+      "Asesor": "KHEYLA EVELYN GUTIÉRREZ ARTEAGA DE ADCO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T16:58:12.280Z"
+  "updatedAt": "2026-08-09T17:19:13.250Z"
 }
