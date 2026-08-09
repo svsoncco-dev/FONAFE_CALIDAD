@@ -102,6 +102,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Fecha Evaluación": "2026-07-25",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 10,
+      "PEC (%)": "100.0%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -2026,7 +2039,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELSE_RYAN_MARCO_FLORES_BORJA_2026-07-25_1ykr5wh",
+      "EDE": "ELSE",
+      "Asesor": "RYAN MARCO FLORES BORJA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T15:19:13.374Z"
+  "updatedAt": "2026-08-09T15:23:47.033Z"
 }
