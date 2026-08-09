@@ -148,7 +148,11 @@
   <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
   <div class="grid2">
     <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
-    <div class="card"><h3>Puntaje Final promedio por Asesor</h3><div class="chart-wrap"><canvas id="chPuntajeAsesor"></canvas></div></div>
+    <div class="card"><h3>Puntaje Final promedio por Asesor</h3>
+      <input type="text" id="puntajeAgenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
+      <div id="tablaPuntajeAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
+      <p class="note" id="puntajeAgenteNote"></p>
+    </div>
   </div>
   <div class="card" style="margin-top:16px;"><h3>Evolución del Puntaje Final por semana</h3><div class="chart-wrap short"><canvas id="chPuntajeFecha"></canvas></div></div>
 </section>
@@ -165,7 +169,11 @@
         <div><p class="note" style="margin:0 0 4px;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
       </div>
     </div>
-    <div class="card"><h3>Por Asesor</h3><div class="chart-wrap"><canvas id="chAsesor"></canvas></div></div>
+    <div class="card"><h3>Por Asesor</h3>
+      <input type="text" id="indicAgenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
+      <div id="tablaIndicAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
+      <p class="note" id="indicAgenteNote"></p>
+    </div>
   </div>
   <div class="card" style="margin-top:16px;"><h3>Evolución del PEC por semana</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
 </section>
@@ -483,7 +491,7 @@ function renderAll(DATA){
   singleIndicator('chEdePECNEG', 'PECNEG', COLORS.amber);
   singleIndicator('chEdePECUM', 'PECUM', COLORS.rose);
 
-  grouped4('chAsesor', ["PEC","PECUF","PECNEG","PECUM"], DATA.byAsesor, DATA.asesores);
+  renderTablaIndicAgente(DATA);
 
   charts.push(new Chart(document.getElementById('chFecha'), {
     type:'bar',
@@ -526,11 +534,7 @@ function renderAll(DATA){
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
 
-  charts.push(new Chart(document.getElementById('chPuntajeAsesor'), {
-    type:'bar',
-    data:{ labels: DATA.asesores, datasets:[{ data: DATA.puntajePorAsesor, backgroundColor:COLORS.violet, borderRadius:4, maxBarThickness:50 }]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
-  }));
+  renderTablaPuntajeAgente(DATA);
 
   charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
     type:'bar',
@@ -546,9 +550,9 @@ let tablaSortDir = 'asc';
 let tablaSearch = '';
 
 function colorForPct(v){
-  // rojo (bajo) -> ámbar (medio) -> verde (alto), estilo semáforo
+  // paleta B: rojo-amarillo-verde vívido, estilo semáforo
   if(v===null || isNaN(v)) return 'transparent';
-  const stops = [[224,73,73],[240,158,60],[99,153,34]]; // rojo, ámbar, verde
+  const stops = [[227,73,72],[237,161,0],[0,163,0]];
   const t = Math.max(0, Math.min(1, v));
   const seg = t*(stops.length-1);
   const i0 = Math.floor(seg), i1 = Math.min(i0+1, stops.length-1), f = seg-i0;
@@ -556,7 +560,10 @@ function colorForPct(v){
   const rgb = c0.map((c,i)=> Math.round(c+(c1[i]-c)*f));
   return `rgb(${rgb.join(',')})`;
 }
-function textColorForPct(v){ return v>=0.55 ? '#173404' : '#4A1B0C'; }
+function textColorForPct(v){
+  const t = Math.max(0, Math.min(1, v));
+  return (t>=0.32 && t<=0.72) ? '#2C2C2A' : '#fff';
+}
 
 function renderTablaCatAgente(DATA){
   LAST_DATA = DATA;
@@ -613,6 +620,121 @@ function renderTablaCatAgente(DATA){
 document.getElementById('agenteSearch').addEventListener('input', (e)=>{
   tablaSearch = e.target.value;
   if(LAST_DATA) renderTablaCatAgente(LAST_DATA);
+});
+
+// ------- tabla "Indicadores PEC/PECUF/PECNEG/PECUM por Agente" -------
+let indicSortCol = null;
+let indicSortDir = 'asc';
+let indicSearch = '';
+const INDIC_COLS = ["PEC","PECUF","PECNEG","PECUM"];
+
+function renderTablaIndicAgente(DATA){
+  const cont = document.getElementById('tablaIndicAgente');
+  const noteEl = document.getElementById('indicAgenteNote');
+  let agentes = DATA.asesores.filter(a=> a.toLowerCase().includes(indicSearch.toLowerCase()));
+
+  if(indicSortCol===null){
+    agentes = [...agentes].sort((a,b)=> indicSortDir==='asc' ? a.localeCompare(b) : b.localeCompare(a));
+  } else {
+    const key = INDIC_COLS[indicSortCol];
+    agentes = [...agentes].sort((a,b)=>{
+      const va = DATA.byAsesor[a][key], vb = DATA.byAsesor[b][key];
+      return indicSortDir==='asc' ? va-vb : vb-va;
+    });
+  }
+
+  noteEl.textContent = agentes.length !== DATA.asesores.length
+    ? `Mostrando ${agentes.length} de ${DATA.asesores.length} agentes.`
+    : `${agentes.length} agente(s). Clic en un encabezado para ordenar.`;
+
+  if(agentes.length===0){
+    cont.innerHTML = '<p class="note">Sin agentes que coincidan.</p>';
+    return;
+  }
+
+  const arrow = (col)=> indicSortCol===col ? (indicSortDir==='asc' ? ' ▲' : ' ▼') : '';
+  let h = '<table style="border-collapse:collapse; font-size:11px; width:100%;">';
+  h += '<tr>';
+  h += `<th data-col="nombre" style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel);">Agente${arrow(null)}</th>`;
+  INDIC_COLS.forEach((c,i)=>{
+    h += `<th data-col="${i}" style="padding:6px 4px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); min-width:70px;">${c}${arrow(i)}</th>`;
+  });
+  h += '</tr>';
+  agentes.forEach(a=>{
+    h += `<tr><td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap;">${a}</td>`;
+    INDIC_COLS.forEach(key=>{
+      const v = DATA.byAsesor[a][key];
+      h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(v)}; color:${textColorForPct(v)};">${Math.round(v*100)}%</td>`;
+    });
+    h += '</tr>';
+  });
+  h += '</table>';
+  cont.innerHTML = h;
+
+  cont.querySelectorAll('th').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const col = th.dataset.col === 'nombre' ? null : Number(th.dataset.col);
+      if(indicSortCol === col){ indicSortDir = indicSortDir==='asc' ? 'desc' : 'asc'; }
+      else { indicSortCol = col; indicSortDir = 'asc'; }
+      renderTablaIndicAgente(LAST_DATA);
+    });
+  });
+}
+document.getElementById('indicAgenteSearch').addEventListener('input', (e)=>{
+  indicSearch = e.target.value;
+  if(LAST_DATA) renderTablaIndicAgente(LAST_DATA);
+});
+
+// ------- tabla "Puntaje Final promedio por Agente" -------
+let puntajeSortDir = 'asc';
+let puntajeSortByValue = false; // false = ordenar por nombre, true = por puntaje
+let puntajeSearch = '';
+
+function renderTablaPuntajeAgente(DATA){
+  const cont = document.getElementById('tablaPuntajeAgente');
+  const noteEl = document.getElementById('puntajeAgenteNote');
+  let pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i] }))
+    .filter(r=> r.nombre.toLowerCase().includes(puntajeSearch.toLowerCase()));
+
+  pares.sort((a,b)=>{
+    const cmp = puntajeSortByValue ? (a.puntaje - b.puntaje) : a.nombre.localeCompare(b.nombre);
+    return puntajeSortDir==='asc' ? cmp : -cmp;
+  });
+
+  noteEl.textContent = pares.length !== DATA.asesores.length
+    ? `Mostrando ${pares.length} de ${DATA.asesores.length} agentes.`
+    : `${pares.length} agente(s). Clic en un encabezado para ordenar.`;
+
+  if(pares.length===0){
+    cont.innerHTML = '<p class="note">Sin agentes que coincidan.</p>';
+    return;
+  }
+
+  const arrowNombre = !puntajeSortByValue ? (puntajeSortDir==='asc' ? ' ▲' : ' ▼') : '';
+  const arrowPuntaje = puntajeSortByValue ? (puntajeSortDir==='asc' ? ' ▲' : ' ▼') : '';
+  let h = '<table style="border-collapse:collapse; font-size:11px; width:100%;">';
+  h += `<tr><th data-col="nombre" style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel);">Agente${arrowNombre}</th>`;
+  h += `<th data-col="puntaje" style="padding:6px 4px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); min-width:90px;">Puntaje Final${arrowPuntaje}</th></tr>`;
+  pares.forEach(r=>{
+    const t = r.puntaje/10;
+    h += `<tr><td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap;">${r.nombre}</td>`;
+    h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)};">${r.puntaje.toFixed(1)}</td></tr>`;
+  });
+  h += '</table>';
+  cont.innerHTML = h;
+
+  cont.querySelectorAll('th').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const wantValue = th.dataset.col === 'puntaje';
+      if(puntajeSortByValue === wantValue){ puntajeSortDir = puntajeSortDir==='asc' ? 'desc' : 'asc'; }
+      else { puntajeSortByValue = wantValue; puntajeSortDir = 'asc'; }
+      renderTablaPuntajeAgente(LAST_DATA);
+    });
+  });
+}
+document.getElementById('puntajeAgenteSearch').addEventListener('input', (e)=>{
+  puntajeSearch = e.target.value;
+  if(LAST_DATA) renderTablaPuntajeAgente(LAST_DATA);
 });
 
 // ------- filtros por EDE y Agente -------
