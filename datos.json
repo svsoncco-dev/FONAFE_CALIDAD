@@ -50,6 +50,19 @@
       "PECNEG (%)": "0.0%",
       "PECUM (%)": "0.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Fecha Evaluación": "2026-07-24",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 10,
+      "PEC (%)": "100.0%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -982,7 +995,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "SEAL_ANA_CAROLINA_MEDRANO_HUAMANI_2026-07-24_bpexgp",
+      "EDE": "SEAL",
+      "Asesor": "ANA CAROLINA MEDRANO HUAMANI",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-08T14:50:28.225Z"
+  "updatedAt": "2026-08-09T15:07:54.585Z"
 }
