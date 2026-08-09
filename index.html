@@ -172,13 +172,13 @@
       <div style="min-width:0; padding:12px 0 0 12px;"><p class="note" style="margin:0 0 4px; text-align:center; font-weight:700;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
     </div>
   </div>
-  <div class="grid2" style="margin-top:16px;">
+  <div class="grid2" style="margin-top:16px; grid-template-columns:1.4fr 1fr;">
     <div class="card"><h3>Por Asesor</h3>
       <input type="text" id="indicAgenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
       <div id="tablaIndicAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="indicAgenteNote"></p>
     </div>
-    <div class="card"><h3>Evolución del PEC por semana</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
+    <div class="card" style="display:flex; flex-direction:column;"><h3>Evolución del PEC por semana</h3><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chFecha"></canvas></div></div>
   </div>
 </section>
 
