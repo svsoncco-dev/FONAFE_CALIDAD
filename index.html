@@ -30,6 +30,7 @@
   .eyebrow{ color:var(--teal); font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:11px; margin:0 0 6px;}
   h1{ margin:0; font-size:26px; font-weight:700; color:#2B3168;}
   .sub{ color:var(--text-dim); font-size:13px; margin-top:6px;}
+  .brand-logo{ height:34px; width:auto; opacity:.82; flex-shrink:0; align-self:flex-start; margin-top:2px;}
 
   .ede-strip{ display:flex; gap:8px; flex-wrap:wrap; }
   .ede-chip{ display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--panel-border); border-radius:999px; padding:6px 12px 6px 8px; box-shadow:0 1px 2px rgba(43,43,42,0.05);}
@@ -105,13 +106,14 @@
 
 <header>
   <div>
-    <p class="eyebrow">Aseguramiento de Calidad · Contact Center</p>
+    <p class="eyebrow">Aseguramiento de Calidad</p>
     <h1>Campaña FONAFE — Panel de Evaluaciones</h1>
     <p class="sub" id="subLine">Consolidado de muestra · 1 EDE cargada · datos tomados del JSON del repositorio</p>
   </div>
   <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
     <div class="ede-strip" id="edeStrip"></div>
     <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
+    <img class="brand-logo" src="logo.png" alt="Contact Americas">
   </div>
 </header>
 
@@ -421,7 +423,7 @@ function renderAll(DATA){
   destroyCharts();
 
   document.getElementById('subLine').textContent = DATA.nResumen>0
-    ? `Consolidado cargado · ${DATA.edes.length} EDE(s) · ${DATA.nResumen} evaluaciones · ${DATA.nDetalle} ítems evaluados`
+    ? `Consolidado cargado · ${DATA.edes.length} EDE(s) · ${DATA.nResumen} evaluaciones`
     : `Sin resultados para los filtros seleccionados.`;
 
   const kpiRow = document.getElementById('kpiRow');
@@ -523,7 +525,7 @@ let tablaSortDir = 'asc';
 let tablaSearch = '';
 
 function colorForPct(v){
-  // paleta B: rojo-amarillo-verde vívido, estilo semáforo
+  // paleta B: rojo-amarillo-verde, más suave/transparente para las listas de asesores
   if(v===null || isNaN(v)) return 'transparent';
   const stops = [[227,73,72],[237,161,0],[0,163,0]];
   const t = Math.max(0, Math.min(1, v));
@@ -531,11 +533,11 @@ function colorForPct(v){
   const i0 = Math.floor(seg), i1 = Math.min(i0+1, stops.length-1), f = seg-i0;
   const c0 = stops[i0], c1 = stops[i1];
   const rgb = c0.map((c,i)=> Math.round(c+(c1[i]-c)*f));
-  return `rgb(${rgb.join(',')})`;
+  return `rgba(${rgb.join(',')},0.55)`;
 }
 function textColorForPct(v){
-  const t = Math.max(0, Math.min(1, v));
-  return (t>=0.32 && t<=0.72) ? '#2C2C2A' : '#fff';
+  // con el fondo más transparente el texto oscuro se lee bien en todo el rango
+  return '#2B3168';
 }
 
 function renderTablaCatAgente(DATA){
