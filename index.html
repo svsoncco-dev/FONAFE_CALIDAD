@@ -146,36 +146,36 @@
 
 <section>
   <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
-  <div class="grid2">
-    <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
+  <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
+  <div class="grid2" style="margin-top:16px;">
     <div class="card"><h3>Puntaje Final promedio por Asesor</h3>
       <input type="text" id="puntajeAgenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
       <div id="tablaPuntajeAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="puntajeAgenteNote"></p>
     </div>
+    <div class="card"><h3>Evolución del Puntaje Final por semana</h3><div class="chart-wrap short"><canvas id="chPuntajeFecha"></canvas></div></div>
   </div>
-  <div class="card" style="margin-top:16px;"><h3>Evolución del Puntaje Final por semana</h3><div class="chart-wrap short"><canvas id="chPuntajeFecha"></canvas></div></div>
 </section>
 
 <section>
   <div class="section-title"><span class="idx">02</span><h2>Indicadores PEC / PECUF / PECNEG / PECUM</h2></div>
-  <div class="grid2">
-    <div class="card">
-      <h3>Por EDE</h3>
-      <div class="grid2" style="gap:10px;">
-        <div><p class="note" style="margin:0 0 4px;">PEC</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePEC"></canvas></div></div>
-        <div><p class="note" style="margin:0 0 4px;">PECUF</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUF"></canvas></div></div>
-        <div><p class="note" style="margin:0 0 4px;">PECNEG</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECNEG"></canvas></div></div>
-        <div><p class="note" style="margin:0 0 4px;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
-      </div>
+  <div class="card">
+    <h3>Por EDE</h3>
+    <div class="grid2" style="gap:10px;">
+      <div><p class="note" style="margin:0 0 4px;">PEC</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePEC"></canvas></div></div>
+      <div><p class="note" style="margin:0 0 4px;">PECUF</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUF"></canvas></div></div>
+      <div><p class="note" style="margin:0 0 4px;">PECNEG</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECNEG"></canvas></div></div>
+      <div><p class="note" style="margin:0 0 4px;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
     </div>
+  </div>
+  <div class="grid2" style="margin-top:16px;">
     <div class="card"><h3>Por Asesor</h3>
       <input type="text" id="indicAgenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
       <div id="tablaIndicAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="indicAgenteNote"></p>
     </div>
+    <div class="card"><h3>Evolución del PEC por semana</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
   </div>
-  <div class="card" style="margin-top:16px;"><h3>Evolución del PEC por semana</h3><div class="chart-wrap short"><canvas id="chFecha"></canvas></div></div>
 </section>
 
 <section>
@@ -195,19 +195,6 @@
 <section>
   <div class="section-title"><span class="idx">04</span><h2>Indicadores complementarios</h2></div>
   <div class="card"><h3>Faltas Graves por EDE</h3><div class="chart-wrap"><canvas id="chFaltas"></canvas></div></div>
-  <div class="card" style="margin-top:16px;">
-    <h3>Ranking de Asesores por Puntaje</h3>
-    <div class="grid2">
-      <div>
-        <p class="rank-title">Mejor puntaje</p>
-        <ul class="rank-list top" id="rankTop"></ul>
-      </div>
-      <div>
-        <p class="rank-title">Menor puntaje</p>
-        <ul class="rank-list bottom" id="rankBottom"></ul>
-      </div>
-    </div>
-  </div>
 </section>
 
 <footer id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</footer>
@@ -515,18 +502,6 @@ function renderAll(DATA){
     data:{ labels: DATA.edes, datasets:[{ data: DATA.edes.map(e=>DATA.faltasPorEde[e]), backgroundColor:COLORS.rose, borderRadius:4, maxBarThickness:50 }]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{beginAtZero:true, ticks:{stepSize:1}, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
-
-  const asesoresOrdenados = DATA.asesores
-    .map((a,i)=>({ nombre:a, puntaje:DATA.puntajePorAsesor[i] }))
-    .filter(r=>!isNaN(r.puntaje))
-    .sort((a,b)=> b.puntaje - a.puntaje);
-  const top10 = asesoresOrdenados.slice(0,10);
-  const bottom10 = asesoresOrdenados.slice(-10).reverse().filter(r=>!top10.includes(r));
-  function rankLi(r,i){
-    return `<li><span class="pos">${i+1}</span><span class="name">${r.nombre}</span><span class="val mono">${r.puntaje.toFixed(1)}</span></li>`;
-  }
-  document.getElementById('rankTop').innerHTML = top10.map(rankLi).join("");
-  document.getElementById('rankBottom').innerHTML = bottom10.map((r,i)=>rankLi(r,i)).join("");
 
   charts.push(new Chart(document.getElementById('chPuntajeEde'), {
     type:'bar',
