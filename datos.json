@@ -154,6 +154,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "81.8%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Fecha Evaluación": "2026-07-27",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 10,
+      "PEC (%)": "100.0%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -3070,7 +3083,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_CELIA_LUZ_TERRY_ARÉVALO_2026-07-27_id5lit",
+      "EDE": "ADINELSA",
+      "Asesor": "CELIA LUZ TERRY ARÉVALO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T17:19:13.250Z"
+  "updatedAt": "2026-08-09T19:42:12.329Z"
 }
