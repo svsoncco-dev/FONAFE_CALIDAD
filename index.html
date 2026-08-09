@@ -158,14 +158,14 @@
 </section>
 
 <section>
-  <div class="section-title"><span class="idx">02</span><h2>Indicadores PEC / PECUF / PECNEG / PECUM</h2></div>
+  <div class="section-title"><span class="idx">02</span><h2>Indicadores</h2></div>
   <div class="card">
     <h3>Por EDE</h3>
-    <div class="grid2" style="gap:10px;">
-      <div><p class="note" style="margin:0 0 4px;">PEC</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePEC"></canvas></div></div>
-      <div><p class="note" style="margin:0 0 4px;">PECUF</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUF"></canvas></div></div>
-      <div><p class="note" style="margin:0 0 4px;">PECNEG</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECNEG"></canvas></div></div>
-      <div><p class="note" style="margin:0 0 4px;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
+    <div class="grid2" style="gap:0;">
+      <div style="padding:0 12px 0 0; border-right:1px solid var(--panel-border); border-bottom:1px solid var(--panel-border);"><p class="note" style="margin:0 0 4px; text-align:center; font-weight:700;">PEC</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePEC"></canvas></div></div>
+      <div style="padding:0 0 0 12px; border-bottom:1px solid var(--panel-border);"><p class="note" style="margin:0 0 4px; text-align:center; font-weight:700;">PECUF</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUF"></canvas></div></div>
+      <div style="padding:12px 12px 0 0; border-right:1px solid var(--panel-border);"><p class="note" style="margin:0 0 4px; text-align:center; font-weight:700;">PECNEG</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECNEG"></canvas></div></div>
+      <div style="padding:12px 0 0 12px;"><p class="note" style="margin:0 0 4px; text-align:center; font-weight:700;">PECUM</p><div class="chart-wrap" style="height:150px;"><canvas id="chEdePECUM"></canvas></div></div>
     </div>
   </div>
   <div class="grid2" style="margin-top:16px;">
@@ -180,14 +180,12 @@
 
 <section>
   <div class="section-title"><span class="idx">03</span><h2>Cumplimiento por Categoría</h2></div>
-  <div class="grid2">
-    <div class="card"><h3>% Cumplimiento por Categoría por EDE</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
-    <div class="card">
-      <h3>% Cumplimiento por Categoría por Agente</h3>
-      <input type="text" id="agenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
-      <div id="tablaCatAgente" style="overflow-x:auto; max-height:420px; overflow-y:auto;"></div>
-      <p class="note" id="catGroupNote"></p>
-    </div>
+  <div class="card"><h3>% Cumplimiento por Categoría por EDE</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
+  <div class="card" style="margin-top:16px;">
+    <h3>% Cumplimiento por Categoría por Agente</h3>
+    <input type="text" id="agenteSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
+    <div id="tablaCatAgente" style="overflow-x:auto; max-height:420px; overflow-y:auto;"></div>
+    <p class="note" id="catGroupNote"></p>
   </div>
 
 </section>
@@ -492,7 +490,7 @@ function renderAll(DATA){
       labels: DATA.categorias,
       datasets: DATA.edes.map((e,i)=>({ label:e, data: DATA.cumplimientoCategoriaEde[e], backgroundColor:[COLORS.teal,COLORS.violet,COLORS.amber,COLORS.rose,COLORS.gray,"#6FCBEE","#173F52"][i%7], borderRadius:4 }))
     },
-    options:{ responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{legend:{position:'bottom'}}, scales:{ x:pctAxis(), y:{grid:{display:false}} } }
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom'}}, scales:{ y:pctAxis(), x:catAxis() } }
   }));
 
   renderTablaCatAgente(DATA);
