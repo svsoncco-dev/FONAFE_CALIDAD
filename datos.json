@@ -115,6 +115,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Fecha Evaluación": "2026-07-27",
+      "Tipo de Llamada": "CONSULTAS",
+      "Puntaje Final (/10)": 9.7,
+      "PEC (%)": "96.6%",
+      "PECUF (%)": "90.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -2287,7 +2300,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_BRIGGITTE_ROSSMERY_FLORES_NAVARRO_2026-07-27_6lzxz5",
+      "EDE": "ADINELSA",
+      "Asesor": "BRIGGITTE ROSSMERY FLORES NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T15:30:15.111Z"
+  "updatedAt": "2026-08-09T16:06:51.496Z"
 }
