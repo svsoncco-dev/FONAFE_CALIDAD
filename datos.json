@@ -206,6 +206,19 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "90.9%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Fecha Evaluación": "2026-08-07",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 7.2,
+      "PEC (%)": "75.0%",
+      "PECUF (%)": "90.0%",
+      "PECNEG (%)": "71.4%",
+      "PECUM (%)": "63.6%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -4114,7 +4127,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MELVA_LUSY_GOMEZ_CASIO_2026-08-07_mboh15",
+      "EDE": "ADINELSA",
+      "Asesor": "MELVA LUSY GOMEZ CASIO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T20:53:33.054Z"
+  "updatedAt": "2026-08-09T20:55:56.455Z"
 }
