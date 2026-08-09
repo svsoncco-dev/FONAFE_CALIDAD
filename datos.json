@@ -219,6 +219,19 @@
       "PECNEG (%)": "71.4%",
       "PECUM (%)": "63.6%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Fecha Evaluación": "2026-08-07",
+      "Tipo de Llamada": "CONSULTAS",
+      "Puntaje Final (/10)": 9.3,
+      "PEC (%)": "93.1%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "81.8%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -4375,7 +4388,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_MARÍA_LUISA_SALDAÑA_NAVARRO_2026-08-07_1ac4cgw",
+      "EDE": "ADINELSA",
+      "Asesor": "MARÍA LUISA SALDAÑA NAVARRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T20:55:56.455Z"
+  "updatedAt": "2026-08-09T20:59:55.570Z"
 }
