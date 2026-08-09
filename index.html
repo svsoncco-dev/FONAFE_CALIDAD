@@ -213,6 +213,21 @@ Chart.defaults.borderColor = COLORS.grid;
 function pctAxis(){ return { min:0, max:1, ticks:{ callback:v=>Math.round(v*100)+"%" }, grid:{color:COLORS.grid} }; }
 function catAxis(){ return { grid:{display:false} }; }
 
+// ------- línea de tendencia (regresión lineal simple) -------
+function trendLine(values){
+  const pts = values.map((v,i)=>[i,v]).filter(([,v])=> v!==null && v!==undefined && !isNaN(v));
+  const n = pts.length;
+  if(n < 2) return values.map(()=>null);
+  const sumX = pts.reduce((s,[x])=>s+x,0);
+  const sumY = pts.reduce((s,[,y])=>s+y,0);
+  const sumXY = pts.reduce((s,[x,y])=>s+x*y,0);
+  const sumXX = pts.reduce((s,[x])=>s+x*x,0);
+  const denom = (n*sumXX - sumX*sumX);
+  const slope = denom===0 ? 0 : (n*sumXY - sumX*sumY) / denom;
+  const intercept = (sumY - slope*sumX) / n;
+  return values.map((v,i)=> (v===null || v===undefined || isNaN(v)) ? null : slope*i + intercept);
+}
+
 // ------- datos de muestra, como filas "crudas" (equivalentes a Resumen General / Detalle) -------
 // Se guardan como filas y no como agregados para que los filtros de EDE/Agente también
 // funcionen sobre la demo, con el mismo pipeline que usa el archivo real.
@@ -486,8 +501,10 @@ function renderAll(DATA){
   renderTablaIndicAgente(DATA);
 
   charts.push(new Chart(document.getElementById('chFecha'), {
-    type:'bar',
-    data:{ labels: DATA.semanasLabelsCortos, datasets:[{ label:'PEC', data: DATA.pecPorSemana, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:40 }]},
+    data:{ labels: DATA.semanasLabelsCortos, datasets:[
+      { type:'bar', label:'PEC', data: DATA.pecPorSemana, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:40, order:2 },
+      { type:'line', label:'Tendencia', data: trendLine(DATA.pecPorSemana), borderColor:COLORS.rose, borderWidth:2, borderDash:[6,4], pointRadius:0, tension:0, fill:false, order:1 }
+    ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:pctAxis(), x:catAxis() } }
   }));
 
@@ -517,8 +534,10 @@ function renderAll(DATA){
   renderTablaPuntajeAgente(DATA);
 
   charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
-    type:'bar',
-    data:{ labels: DATA.semanasLabelsCortos, datasets:[{ label:'Puntaje Final', data: DATA.puntajePorSemana, backgroundColor:COLORS.amber, borderRadius:4, maxBarThickness:40 }]},
+    data:{ labels: DATA.semanasLabelsCortos, datasets:[
+      { type:'bar', label:'Puntaje Final', data: DATA.puntajePorSemana, backgroundColor:COLORS.amber, borderRadius:4, maxBarThickness:40, order:2 },
+      { type:'line', label:'Tendencia', data: trendLine(DATA.puntajePorSemana), borderColor:COLORS.rose, borderWidth:2, borderDash:[6,4], pointRadius:0, tension:0, fill:false, order:1 }
+    ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
 }
