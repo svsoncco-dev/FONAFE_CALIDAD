@@ -112,14 +112,12 @@
     <h1>Campaña FONAFE — Panel de Evaluaciones</h1>
     <p class="sub" id="subLine">Consolidado de muestra · 1 EDE cargada · datos tomados del JSON del repositorio</p>
   </div>
-  <div style="display:flex; flex-direction:column; align-items:flex-end; justify-content:space-between;">
-    <img class="brand-logo" src="logo.png" alt="Contact Americas">
-    <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
+  <div style="display:flex; align-items:flex-start;">
+    <img class="brand-logo" src="logo.png" alt="Contact Americas" style="margin-top:22px;">
   </div>
 </header>
 
 <div class="ede-strip" id="edeStrip" style="margin-bottom:16px;"></div>
-</header>
 
 <div style="display:none;">
   <button id="btnRecargar" type="button"></button>
@@ -202,6 +200,10 @@
 </section>
 
 <footer id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</footer>
+
+<div style="display:flex; justify-content:flex-end; margin-top:20px;">
+  <button class="export-btn" id="btnExportExcel" type="button">⬇ Exportar a Excel</button>
+</div>
 
 <script>
 const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
