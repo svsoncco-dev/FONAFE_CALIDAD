@@ -438,6 +438,9 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
     const vals = resumenNorm.filter(r=>r.Asesor===a).map(r=>r.Puntaje).filter(v=>!isNaN(v));
     return avg(vals);
   });
+  const qPorAsesor = asesores.map(a=>{
+    return resumenNorm.filter(r=>r.Asesor===a).map(r=>r.Puntaje).filter(v=>!isNaN(v)).length;
+  });
   const resumenConMes = resumenNorm.map(r=>({...r, Mes: mesKey(r.Fecha)}));
   const meses = uniq(resumenConMes.map(r=>r.Mes)).sort();
   const mesesLabels = meses.map(mesLabelFromKey);
@@ -454,7 +457,7 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
     agentesCat, cumplimientoCategoriaAgente,
     totalAgentesConDetalle: agentesConDetalle.length,
     faltasPorEde: faltasPorEdeMap,
-    puntajePorEde, puntajePorAsesor, mesesLabels, puntajeGeneral,
+    puntajePorEde, puntajePorAsesor, qPorAsesor, mesesLabels, puntajeGeneral,
     semanasLabelsCortos, semanasLabelsCompletos, numerosSemana, pecPorSemana, puntajePorSemana,
     nResumen: resumenNorm.length, nDetalle: detalleNorm.length
   };
@@ -713,7 +716,7 @@ let puntajeSearch = '';
 function renderTablaPuntajeAgente(DATA){
   const cont = document.getElementById('tablaPuntajeAgente');
   const noteEl = document.getElementById('puntajeAgenteNote');
-  let pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i] }))
+  let pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i], q: DATA.qPorAsesor[i] }))
     .filter(r=> r.nombre.toLowerCase().includes(puntajeSearch.toLowerCase()));
 
   pares.sort((a,b)=>{
@@ -734,11 +737,13 @@ function renderTablaPuntajeAgente(DATA){
   const arrowPuntaje = puntajeSortByValue ? (puntajeSortDir==='asc' ? ' ▲' : ' ▼') : '';
   let h = '<table style="border-collapse:collapse; font-size:11px; width:100%;">';
   h += `<tr><th data-col="nombre" style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel);">Agente${arrowNombre}</th>`;
-  h += `<th data-col="puntaje" style="padding:6px 4px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); min-width:90px;">Puntaje Final${arrowPuntaje}</th></tr>`;
+  h += `<th data-col="puntaje" style="padding:6px 4px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); min-width:90px;">Puntaje Final${arrowPuntaje}</th>`;
+  h += `<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel); min-width:40px;">Q</th></tr>`;
   pares.forEach(r=>{
     const t = r.puntaje/10;
     h += `<tr><td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap;">${r.nombre}</td>`;
-    h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)};">${r.puntaje.toFixed(1)}</td></tr>`;
+    h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)};">${r.puntaje.toFixed(1)}</td>`;
+    h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; color:var(--text-dim); font-weight:600;">${r.q}</td></tr>`;
   });
   h += '</table>';
   cont.innerHTML = h;
