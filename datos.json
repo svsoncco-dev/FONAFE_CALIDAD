@@ -571,6 +571,20 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Fecha Evaluación": "2026-08-09",
+      "Teléfono": "900108789",
+      "Tipo de Llamada": "CONSULTAS",
+      "Puntaje Final (/10)": 10,
+      "PEC (%)": "100.0%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -11087,7 +11101,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LEONARDO_ALONSO_RIVERA_ESPINOZA_2026-08-09_1gnw8nd",
+      "EDE": "ADINELSA",
+      "Asesor": "LEONARDO ALONSO RIVERA ESPINOZA",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-10T12:24:25.450Z"
+  "updatedAt": "2026-08-10T12:28:36.370Z"
 }
