@@ -364,6 +364,7 @@ function normalizeData(json){
 
   const detalleNorm = detalleRows
     .map(r=>({
+      IdEvaluacion: r["ID Evaluación"] !== undefined ? r["ID Evaluación"] : null,
       EDE: r["EDE"],
       Asesor: r["Asesor"] !== undefined ? r["Asesor"] : null, // algunas plantillas sí incluyen Asesor en Detalle
       Categoria: r["Categoría"],
@@ -815,6 +816,67 @@ function abrirModalAgente(nombre){
   }
 
   overlay.style.display = 'flex';
+
+  renderCategoriasAgente(nombre);
+}
+
+function renderCategoriasAgente(nombre){
+  const tituloEl = document.getElementById('modalAgenteCatTitulo');
+  const contEl = document.getElementById('modalAgenteCategorias');
+
+  const items = RAW.detalleNorm.filter(r=> r.Asesor === nombre);
+
+  if(items.length===0){
+    tituloEl.style.display = 'none';
+    contEl.innerHTML = '';
+    return;
+  }
+  tituloEl.style.display = 'block';
+
+  // agrupa por Categoría y cuenta SI / NO / NO AMERITA
+  const porCategoria = {};
+  items.forEach(r=>{
+    const cat = r.Categoria || 'Sin categoría';
+    if(!porCategoria[cat]) porCategoria[cat] = { si:0, no:0, noAmerita:0 };
+    const ev = String(r.Evaluacion || '').toUpperCase();
+    if(ev === 'SI') porCategoria[cat].si++;
+    else if(ev === 'NO AMERITA') porCategoria[cat].noAmerita++;
+    else if(ev === 'NO') porCategoria[cat].no++;
+  });
+
+  let filas = Object.keys(porCategoria).map(cat=>{
+    const c = porCategoria[cat];
+    const evaluables = c.si + c.no; // NO AMERITA no cuenta para el % de cumplimiento
+    const pct = evaluables>0 ? c.si/evaluables : null;
+    return { cat, ...c, pct };
+  });
+
+  // primero las categorías con más incidencias (NO), luego por peor % de cumplimiento
+  filas.sort((a,b)=> b.no - a.no || (a.pct??1) - (b.pct??1));
+
+  let h = '<table style="border-collapse:collapse; font-size:12px; width:100%;">';
+  h += '<tr>'
+    + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Categoría</th>'
+    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Cumple</th>'
+    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">No Cumple</th>'
+    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">No Aplica</th>'
+    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">% Cumplimiento</th>'
+    + '</tr>';
+  filas.forEach(f=>{
+    const tieneFallas = f.no > 0;
+    const bg = f.pct===null ? 'transparent' : colorForPct(f.pct);
+    const txt = f.pct===null ? 'var(--text-dim)' : textColorForPct(f.pct);
+    h += `<tr style="${tieneFallas ? 'background:rgba(227,73,72,0.08);' : ''}">`
+      + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:${tieneFallas?700:600}; ${tieneFallas?'color:#B3261E;':''}">${f.cat}${tieneFallas ? ' ⚠️' : ''}</td>`
+      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center;">${f.si}</td>`
+      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; font-weight:${tieneFallas?700:400}; color:${tieneFallas?'#B3261E':'inherit'};">${f.no}</td>`
+      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; color:var(--text-dim);">${f.noAmerita}</td>`
+      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${bg}; color:${txt}; font-weight:700;">${f.pct===null ? '—' : Math.round(f.pct*100)+'%'}</td>`
+      + '</tr>';
+  });
+  h += '</table>';
+  h += '<p class="note" style="margin-top:8px; font-size:11px;">⚠️ = categoría con al menos un ítem "No Cumple" en alguna evaluación. "No Aplica" no se considera en el % de cumplimiento.</p>';
+  contEl.innerHTML = h;
 }
 
 function cerrarModalAgente(){
@@ -1132,6 +1194,8 @@ cargarDesdeGitHub();
     </div>
     <p id="modalAgenteResumen" class="note" style="margin:0 0 12px;"></p>
     <div id="modalAgenteTabla" style="overflow-x:auto;"></div>
+    <h4 id="modalAgenteCatTitulo" style="margin:18px 0 8px; font-size:14px; color:#2B3168; display:none;">Categorías con oportunidad de mejora</h4>
+    <div id="modalAgenteCategorias" style="overflow-x:auto;"></div>
   </div>
 </div>
 </body>
