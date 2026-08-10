@@ -773,17 +773,24 @@ function abrirModalAgente(nombre){
 
   const evals = RAW.resumenNorm
     .filter(r=> r.Asesor === nombre)
+    .filter(r=>
+      (selectedEdes.size===0 || selectedEdes.has(r.EDE)) &&
+      (selectedMeses.size===0 || (()=>{ const info=getMesInfo(r.Fecha); return info && selectedMeses.has(info.key); })()) &&
+      (selectedSemanas.size===0 || (()=>{ const info=getSemanaInfo(r.Fecha); return info && selectedSemanas.has(info.numSemana); })())
+    )
     .slice()
     .sort((a,b)=> String(a.Fecha).localeCompare(String(b.Fecha)));
 
   titulo.textContent = nombre;
 
+  const filtroActivo = selectedEdes.size>0 ? ` (filtrado por EDE: ${[...selectedEdes].join(', ')})` : '';
+
   if(evals.length===0){
-    resumenEl.textContent = 'Sin evaluaciones registradas.';
+    resumenEl.textContent = 'Sin evaluaciones registradas' + filtroActivo + '.';
     tablaEl.innerHTML = '';
   } else {
     const prom = evals.reduce((s,r)=> s + (isNaN(r.Puntaje)?0:r.Puntaje), 0) / evals.length;
-    resumenEl.textContent = `${evals.length} evaluación(es) · Promedio: ${prom.toFixed(1)}/10`;
+    resumenEl.textContent = `${evals.length} evaluación(es) · Promedio: ${prom.toFixed(1)}/10${filtroActivo}`;
 
     let h = '<table style="border-collapse:collapse; font-size:12px; width:100%;">';
     h += '<tr>'
@@ -824,7 +831,9 @@ function renderCategoriasAgente(nombre){
   const tituloEl = document.getElementById('modalAgenteCatTitulo');
   const contEl = document.getElementById('modalAgenteCategorias');
 
-  const items = RAW.detalleNorm.filter(r=> r.Asesor === nombre);
+  const items = RAW.detalleNorm
+    .filter(r=> r.Asesor === nombre)
+    .filter(r=> selectedEdes.size===0 || selectedEdes.has(r.EDE));
 
   if(items.length===0){
     tituloEl.style.display = 'none';
