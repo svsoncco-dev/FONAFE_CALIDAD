@@ -403,6 +403,20 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Fecha Evaluación": "2026-08-08",
+      "Teléfono": "920200295",
+      "Tipo de Llamada": "CONSULTAS",
+      "Puntaje Final (/10)": 7.7,
+      "PEC (%)": "79.3%",
+      "PECUF (%)": "50.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "90.9%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -7943,7 +7957,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_LUISA_DIAZ_HURTADO_2026-08-08_8d59eh",
+      "EDE": "ADINELSA",
+      "Asesor": "LUISA DIAZ HURTADO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-10T02:46:11.514Z"
+  "updatedAt": "2026-08-10T02:50:29.613Z"
 }
