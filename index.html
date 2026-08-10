@@ -99,7 +99,8 @@
   .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; min-width:0;}
   .grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; min-width:0;}
   .grid2 > *, .grid3 > *{ min-width:0; }
-  @media(max-width:900px){ .grid2,.grid3,.kpis{grid-template-columns:1fr;} }
+  .grid2-60-40{ grid-template-columns:60% 40%; }
+  @media(max-width:900px){ .grid2,.grid3,.kpis,.grid2-60-40{grid-template-columns:1fr;} }
 
   .card{ background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:16px 16px 8px; box-shadow:0 1px 3px rgba(43,43,42,0.06); min-width:0;}
   .card h3{ margin:0 0 10px; font-size:13px; color:var(--text); font-weight:600;}
@@ -179,7 +180,7 @@
 <section>
   <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
   <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
-  <div class="grid2" style="margin-top:16px;">
+  <div class="grid2 grid2-60-40" style="margin-top:16px;">
     <div class="card"><h3>Puntaje Final promedio por Asesor</h3>
       <div id="tablaPuntajeAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="puntajeAgenteNote"></p>
