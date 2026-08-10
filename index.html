@@ -742,7 +742,7 @@ function renderTablaPuntajeAgente(DATA){
   h += `<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel); min-width:40px;">Q</th></tr>`;
   pares.forEach(r=>{
     const t = r.puntaje/10;
-    h += `<tr><td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap;">${r.nombre}</td>`;
+    h += `<tr><td class="agente-link" data-agente="${r.nombre.replace(/"/g,'&quot;')}" style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap; cursor:pointer; color:#2B5FE0; text-decoration:underline dotted;">${r.nombre}</td>`;
     h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)};">${r.puntaje.toFixed(1)}</td>`;
     h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; color:var(--text-dim); font-weight:600;">${r.q}</td></tr>`;
   });
@@ -757,7 +757,78 @@ function renderTablaPuntajeAgente(DATA){
       renderTablaPuntajeAgente(LAST_DATA);
     });
   });
+
+  cont.querySelectorAll('.agente-link').forEach(td=>{
+    td.addEventListener('click', ()=> abrirModalAgente(td.dataset.agente));
+  });
 }
+
+function abrirModalAgente(nombre){
+  const overlay = document.getElementById('modalAgenteOverlay');
+  const box = document.getElementById('modalAgenteBox');
+  const titulo = document.getElementById('modalAgenteNombre');
+  const resumenEl = document.getElementById('modalAgenteResumen');
+  const tablaEl = document.getElementById('modalAgenteTabla');
+
+  const evals = RAW.resumenNorm
+    .filter(r=> r.Asesor === nombre)
+    .slice()
+    .sort((a,b)=> String(a.Fecha).localeCompare(String(b.Fecha)));
+
+  titulo.textContent = nombre;
+
+  if(evals.length===0){
+    resumenEl.textContent = 'Sin evaluaciones registradas.';
+    tablaEl.innerHTML = '';
+  } else {
+    const prom = evals.reduce((s,r)=> s + (isNaN(r.Puntaje)?0:r.Puntaje), 0) / evals.length;
+    resumenEl.textContent = `${evals.length} evaluación(es) · Promedio: ${prom.toFixed(1)}/10`;
+
+    let h = '<table style="border-collapse:collapse; font-size:12px; width:100%;">';
+    h += '<tr>'
+      + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Fecha</th>'
+      + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Tipo</th>'
+      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Puntaje</th>'
+      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PEC</th>'
+      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PECUF</th>'
+      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PECNEG</th>'
+      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PECUM</th>'
+      + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Falta Grave</th>'
+      + '</tr>';
+    evals.forEach(r=>{
+      const t = (isNaN(r.Puntaje)?0:r.Puntaje)/10;
+      const fmtPct = v => (v===null||v===undefined||isNaN(v)) ? '—' : Math.round(v*100)+'%';
+      const falta = r.FaltaGrave ? String(r.FaltaGrave) : '—';
+      h += '<tr>'
+        + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${r.Fecha ?? '—'}</td>`
+        + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${r.TipoLlamada ?? '—'}</td>`
+        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)}; font-weight:700;">${isNaN(r.Puntaje)?'—':r.Puntaje.toFixed(1)}</td>`
+        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PEC)}; color:${textColorForPct(r.PEC)};">${fmtPct(r.PEC)}</td>`
+        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PECUF)}; color:${textColorForPct(r.PECUF)};">${fmtPct(r.PECUF)}</td>`
+        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PECNEG)}; color:${textColorForPct(r.PECNEG)};">${fmtPct(r.PECNEG)}</td>`
+        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PECUM)}; color:${textColorForPct(r.PECUM)};">${fmtPct(r.PECUM)}</td>`
+        + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${falta}</td>`
+        + '</tr>';
+    });
+    h += '</table>';
+    tablaEl.innerHTML = h;
+  }
+
+  overlay.style.display = 'flex';
+}
+
+function cerrarModalAgente(){
+  document.getElementById('modalAgenteOverlay').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  const overlay = document.getElementById('modalAgenteOverlay');
+  const box = document.getElementById('modalAgenteBox');
+  const closeBtn = document.getElementById('modalAgenteClose');
+  if(closeBtn) closeBtn.addEventListener('click', cerrarModalAgente);
+  if(overlay) overlay.addEventListener('click', (e)=>{ if(e.target === overlay) cerrarModalAgente(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') cerrarModalAgente(); });
+});
 
 // ------- filtros por EDE y Agente -------
 let RAW = { resumenNorm: SAMPLE_RESUMEN_NORM, detalleNorm: SAMPLE_DETALLE_NORM };
@@ -1053,5 +1124,15 @@ populateFilters();
 applyFiltersAndRender();
 cargarDesdeGitHub();
 </script>
+<div id="modalAgenteOverlay" style="display:none; position:fixed; inset:0; background:rgba(20,20,30,0.55); z-index:1000; align-items:center; justify-content:center; padding:20px;">
+  <div id="modalAgenteBox" style="background:var(--panel); border-radius:14px; max-width:720px; width:100%; max-height:85vh; overflow-y:auto; box-shadow:0 8px 30px rgba(0,0,0,0.25); padding:20px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px;">
+      <h3 id="modalAgenteNombre" style="margin:0; font-size:16px; color:#2B3168;"></h3>
+      <button id="modalAgenteClose" type="button" style="border:none; background:var(--panel-border); color:var(--text-dim); width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:16px; line-height:1;">✕</button>
+    </div>
+    <p id="modalAgenteResumen" class="note" style="margin:0 0 12px;"></p>
+    <div id="modalAgenteTabla" style="overflow-x:auto;"></div>
+  </div>
+</div>
 </body>
 </html>
