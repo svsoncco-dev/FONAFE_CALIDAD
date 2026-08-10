@@ -1026,7 +1026,10 @@ function updateFilterButtons(){
   const btnAg = document.getElementById('btnAgenteFilter');
   const btnMes = document.getElementById('btnMesFilter');
   const btnSem = document.getElementById('btnSemanaFilter');
-  btnEde.textContent = (selectedEdes.size ? selectedEdes.size + ' seleccionada(s)' : 'Todas') + ' ▾';
+  const edeLabel = selectedEdes.size
+    ? (selectedEdes.size <= 2 ? [...selectedEdes].join(', ') : selectedEdes.size + ' seleccionadas')
+    : 'Todas';
+  btnEde.textContent = edeLabel + ' ▾';
   btnAg.textContent = (selectedAgentes.size ? selectedAgentes.size + ' seleccionado(s)' : 'Todos') + ' ▾';
   btnMes.textContent = (selectedMeses.size ? selectedMeses.size + ' seleccionado(s)' : 'Todos') + ' ▾';
   btnSem.textContent = (selectedSemanas.size ? selectedSemanas.size + ' seleccionada(s)' : 'Todas') + ' ▾';
