@@ -515,6 +515,20 @@
       "PECNEG (%)": "85.7%",
       "PECUM (%)": "90.9%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Fecha Evaluación": "2026-08-09",
+      "Teléfono": "908760392",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Puntaje Final (/10)": 10,
+      "PEC (%)": "100.0%",
+      "PECUF (%)": "100.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -10039,7 +10053,255 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ADINELSA_ANA_MARÍA_CHRISS_SANTOS_CASTRO_2026-08-09_1pvff77",
+      "EDE": "ADINELSA",
+      "Asesor": "ANA MARÍA CHRISS SANTOS CASTRO",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-10T12:03:52.971Z"
+  "updatedAt": "2026-08-10T12:06:46.580Z"
 }
