@@ -297,6 +297,19 @@
       "PECNEG (%)": "87.5%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Fecha Evaluación": "",
+      "Tipo de Llamada": "",
+      "Puntaje Final (/10)": 5.5,
+      "PEC (%)": "89.5%",
+      "PECUF (%)": "90.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "83.3%",
+      "Falta Grave": ""
     }
   ],
   "Detalle": [
@@ -5941,7 +5954,167 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "EDE_sin_asesor_2026-08-10_1nt6drn",
+      "EDE": "",
+      "Asesor": "",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-09T23:24:46.352Z"
+  "updatedAt": "2026-08-10T00:36:56.525Z"
 }
