@@ -19,13 +19,30 @@
     --grid: rgba(43,49,104,0.08);
   }
   *{box-sizing:border-box;}
+  html,body{ height:100%; }
   body{
     margin:0; background:var(--bg); color:var(--text);
     font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    padding: 28px 32px 60px;
     overflow-x:hidden;
   }
   .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+  .app-shell{ display:flex; min-height:100vh; }
+
+  /* ---- sidebar ---- */
+  .sidebar{ width:222px; flex-shrink:0; background:#171B3C; padding:22px 14px 20px; display:flex; flex-direction:column; position:sticky; top:0; height:100vh; }
+  .sidebar-logo{ display:flex; align-items:center; gap:9px; padding:0 8px 22px; }
+  .sidebar-logo img{ height:26px; width:auto; filter:brightness(0) invert(1); opacity:.95; }
+  .sidebar-nav{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px; }
+  .sidebar-nav a{ display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:9px; color:#AAB0D6; text-decoration:none; font-size:13.5px; font-weight:600; }
+  .sidebar-nav a svg{ flex-shrink:0; opacity:.85; }
+  .sidebar-nav a:hover{ background:rgba(255,255,255,0.06); color:#fff; }
+  .sidebar-nav a.active{ background:var(--teal); color:#fff; }
+  .sidebar-nav a.active svg{ opacity:1; }
+  .sidebar-bottom{ margin-top:auto; }
+  .sidebar-save{ display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:9px; color:#8890BA; font-size:12.5px; font-weight:600; }
+
+  .main-col{ flex:1; min-width:0; padding: 24px 32px 60px; }
 
   header{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:16px; background:var(--panel); border:1px solid var(--panel-border); border-bottom:1px solid var(--panel-border); border-radius:12px; padding:22px 28px; box-shadow:0 1px 3px rgba(43,43,42,0.06);}
   .header-left{ display:flex; align-items:center; gap:16px; }
@@ -44,6 +61,74 @@
   .dot.bad{ background:var(--rose);}
   .ede-chip .name{ font-size:12px; font-weight:700;}
   .ede-chip .val{ font-size:11px; color:var(--text-dim);}
+
+  /* ---- tarjetas EDE grandes (estilo franja superior) ---- */
+  .ede-cards{ display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-bottom:16px; }
+  .ede-card{ background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:12px 14px; box-shadow:0 1px 3px rgba(43,43,42,0.06); min-width:0; }
+  .ede-card .top{ display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+  .ede-card .dot{ width:8px; height:8px; }
+  .ede-card .ede-name{ font-size:12.5px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ede-card .ede-pct{ font-size:19px; font-weight:800; line-height:1.1; }
+  .ede-card .ede-pct.na{ font-size:12px; font-weight:700; color:var(--rose); }
+  .ede-card .ede-q{ font-size:10.5px; color:var(--text-dim); margin-top:2px; }
+  @media(max-width:1200px){ .ede-cards{ grid-template-columns:repeat(4,1fr);} }
+  @media(max-width:640px){ .ede-cards{ grid-template-columns:repeat(2,1fr);} }
+
+  /* ---- badge cumple/no cumple ---- */
+  .kpi-head{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
+  .badge{ display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap; }
+  .badge.ok{ background:#E3F6E8; color:#1E8A3C; }
+  .badge.bad{ background:#FBE7E7; color:#C23636; }
+  .kpi .meta{ font-size:11px; color:var(--text-dim); margin-top:2px; }
+
+  /* ---- ranking / desempeño por EDE (barras horizontales tipo lista) ---- */
+  .rank-bars{ display:flex; flex-direction:column; gap:9px; }
+  .rank-bars .row{ display:grid; grid-template-columns:16px 62px 1fr 46px; align-items:center; gap:8px; }
+  .rank-bars .pos{ font-size:11px; color:var(--text-dim); font-weight:700; }
+  .rank-bars .lbl{ font-size:12px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .rank-bars .track{ background:var(--bg); border-radius:5px; height:12px; overflow:hidden; }
+  .rank-bars .fill{ height:100%; border-radius:5px; background:var(--violet); }
+  .rank-bars .val{ font-size:12px; font-weight:700; text-align:right; }
+  .rank-bars .val.na{ color:var(--rose); font-size:11px; }
+
+  /* ---- dona tipo de llamada ---- */
+  .donut-wrap{ display:flex; align-items:center; gap:18px; }
+  .donut-canvas-box{ position:relative; width:150px; height:150px; flex-shrink:0; }
+  .donut-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; }
+  .donut-center .n{ font-size:19px; font-weight:800; color:var(--violet); line-height:1.1; }
+  .donut-center .lbl{ font-size:9.5px; color:var(--text-dim); text-align:center; max-width:80px; }
+  .donut-legend{ display:flex; flex-direction:column; gap:9px; flex:1; min-width:0; }
+  .donut-legend .item{ display:flex; align-items:center; gap:8px; font-size:12px; }
+  .donut-legend .sw{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+  .donut-legend .name{ font-weight:700; color:var(--text); }
+  .donut-legend .sub{ color:var(--text-dim); font-size:11px; }
+
+  /* ---- top 5 oportunidades de mejora ---- */
+  .top5-table{ width:100%; border-collapse:collapse; font-size:12px; }
+  .top5-table th{ text-align:left; color:var(--text-dim); font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; padding:0 6px 8px; }
+  .top5-table td{ padding:8px 6px; border-top:1px solid var(--panel-border); vertical-align:middle; }
+  .top5-table .num{ color:var(--text-dim); font-weight:700; width:18px; }
+  .top5-table .pct{ font-weight:800; }
+  .top5-table .delta{ font-size:11px; font-weight:700; white-space:nowrap; }
+  .top5-table .delta.down{ color:var(--rose); }
+  .top5-table .delta.up{ color:#1E8A3C; }
+  .top5-table .delta.flat{ color:var(--text-dim); }
+
+  /* ---- faltas graves resumen ---- */
+  .faltas-total{ display:flex; align-items:center; gap:10px; margin:2px 0 14px; }
+  .faltas-total .n{ font-size:30px; font-weight:800; color:var(--rose); line-height:1; }
+  .faltas-total svg{ color:var(--rose); flex-shrink:0; }
+  .faltas-row{ display:flex; justify-content:space-between; align-items:center; font-size:11.5px; color:var(--text-dim); font-weight:700; margin-bottom:6px; }
+  .faltas-pill{ display:inline-flex; align-items:center; gap:6px; background:#FBE7E7; color:#C23636; font-weight:800; font-size:12px; padding:6px 12px; border-radius:8px; }
+  .faltas-pill.cat{ background:var(--bg); color:var(--text); }
+
+  /* ---- ranking de asesores (top card) ---- */
+  .top-rank-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .top-rank-list li{ display:flex; align-items:center; gap:9px; cursor:pointer; }
+  .top-rank-list .medal{ width:18px; text-align:center; flex-shrink:0; }
+  .top-rank-list .name{ flex:1; font-size:12.5px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .top-rank-list .score{ font-size:12.5px; font-weight:800; color:var(--violet); }
+  .see-all-link{ display:inline-flex; align-items:center; gap:5px; color:var(--teal); font-size:12px; font-weight:700; text-decoration:none; margin-top:12px; cursor:pointer; }
 
   .rank-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
   .rank-list li{ display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:8px; background:var(--panel); border:1px solid var(--panel-border);}
@@ -91,7 +176,8 @@
   .kpi .value.teal{color:var(--teal);} .kpi .value.violet{color:var(--violet);}
   .kpi .value.amber{color:var(--amber);} .kpi .value.rose{color:var(--rose);}
 
-  section{ margin-bottom:34px; }
+  html{ scroll-behavior:smooth; }
+  section{ margin-bottom:34px; scroll-margin-top:20px; }
   .section-title{ display:flex; align-items:baseline; gap:10px; margin-bottom:14px;}
   .section-title .idx{ font-family: ui-monospace, monospace; color:var(--text-dim); font-size:12px;}
   .section-title h2{ font-size:16px; margin:0; font-weight:700; color:#2B3168;}
@@ -120,6 +206,23 @@
 </head>
 <body>
 
+<div class="app-shell">
+<aside class="sidebar">
+  <div class="sidebar-logo"><img src="logo.png" alt="Contact Americas"></div>
+  <ul class="sidebar-nav">
+    <li><a href="#top" class="active"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Dashboard</a></li>
+    <li><a href="#seccionEde"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>EDEs</a></li>
+    <li><a href="#seccionAsesores"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Asesores</a></li>
+    <li><a href="#seccionCategoria"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Hallazgos</a></li>
+    <li><a href="#seccionComplementarios"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>Evaluaciones</a></li>
+    <li><a href="#seccionReportes"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Reportes</a></li>
+  </ul>
+  <div class="sidebar-bottom">
+    <div class="sidebar-save"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path></svg>Filtros guardados</div>
+  </div>
+</aside>
+<div class="main-col" id="top">
+
 <header>
   <div class="header-left">
     <img class="brand-logo" src="logo.png" alt="Contact Americas">
@@ -137,7 +240,7 @@
   </div>
 </header>
 
-<div class="ede-strip" id="edeStrip" style="margin-bottom:16px;"></div>
+<div class="ede-cards" id="edeCards"></div>
 
 <div style="display:none;">
   <button id="btnRecargar" type="button"></button>
@@ -177,19 +280,38 @@
 
 <div class="kpis" id="kpiRow"></div>
 
-<section>
+<div class="grid3" style="margin-bottom:16px;">
+  <div class="card"><h3>Desempeño por EDE (Puntaje final promedio)</h3><div id="rankBarsEde" class="rank-bars" style="padding:6px 4px 14px;"></div></div>
+  <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final (promedio general)</h3><span class="trend-legend"><span class="trend-swatch"></span>Tendencia</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
+  <div class="card"><h3>Evaluaciones por Tipo de Llamada</h3>
+    <div class="donut-wrap" style="padding:8px 0 14px;">
+      <div class="donut-canvas-box"><canvas id="chTipoLlamada"></canvas><div class="donut-center"><div class="n" id="donutTotal">—</div><div class="lbl">Evaluaciones</div></div></div>
+      <div class="donut-legend" id="donutLegend"></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr;">
+  <div class="card"><h3>Cumplimiento por Categoría (promedio general)</h3><div id="catBars" style="padding:6px 4px 14px;"></div></div>
+  <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
+  <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
+    <div class="card"><h3>Faltas Graves (Total)</h3><div id="faltasResumen"></div></div>
+    <div class="card"><h3>Ranking de Asesores <span style="font-weight:400; color:var(--text-dim); font-size:11px;">(Puntaje final promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
+  </div>
+</div>
+
+<section id="seccionAsesores">
   <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
-  <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
-  <div class="grid2 grid2-60-40" style="margin-top:16px;">
+  <div class="grid2" style="margin-top:0;">
     <div class="card"><h3>Puntaje Final promedio por Asesor</h3>
       <div id="tablaPuntajeAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="puntajeAgenteNote"></p>
     </div>
-    <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final por semana</h3><span class="trend-legend"><span class="trend-swatch"></span>Tendencia</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
+    <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
   </div>
 </section>
 
-<section>
+<section id="seccionEde">
   <div class="section-title"><span class="idx">02</span><h2>Indicadores</h2></div>
   <div class="card">
     <h3>Por EDE</h3>
@@ -209,7 +331,7 @@
   </div>
 </section>
 
-<section>
+<section id="seccionCategoria">
   <div class="section-title"><span class="idx">03</span><h2>Cumplimiento por Categoría</h2></div>
   <div class="card"><h3>% Cumplimiento por Categoría por EDE</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
   <div class="card" style="margin-top:16px;">
@@ -221,14 +343,16 @@
 
 </section>
 
-<section>
+<section id="seccionComplementarios">
   <div class="section-title"><span class="idx">04</span><h2>Indicadores complementarios</h2></div>
   <div class="card"><h3>Faltas Graves por EDE</h3><div class="chart-wrap"><canvas id="chFaltas"></canvas></div></div>
 </section>
 
-<footer>
+<footer id="seccionReportes">
   <div id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</div>
 </footer>
+</div>
+</div>
 
 <script>
 const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
@@ -448,6 +572,12 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   const mesesLabels = meses.map(mesLabelFromKey);
   const puntajeGeneral = avg(resumenNorm.map(r=>r.Puntaje).filter(v=>!isNaN(v)));
 
+  const nPorEdeMap = {};
+  edes.forEach(e=>{ nPorEdeMap[e] = resumenNorm.filter(r=>r.EDE===e).length; });
+
+  const tiposLlamada = uniq(resumenNorm.map(r=>r.TipoLlamada));
+  const conteoTipoLlamada = tiposLlamada.map(t=> resumenNorm.filter(r=>r.TipoLlamada===t).length);
+
   const faltasPorEdeMap = {};
   edes.forEach(e=>{
     faltasPorEdeMap[e] = resumenNorm.filter(r=>r.EDE===e && r.FaltaGrave!==null && r.FaltaGrave!==undefined && r.FaltaGrave!=="").length;
@@ -461,6 +591,7 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
     faltasPorEde: faltasPorEdeMap,
     puntajePorEde, puntajePorAsesor, qPorAsesor, mesesLabels, puntajeGeneral,
     semanasLabelsCortos, semanasLabelsCompletos, numerosSemana, pecPorSemana, puntajePorSemana,
+    nPorEde: nPorEdeMap, tiposLlamada, conteoTipoLlamada,
     nResumen: resumenNorm.length, nDetalle: detalleNorm.length
   };
 }
@@ -476,23 +607,32 @@ function renderAll(DATA){
     ? `Consolidado cargado · ${DATA.edes.length} EDE(s) · ${DATA.nResumen} evaluaciones`
     : `Sin resultados para los filtros seleccionados.`;
 
+  const META_PCT = 0.90, META_PUNTAJE = 9.0;
   const kpiRow = document.getElementById('kpiRow');
-  const kpiDefs = [["PEC","teal"],["PECUF","violet"],["PECNEG","amber"],["PECUM","rose"]];
-  kpiRow.innerHTML = kpiDefs.map(([k,c])=>`
-    <div class="kpi">
-      <div class="label">${k} promedio</div>
-      <div class="value ${c}">${Math.round(DATA.overall[k]*100)}%</div>
-    </div>`).join("")
-    + `<div class="kpi">
-      <div class="label">Puntaje Final promedio</div>
-      <div class="value teal">${DATA.puntajeGeneral.toFixed(1)}<span style="font-size:16px;color:var(--text-dim);">/10</span></div>
+  const kpiDefs = [["PEC","teal","PEC promedio"],["PECUF","violet","PECUF promedio"],["PECNEG","amber","PECNEG promedio"],["PECUM","rose","PECUM promedio"]];
+  kpiRow.innerHTML = kpiDefs.map(([k,c,label])=>{
+    const v = DATA.overall[k];
+    const cumple = v >= META_PCT;
+    return `<div class="kpi">
+      <div class="kpi-head"><div class="label">${label}</div><span class="badge ${cumple?'ok':'bad'}">${cumple?'Cumple ✓':'No cumple'}</span></div>
+      <div class="value ${c}">${Math.round(v*100)}%</div>
+      <div class="meta">Meta: ${Math.round(META_PCT*100)}%</div>
     </div>`;
+  }).join("")
+    + (()=>{ const cumple = DATA.puntajeGeneral >= META_PUNTAJE; return `<div class="kpi">
+      <div class="kpi-head"><div class="label">Puntaje Final promedio</div><span class="badge ${cumple?'ok':'bad'}">${cumple?'Cumple ✓':'No cumple'}</span></div>
+      <div class="value teal">${DATA.puntajeGeneral.toFixed(1)}<span style="font-size:16px;color:var(--text-dim);">/10</span></div>
+      <div class="meta">Meta: ${META_PUNTAJE.toFixed(1)}/10</div>
+    </div>`; })();
 
-  const strip = document.getElementById('edeStrip');
-  strip.innerHTML = DATA.edes.map(e=>{
+  const edeCards = document.getElementById('edeCards');
+  edeCards.innerHTML = DATA.edes.map(e=>{
     const v = DATA.byEde[e].PEC;
-    const cls = v>=0.9 ? "" : v>=0.75 ? "warn" : "bad";
-    return `<div class="ede-chip"><span class="dot ${cls}"></span><span class="name">${e}</span><span class="val mono">${Math.round(v*100)}%</span></div>`;
+    const q = DATA.nPorEde ? DATA.nPorEde[e] : null;
+    const sinDatos = v===null || v===undefined || isNaN(v);
+    const cls = sinDatos ? "bad" : v>=0.9 ? "" : v>=0.75 ? "warn" : "bad";
+    const pctHtml = sinDatos ? `<div class="ede-pct na">Sin datos</div>` : `<div class="ede-pct" style="color:${v>=0.9?'#2B3168':v>=0.75?'#0B5F7D':'#D64550'}">${Math.round(v*100)}%</div>`;
+    return `<div class="ede-card"><div class="top"><span class="dot ${cls}"></span><span class="ede-name">${e}</span></div>${pctHtml}<div class="ede-q">${q!==undefined && q!==null ? q+' eval.' : ''}</div></div>`;
   }).join("");
 
   function grouped4(ctxId, labels, byGroupObj, groupKeys){
@@ -570,6 +710,116 @@ function renderAll(DATA){
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
+
+  renderRankBarsEde(DATA);
+  renderCatBars(DATA);
+  renderDonutTipoLlamada(DATA);
+  renderTop5Oportunidades(DATA);
+  renderFaltasResumen(DATA);
+  renderRankingAsesores(DATA);
+}
+
+// ------- 01: Desempeño por EDE (lista con barras horizontales, ordenada) -------
+function renderRankBarsEde(DATA){
+  const cont = document.getElementById('rankBarsEde');
+  const pares = DATA.edes.map(e=>({ nombre:e, v: DATA.puntajePorEde[DATA.edes.indexOf(e)] }));
+  pares.sort((a,b)=> (b.v??-1) - (a.v??-1));
+  cont.innerHTML = pares.map((p,i)=>{
+    const sinDatos = p.v===undefined || p.v===null || isNaN(p.v);
+    const pct = sinDatos ? 0 : Math.max(2, (p.v/10)*100);
+    const color = sinDatos ? COLORS.gray : p.v>=9 ? COLORS.violet : p.v>=7.5 ? COLORS.teal : COLORS.rose;
+    return `<div class="row">
+      <span class="pos">${i+1}</span>
+      <span class="lbl">${p.nombre}</span>
+      <span class="track"><span class="fill" style="width:${pct}%; background:${color};"></span></span>
+      <span class="val ${sinDatos?'na':''}">${sinDatos?'Sin datos':p.v.toFixed(1)+'/10'}</span>
+    </div>`;
+  }).join("");
+}
+
+// ------- 03 (resumen): Cumplimiento por categoría, barras horizontales con semáforo -------
+function renderCatBars(DATA){
+  const cont = document.getElementById('catBars');
+  const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }));
+  pares.sort((a,b)=> b.v - a.v);
+  cont.innerHTML = pares.map(p=>{
+    const dotColor = p.v>=0.9 ? '#1E8A3C' : p.v>=0.8 ? '#E3A100' : '#D64550';
+    return `<div class="row" style="display:grid; grid-template-columns:1fr 2fr 44px 14px; align-items:center; gap:8px; margin-bottom:9px;">
+      <span class="lbl" style="white-space:normal;">${p.cat}</span>
+      <span class="track"><span class="fill" style="width:${Math.max(2,p.v*100)}%; background:${dotColor};"></span></span>
+      <span class="val">${Math.round(p.v*100)}%</span>
+      <span style="width:8px; height:8px; border-radius:50%; background:${dotColor};"></span>
+    </div>`;
+  }).join("");
+}
+
+// ------- dona: Evaluaciones por Tipo de Llamada -------
+let donutChart = null;
+function renderDonutTipoLlamada(DATA){
+  if(donutChart){ donutChart.destroy(); donutChart = null; }
+  const total = DATA.conteoTipoLlamada.reduce((a,b)=>a+b,0);
+  document.getElementById('donutTotal').textContent = total.toLocaleString('es-PE');
+  const palette = [COLORS.violet, COLORS.teal, "#3FB88A", COLORS.gray, COLORS.amber, COLORS.rose];
+  donutChart = new Chart(document.getElementById('chTipoLlamada'), {
+    type:'doughnut',
+    data:{ labels: DATA.tiposLlamada, datasets:[{ data: DATA.conteoTipoLlamada, backgroundColor: DATA.tiposLlamada.map((_,i)=>palette[i%palette.length]), borderWidth:2, borderColor:'#fff' }]},
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'68%', plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:(ctx)=>{ const pct = total>0 ? Math.round(ctx.parsed/total*100) : 0; return `${ctx.label}: ${ctx.parsed} (${pct}%)`; } } } } }
+  });
+  const legend = document.getElementById('donutLegend');
+  legend.innerHTML = DATA.tiposLlamada.map((t,i)=>{
+    const n = DATA.conteoTipoLlamada[i];
+    const pct = total>0 ? Math.round(n/total*100) : 0;
+    return `<div class="item"><span class="sw" style="background:${palette[i%palette.length]}"></span><div><div class="name">${t}</div><div class="sub">${n.toLocaleString('es-PE')} (${pct}%)</div></div></div>`;
+  }).join("");
+}
+
+// ------- Top 5 Oportunidades de Mejora (categorías con menor % de cumplimiento) -------
+function renderTop5Oportunidades(DATA){
+  const cont = document.getElementById('top5Wrap');
+  const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }))
+    .sort((a,b)=> a.v - b.v)
+    .slice(0,5);
+  let h = '<table class="top5-table"><tr><th>#</th><th>Categoría</th><th>Cumplimiento</th><th>vs. Meta (90%)</th></tr>';
+  pares.forEach((p,i)=>{
+    const diff = Math.round((p.v - 0.90)*100);
+    const cls = diff < 0 ? 'down' : diff > 0 ? 'up' : 'flat';
+    const arrow = diff < 0 ? '↓' : diff > 0 ? '↑' : '—';
+    h += `<tr><td class="num">${i+1}</td><td>${p.cat}</td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
+  });
+  h += '</table>';
+  cont.innerHTML = h;
+}
+
+// ------- Faltas Graves: total + EDE y categoría con más incidencias -------
+function renderFaltasResumen(DATA){
+  const cont = document.getElementById('faltasResumen');
+  const total = Object.values(DATA.faltasPorEde).reduce((a,b)=>a+b,0);
+  const edeTop = Object.keys(DATA.faltasPorEde).sort((a,b)=>DATA.faltasPorEde[b]-DATA.faltasPorEde[a])[0];
+  const catPares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] })).sort((a,b)=>a.v-b.v);
+  const catTop = catPares[0];
+  let h = `<div class="faltas-total"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><span class="n">${total}</span></div>`;
+  if(edeTop && DATA.faltasPorEde[edeTop] > 0){
+    h += `<div class="faltas-row">EDE con más faltas</div><div class="faltas-pill" style="margin-bottom:12px;">${edeTop} · ${DATA.faltasPorEde[edeTop]}</div>`;
+  }
+  if(catTop){
+    h += `<div class="faltas-row">Categoría con más oportunidad</div><div class="faltas-pill cat">${catTop.cat} · ${Math.round(catTop.v*100)}%</div>`;
+  }
+  cont.innerHTML = h;
+}
+
+// ------- Ranking de Asesores (top 5 por puntaje final promedio) -------
+function renderRankingAsesores(DATA){
+  const cont = document.getElementById('rankingAsesores');
+  const pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i] }))
+    .filter(p=>!isNaN(p.puntaje))
+    .sort((a,b)=> b.puntaje - a.puntaje)
+    .slice(0,5);
+  const medals = ['🏆','🏆','🏆','🎖️','🎖️'];
+  cont.innerHTML = pares.map((p,i)=> `<li data-agente="${p.nombre.replace(/"/g,'&quot;')}"><span class="medal">${medals[i]||(i+1)}</span><span class="name">${p.nombre}</span><span class="score">${p.puntaje.toFixed(1)}/10</span></li>`).join("")
+    || '<li class="note" style="cursor:default;">Sin datos suficientes.</li>';
+  cont.querySelectorAll('li[data-agente]').forEach(li=>{
+    li.addEventListener('click', ()=> abrirModalAgente(li.dataset.agente));
+  });
 }
 
 // ------- tabla "% Cumplimiento por Categoría por Agente" con colores, orden y búsqueda -------
