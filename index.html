@@ -418,6 +418,7 @@ const metaLinePlugin = {
 const valueLabelPlugin = {
   id: 'valueLabels',
   afterDatasetsDraw(chart, args, opts){
+    if(!opts) return;
     const idx = opts && opts.datasetIndex!==undefined ? opts.datasetIndex : 0;
     const meta = chart.getDatasetMeta(idx);
     const dataset = chart.data.datasets[idx];
