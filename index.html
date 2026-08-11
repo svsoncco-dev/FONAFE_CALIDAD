@@ -689,13 +689,13 @@ function renderAll(DATA){
     const v = DATA.overall[k];
     const cumple = v >= META_PCT;
     return `<div class="kpi">
-      <div class="kpi-head"><div class="label">${label}</div><span class="badge ${cumple?'ok':'bad'}">${cumple?'Cumple ✓':'No cumple'}</span></div>
+      <div class="kpi-head"><div class="label">${label}</div>${cumple?'<span class="badge ok">Cumple ✓</span>':''}</div>
       <div class="value ${c}">${Math.round(v*100)}%</div>
       <div class="meta">Meta: ${Math.round(META_PCT*100)}%</div>
     </div>`;
   }).join("")
     + (()=>{ const cumple = DATA.puntajeGeneral >= META_PUNTAJE; return `<div class="kpi">
-      <div class="kpi-head"><div class="label">Puntaje Final promedio</div><span class="badge ${cumple?'ok':'bad'}">${cumple?'Cumple ✓':'No cumple'}</span></div>
+      <div class="kpi-head"><div class="label">Puntaje Final promedio</div>${cumple?'<span class="badge ok">Cumple ✓</span>':''}</div>
       <div class="value teal">${DATA.puntajeGeneral.toFixed(1)}<span style="font-size:16px;color:var(--text-dim);">/10</span></div>
       <div class="meta">Meta: ${META_PUNTAJE.toFixed(1)}/10</div>
     </div>`; })();
