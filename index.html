@@ -371,6 +371,33 @@ const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D6455
 const META_PCT = 0.95, META_PUNTAJE = 9.5;
 Chart.defaults.color = COLORS.text;
 Chart.defaults.font.size = 11;
+
+// plugin ligero: dibuja un valor pequeño encima de cada punto de los datasets
+// que tengan showValueLabels:true (se usa en el gráfico de evolución del Puntaje Final)
+const valueLabelPlugin = {
+  id: 'valueLabelPlugin',
+  afterDatasetsDraw(chart){
+    const { ctx } = chart;
+    chart.data.datasets.forEach((dataset, i)=>{
+      if(!dataset.showValueLabels) return;
+      const meta = chart.getDatasetMeta(i);
+      if(meta.hidden) return;
+      meta.data.forEach((point, index)=>{
+        const value = dataset.data[index];
+        if(value===null || value===undefined || isNaN(value)) return;
+        ctx.save();
+        ctx.font = '700 10px -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+        ctx.fillStyle = dataset.labelColor || COLORS.violet;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        const text = dataset.labelFormat ? dataset.labelFormat(value) : value;
+        ctx.fillText(text, point.x, point.y - 7);
+        ctx.restore();
+      });
+    });
+  }
+};
+Chart.register(valueLabelPlugin);
 Chart.defaults.borderColor = COLORS.grid;
 
 function pctAxis(){ return { min:0, max:1, ticks:{ callback:v=>Math.round(v*100)+"%" }, grid:{color:COLORS.grid} }; }
@@ -446,6 +473,12 @@ function mesLabelFromKey(k){
   return MES_LABEL[Number(m)-1] + " " + y;
 }
 function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
+function fmtFechaCorta(fechaStr){
+  if(!fechaStr) return '—';
+  const d = new Date(fechaStr + 'T00:00:00');
+  if(isNaN(d)) return fechaStr;
+  return d.toLocaleDateString('es-PE', {day:'2-digit', month:'short'});
+}
 
 function groupAvg(items, groupField, valueFields){
   const buckets = {};
@@ -526,8 +559,10 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   valueFields.forEach(f=> overall[f] = avg(resumenNorm.map(r=>r[f]).filter(v=>v!==null)));
   const byEde = groupAvg(resumenNorm, "EDE", valueFields);
   const byAsesor = groupAvg(resumenNorm, "Asesor", valueFields);
-  const byFecha = groupAvg(resumenNorm, "Fecha", ["PEC"]);
+  const byFecha = groupAvg(resumenNorm, "Fecha", ["PEC","Puntaje"]);
   const pecPorFecha = fechas.map(f=> (byFecha[f] ? byFecha[f].PEC : 0));
+  const puntajePorFecha = fechas.map(f=> (byFecha[f] ? byFecha[f].Puntaje : 0));
+  const fechasLabels = fechas.map(fmtFechaCorta);
 
   // Tendencia semanal (usa la misma numeración "Semana N" que el filtro de arriba,
   // contada desde el inicio de operaciones el 20 de julio de 2026).
@@ -597,7 +632,7 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   });
 
   return {
-    edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha,
+    edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha, fechasLabels, puntajePorFecha,
     categorias, cumplimientoCategoria, cumplimientoCategoriaEde,
     agentesCat, cumplimientoCategoriaAgente,
     totalAgentesConDetalle: agentesConDetalle.length,
@@ -716,11 +751,18 @@ function renderAll(DATA){
   renderTablaPuntajeAgente(DATA);
 
   charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
-    data:{ labels: DATA.semanasLabelsCortos, datasets:[
-      { type:'bar', label:'Puntaje Final', data: DATA.puntajePorSemana, backgroundColor:COLORS.amber, borderRadius:4, maxBarThickness:40, order:2 },
-      { type:'line', label:'Tendencia', data: trendLine(DATA.puntajePorSemana), borderColor:'#8A93B8', borderWidth:1.75, borderDash:[5,4], borderCapStyle:'round', pointRadius:0, tension:0, fill:false, order:1 }
+    type:'line',
+    data:{ labels: DATA.fechasLabels, datasets:[
+      { label:'Puntaje Final', data: DATA.puntajePorFecha,
+        borderColor: COLORS.amber, backgroundColor:'rgba(11,95,125,0.08)',
+        borderWidth:2, tension:0.25, fill:true,
+        pointRadius:4, pointHoverRadius:6, pointBackgroundColor:COLORS.amber, pointBorderColor:'#fff', pointBorderWidth:1.5,
+        showValueLabels:true, labelColor:COLORS.violet, labelFormat:(v)=>Math.round(v*10)+'%'
+      }
     ]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
+    options:{ responsive:true, maintainAspectRatio:false, layout:{padding:{top:18}},
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:(item)=> 'Puntaje Final: ' + item.parsed.y.toFixed(1) + '/10 (' + Math.round(item.parsed.y*10) + '%)'}} },
+      scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
 
   renderRankBarsEde(DATA);
