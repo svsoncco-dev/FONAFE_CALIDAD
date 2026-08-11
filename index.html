@@ -237,10 +237,10 @@
 
 <header>
   <div class="header-left">
-    <img class="brand-logo" src="logo.png" alt="Contact Americas">
+    <img class="brand-logo" src="logo-fonafe.png" alt="Campaña FONAFE">
     <div>
       <h1>Panel de Aseguramiento de Calidad</h1>
-      <p class="sub" id="subLine">1 EDE(s)</p>
+      <p class="sub" id="subLine">CAMPAÑA FONAFE - 1 EDES</p>
     </div>
   </div>
   <div class="header-right">
@@ -682,7 +682,7 @@ function renderAll(DATA){
   destroyCharts();
 
   document.getElementById('subLine').textContent = DATA.nResumen>0
-    ? `${DATA.edes.length} EDE(s)`
+    ? `CAMPAÑA FONAFE - ${DATA.edes.length} EDES`
     : `Sin resultados para los filtros seleccionados.`;
 
   const kpiRow = document.getElementById('kpiRow');
