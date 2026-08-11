@@ -36,18 +36,20 @@
     overflow:hidden; transition:width .2s ease; z-index:20;
   }
   .sidebar:hover{ width:222px; }
-  .sidebar-logo{ display:flex; align-items:center; gap:9px; padding:0 8px 22px; }
-  .sidebar-logo img{ height:26px; width:auto; filter:brightness(0) invert(1); opacity:.95; flex-shrink:0; }
+  .sidebar-logo{ display:flex; align-items:center; justify-content:center; gap:0; padding:0 8px 22px; transition:justify-content .2s ease, gap .2s ease; }
+  .sidebar:hover .sidebar-logo{ justify-content:flex-start; gap:9px; }
+  .sidebar-logo img{ height:26px; width:auto; filter:brightness(0) invert(1); opacity:0; max-width:0; overflow:hidden; flex-shrink:0; transition:opacity .15s ease, max-width .2s ease; }
+  .sidebar:hover .sidebar-logo img{ opacity:.95; max-width:120px; }
   .sidebar-nav{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px; }
-  .sidebar-nav a{ display:flex; align-items:center; justify-content:center; gap:11px; padding:10px 0; border-radius:9px; color:#AAB0D6; text-decoration:none; font-size:13.5px; font-weight:600; white-space:nowrap; transition:justify-content .2s ease, padding .2s ease; }
-  .sidebar:hover .sidebar-nav a{ justify-content:flex-start; padding:10px 12px; }
+  .sidebar-nav a{ display:flex; align-items:center; justify-content:center; gap:0; padding:10px 0; border-radius:9px; color:#AAB0D6; text-decoration:none; font-size:13.5px; font-weight:600; white-space:nowrap; transition:justify-content .2s ease, padding .2s ease, gap .2s ease; }
+  .sidebar:hover .sidebar-nav a{ justify-content:flex-start; padding:10px 12px; gap:11px; }
   .sidebar-nav a svg{ flex-shrink:0; opacity:.85; }
   .sidebar-nav a:hover{ background:rgba(255,255,255,0.06); color:#fff; }
   .sidebar-nav a.active{ background:var(--teal); color:#fff; }
   .sidebar-nav a.active svg{ opacity:1; }
   .sidebar-bottom{ margin-top:auto; }
-  .sidebar-save{ display:flex; align-items:center; justify-content:center; gap:9px; padding:10px 0; border-radius:9px; color:#8890BA; font-size:12.5px; font-weight:600; white-space:nowrap; transition:justify-content .2s ease, padding .2s ease; }
-  .sidebar:hover .sidebar-save{ justify-content:flex-start; padding:10px 12px; }
+  .sidebar-save{ display:flex; align-items:center; justify-content:center; gap:0; padding:10px 0; border-radius:9px; color:#8890BA; font-size:12.5px; font-weight:600; white-space:nowrap; transition:justify-content .2s ease, padding .2s ease, gap .2s ease; }
+  .sidebar:hover .sidebar-save{ justify-content:flex-start; padding:10px 12px; gap:9px; }
   .sidebar .label{ opacity:0; max-width:0; overflow:hidden; transition:opacity .15s ease .02s, max-width .2s ease; display:inline-block; }
   .sidebar:hover .label{ opacity:1; max-width:160px; }
 
