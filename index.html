@@ -839,10 +839,10 @@ function renderCatBars(DATA){
   pares.sort((a,b)=> b.v - a.v);
   cont.innerHTML = pares.map(p=>{
     const dotColor = p.v>=META_PCT ? '#1E8A3C' : p.v>=0.85 ? '#E3A100' : '#D64550';
-    return `<div class="row" style="display:grid; grid-template-columns:1fr 2fr 44px 14px; align-items:center; gap:8px; margin-bottom:9px;">
-      <span class="lbl" style="white-space:normal;">${p.cat}</span>
+    return `<div class="row" style="display:grid; grid-template-columns:1.9fr .7fr 42px 14px; align-items:center; gap:10px; margin-bottom:12px;">
+      <span class="lbl" style="white-space:normal; line-height:1.25; font-size:13px; font-weight:600; color:#2B3168;">${p.cat}</span>
       <span class="track"><span class="fill" style="width:${Math.max(2,p.v*100)}%; background:${dotColor};"></span></span>
-      <span class="val">${Math.round(p.v*100)}%</span>
+      <span class="val" style="font-size:13px; font-weight:700; color:#2B3168;">${Math.round(p.v*100)}%</span>
       <span style="width:8px; height:8px; border-radius:50%; background:${dotColor};"></span>
     </div>`;
   }).join("");
