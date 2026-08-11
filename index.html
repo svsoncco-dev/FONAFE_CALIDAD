@@ -30,17 +30,26 @@
   .app-shell{ display:flex; min-height:100vh; }
 
   /* ---- sidebar ---- */
-  .sidebar{ width:222px; flex-shrink:0; background:#171B3C; padding:22px 14px 20px; display:flex; flex-direction:column; position:sticky; top:0; height:100vh; }
+  .sidebar{
+    width:56px; flex-shrink:0; background:#171B3C; padding:22px 14px 20px;
+    display:flex; flex-direction:column; position:sticky; top:0; height:100vh;
+    overflow:hidden; transition:width .2s ease; z-index:20;
+  }
+  .sidebar:hover{ width:222px; }
   .sidebar-logo{ display:flex; align-items:center; gap:9px; padding:0 8px 22px; }
-  .sidebar-logo img{ height:26px; width:auto; filter:brightness(0) invert(1); opacity:.95; }
+  .sidebar-logo img{ height:26px; width:auto; filter:brightness(0) invert(1); opacity:.95; flex-shrink:0; }
   .sidebar-nav{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px; }
-  .sidebar-nav a{ display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:9px; color:#AAB0D6; text-decoration:none; font-size:13.5px; font-weight:600; }
+  .sidebar-nav a{ display:flex; align-items:center; justify-content:center; gap:11px; padding:10px 0; border-radius:9px; color:#AAB0D6; text-decoration:none; font-size:13.5px; font-weight:600; white-space:nowrap; transition:justify-content .2s ease, padding .2s ease; }
+  .sidebar:hover .sidebar-nav a{ justify-content:flex-start; padding:10px 12px; }
   .sidebar-nav a svg{ flex-shrink:0; opacity:.85; }
   .sidebar-nav a:hover{ background:rgba(255,255,255,0.06); color:#fff; }
   .sidebar-nav a.active{ background:var(--teal); color:#fff; }
   .sidebar-nav a.active svg{ opacity:1; }
   .sidebar-bottom{ margin-top:auto; }
-  .sidebar-save{ display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:9px; color:#8890BA; font-size:12.5px; font-weight:600; }
+  .sidebar-save{ display:flex; align-items:center; justify-content:center; gap:9px; padding:10px 0; border-radius:9px; color:#8890BA; font-size:12.5px; font-weight:600; white-space:nowrap; transition:justify-content .2s ease, padding .2s ease; }
+  .sidebar:hover .sidebar-save{ justify-content:flex-start; padding:10px 12px; }
+  .sidebar .label{ opacity:0; max-width:0; overflow:hidden; transition:opacity .15s ease .02s, max-width .2s ease; display:inline-block; }
+  .sidebar:hover .label{ opacity:1; max-width:160px; }
 
   .main-col{ flex:1; min-width:0; padding: 24px 32px 60px; }
 
@@ -208,17 +217,17 @@
 
 <div class="app-shell">
 <aside class="sidebar">
-  <div class="sidebar-logo"><img src="logo.png" alt="Contact Americas"></div>
+  <div class="sidebar-logo"><img src="logo.png" alt="Contact Americas"><span class="label">Contact Americas</span></div>
   <ul class="sidebar-nav">
-    <li><a href="#top" class="active"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Dashboard</a></li>
-    <li><a href="#seccionEde"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>EDEs</a></li>
-    <li><a href="#seccionAsesores"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Asesores</a></li>
-    <li><a href="#seccionCategoria"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Hallazgos</a></li>
-    <li><a href="#seccionComplementarios"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>Evaluaciones</a></li>
-    <li><a href="#seccionReportes"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Reportes</a></li>
+    <li><a href="#top" class="active"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="label">Dashboard</span></a></li>
+    <li><a href="#seccionEde"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span class="label">EDEs</span></a></li>
+    <li><a href="#seccionAsesores"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="label">Asesores</span></a></li>
+    <li><a href="#seccionCategoria"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span class="label">Hallazgos</span></a></li>
+    <li><a href="#seccionComplementarios"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span class="label">Evaluaciones</span></a></li>
+    <li><a href="#seccionReportes"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><span class="label">Reportes</span></a></li>
   </ul>
   <div class="sidebar-bottom">
-    <div class="sidebar-save"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path></svg>Filtros guardados</div>
+    <div class="sidebar-save"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path></svg><span class="label">Filtros guardados</span></div>
   </div>
 </aside>
 <div class="main-col" id="top">
