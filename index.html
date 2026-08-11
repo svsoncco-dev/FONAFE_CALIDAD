@@ -385,7 +385,7 @@ Chart.defaults.font.size = 11;
 Chart.defaults.borderColor = COLORS.grid;
 
 function pctAxis(){ return { min:0, max:1, ticks:{ callback:v=>Math.round(v*100)+"%" }, grid:{color:COLORS.grid} }; }
-function catAxis(){ return { grid:{display:false} }; }
+function catAxis(){ return { grid:{display:false}, offset:true }; }
 
 // ------- plugin: línea horizontal punteada de meta, con etiqueta -------
 const metaLinePlugin = {
@@ -751,7 +751,7 @@ function renderAll(DATA){
       { type:'bar', label:'PEC', data: DATA.pecPorSemana, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:40, order:2 },
       { type:'line', label:'Tendencia', data: trendLine(DATA.pecPorSemana), borderColor:'#8A93B8', borderWidth:1.75, borderDash:[5,4], borderCapStyle:'round', pointRadius:0, tension:0, fill:false, order:1 }
     ]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:pctAxis(), x:catAxis() } }
+    options:{ responsive:true, maintainAspectRatio:false, layout:{padding:{left:10,right:10}}, plugins:{legend:{display:false}, tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}}}, scales:{ y:pctAxis(), x:catAxis() } }
   }));
 
   charts.push(new Chart(document.getElementById('chCatGeneral'), {
@@ -788,18 +788,18 @@ function renderAll(DATA){
       data:{ labels: DATA.semanasLabelsCortos, datasets:[
         { label:'Puntaje Final', data: DATA.puntajePorSemana, borderColor:COLORS.violet, backgroundColor:COLORS.violet,
           borderWidth:2.5, tension:0.35, fill:false,
-          pointRadius:5, pointHoverRadius:6, pointBackgroundColor:COLORS.violet, pointBorderColor:'#fff', pointBorderWidth:2 }
+          pointRadius:4, pointHoverRadius:6, pointBackgroundColor:COLORS.violet, pointBorderColor:'#fff', pointBorderWidth:2 }
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
-        layout:{ padding:{ top:18 } },
+        layout:{ padding:{ top:20, left:14, right:14 } },
         plugins:{
           legend:{display:false},
           tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}},
           metaLine:{ value: META_PUNTAJE, label:'Meta: '+META_PUNTAJE.toFixed(1), color:'#B9BFD4' },
           valueLabels:{ color:COLORS.violet, format:(v)=>v.toFixed(1) }
         },
-        scales:{ y:{min:yMin, max:10, ticks:{stepSize:0.5}, grid:{color:COLORS.grid}}, x:catAxis() }
+        scales:{ y:{min:yMin, max:10, ticks:{stepSize:0.5}, grid:{color:COLORS.grid}}, x:{...catAxis(), ticks:{padding:6}} }
       }
     }));
   }
