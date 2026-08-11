@@ -309,7 +309,19 @@
     </div>
     <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
   </div>
+
+  <div class="card" id="detalleAsesorCard" style="margin-top:16px; display:none;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:4px;">
+      <h3 id="detalleAsesorNombre" style="margin:0; font-size:15px; color:#2B3168;">—</h3>
+      <button id="detalleAsesorClose" type="button" style="border:none; background:var(--bg); color:var(--text-dim); width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:16px; line-height:1;">✕</button>
+    </div>
+    <p id="detalleAsesorResumen" class="note" style="margin:0 0 12px;"></p>
+    <div id="detalleAsesorTabla" style="overflow-x:auto;"></div>
+    <h4 id="detalleAsesorCatTitulo" style="margin:18px 0 8px; font-size:14px; color:#2B3168; display:none;">Categorías con oportunidad de mejora</h4>
+    <div id="detalleAsesorCategorias" style="overflow-x:auto;"></div>
+  </div>
 </section>
+
 
 <section id="seccionEde">
   <div class="section-title"><span class="idx">02</span><h2>Indicadores</h2></div>
@@ -1015,11 +1027,10 @@ function renderTablaPuntajeAgente(DATA){
 }
 
 function abrirModalAgente(nombre){
-  const overlay = document.getElementById('modalAgenteOverlay');
-  const box = document.getElementById('modalAgenteBox');
-  const titulo = document.getElementById('modalAgenteNombre');
-  const resumenEl = document.getElementById('modalAgenteResumen');
-  const tablaEl = document.getElementById('modalAgenteTabla');
+  const card = document.getElementById('detalleAsesorCard');
+  const titulo = document.getElementById('detalleAsesorNombre');
+  const resumenEl = document.getElementById('detalleAsesorResumen');
+  const tablaEl = document.getElementById('detalleAsesorTabla');
 
   const evals = RAW.resumenNorm
     .filter(r=> r.Asesor === nombre)
@@ -1072,14 +1083,15 @@ function abrirModalAgente(nombre){
     tablaEl.innerHTML = h;
   }
 
-  overlay.style.display = 'flex';
+  card.style.display = 'block';
+  card.scrollIntoView({ behavior:'smooth', block:'start' });
 
   renderCategoriasAgente(nombre);
 }
 
 function renderCategoriasAgente(nombre){
-  const tituloEl = document.getElementById('modalAgenteCatTitulo');
-  const contEl = document.getElementById('modalAgenteCategorias');
+  const tituloEl = document.getElementById('detalleAsesorCatTitulo');
+  const contEl = document.getElementById('detalleAsesorCategorias');
 
   const items = RAW.detalleNorm
     .filter(r=> r.Asesor === nombre)
@@ -1139,17 +1151,11 @@ function renderCategoriasAgente(nombre){
 }
 
 function cerrarModalAgente(){
-  document.getElementById('modalAgenteOverlay').style.display = 'none';
+  document.getElementById('detalleAsesorCard').style.display = 'none';
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  const overlay = document.getElementById('modalAgenteOverlay');
-  const box = document.getElementById('modalAgenteBox');
-  const closeBtn = document.getElementById('modalAgenteClose');
-  if(closeBtn) closeBtn.addEventListener('click', cerrarModalAgente);
-  if(overlay) overlay.addEventListener('click', (e)=>{ if(e.target === overlay) cerrarModalAgente(); });
-  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') cerrarModalAgente(); });
-});
+document.getElementById('detalleAsesorClose').addEventListener('click', cerrarModalAgente);
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') cerrarModalAgente(); });
 
 // ------- filtros por EDE y Agente -------
 let RAW = { resumenNorm: SAMPLE_RESUMEN_NORM, detalleNorm: SAMPLE_DETALLE_NORM };
@@ -1448,17 +1454,6 @@ populateFilters();
 applyFiltersAndRender();
 cargarDesdeGitHub();
 </script>
-<div id="modalAgenteOverlay" style="display:none; position:fixed; inset:0; background:rgba(20,20,30,0.55); z-index:1000; align-items:center; justify-content:center; padding:20px;">
-  <div id="modalAgenteBox" style="background:var(--panel); border-radius:14px; max-width:720px; width:100%; max-height:85vh; overflow-y:auto; box-shadow:0 8px 30px rgba(0,0,0,0.25); padding:20px;">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px;">
-      <h3 id="modalAgenteNombre" style="margin:0; font-size:16px; color:#2B3168;"></h3>
-      <button id="modalAgenteClose" type="button" style="border:none; background:var(--panel-border); color:var(--text-dim); width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:16px; line-height:1;">✕</button>
-    </div>
-    <p id="modalAgenteResumen" class="note" style="margin:0 0 12px;"></p>
-    <div id="modalAgenteTabla" style="overflow-x:auto;"></div>
-    <h4 id="modalAgenteCatTitulo" style="margin:18px 0 8px; font-size:14px; color:#2B3168; display:none;">Categorías con oportunidad de mejora</h4>
-    <div id="modalAgenteCategorias" style="overflow-x:auto;"></div>
-  </div>
-</div>
 </body>
 </html>
+
