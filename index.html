@@ -734,12 +734,12 @@ function renderAll(DATA){
 // ------- 01: Desempeño por EDE (lista con barras horizontales, ordenada) -------
 function renderRankBarsEde(DATA){
   const cont = document.getElementById('rankBarsEde');
-  const pares = DATA.edes.map(e=>({ nombre:e, v: DATA.puntajePorEde[DATA.edes.indexOf(e)] }));
+  const pares = DATA.edes.map(e=>({ nombre:e, v: DATA.puntajePorEde[DATA.edes.indexOf(e)], n: DATA.nPorEde[e] }));
   pares.sort((a,b)=> (b.v??-1) - (a.v??-1));
   cont.innerHTML = pares.map((p,i)=>{
-    const sinDatos = p.v===undefined || p.v===null || isNaN(p.v);
+    const sinDatos = !p.n || p.n===0 || p.v===undefined || p.v===null || isNaN(p.v);
     const pct = sinDatos ? 0 : Math.max(2, (p.v/10)*100);
-    const color = sinDatos ? COLORS.gray : p.v>=META_PUNTAJE ? COLORS.violet : p.v>=8 ? COLORS.teal : COLORS.rose;
+    const color = sinDatos ? COLORS.gray : COLORS.violet;
     return `<div class="row">
       <span class="pos">${i+1}</span>
       <span class="lbl">${p.nombre}</span>
