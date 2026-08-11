@@ -368,6 +368,7 @@
 
 <script>
 const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
+const META_PCT = 0.95, META_PUNTAJE = 9.5;
 Chart.defaults.color = COLORS.text;
 Chart.defaults.font.size = 11;
 Chart.defaults.borderColor = COLORS.grid;
@@ -619,7 +620,6 @@ function renderAll(DATA){
     ? `Consolidado cargado · ${DATA.edes.length} EDE(s) · ${DATA.nResumen} evaluaciones`
     : `Sin resultados para los filtros seleccionados.`;
 
-  const META_PCT = 0.90, META_PUNTAJE = 9.0;
   const kpiRow = document.getElementById('kpiRow');
   const kpiDefs = [["PEC","teal","PEC promedio"],["PECUF","violet","PECUF promedio"],["PECNEG","amber","PECNEG promedio"],["PECUM","rose","PECUM promedio"]];
   kpiRow.innerHTML = kpiDefs.map(([k,c,label])=>{
@@ -642,8 +642,8 @@ function renderAll(DATA){
     const v = DATA.byEde[e].PEC;
     const q = DATA.nPorEde ? DATA.nPorEde[e] : null;
     const sinDatos = v===null || v===undefined || isNaN(v);
-    const cls = sinDatos ? "bad" : v>=0.9 ? "" : v>=0.75 ? "warn" : "bad";
-    const pctHtml = sinDatos ? `<div class="ede-pct na">Sin datos</div>` : `<div class="ede-pct" style="color:${v>=0.9?'#2B3168':v>=0.75?'#0B5F7D':'#D64550'}">${Math.round(v*100)}%</div>`;
+    const cls = sinDatos ? "bad" : v>=META_PCT ? "" : v>=0.75 ? "warn" : "bad";
+    const pctHtml = sinDatos ? `<div class="ede-pct na">Sin datos</div>` : `<div class="ede-pct" style="color:${v>=META_PCT?'#2B3168':v>=0.75?'#0B5F7D':'#D64550'}">${Math.round(v*100)}%</div>`;
     return `<div class="ede-card"><div class="top"><span class="dot ${cls}"></span><span class="ede-name">${e}</span></div>${pctHtml}<div class="ede-q">${q!==undefined && q!==null ? q+' eval.' : ''}</div></div>`;
   }).join("");
 
@@ -739,7 +739,7 @@ function renderRankBarsEde(DATA){
   cont.innerHTML = pares.map((p,i)=>{
     const sinDatos = p.v===undefined || p.v===null || isNaN(p.v);
     const pct = sinDatos ? 0 : Math.max(2, (p.v/10)*100);
-    const color = sinDatos ? COLORS.gray : p.v>=9 ? COLORS.violet : p.v>=7.5 ? COLORS.teal : COLORS.rose;
+    const color = sinDatos ? COLORS.gray : p.v>=META_PUNTAJE ? COLORS.violet : p.v>=8 ? COLORS.teal : COLORS.rose;
     return `<div class="row">
       <span class="pos">${i+1}</span>
       <span class="lbl">${p.nombre}</span>
@@ -755,7 +755,7 @@ function renderCatBars(DATA){
   const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }));
   pares.sort((a,b)=> b.v - a.v);
   cont.innerHTML = pares.map(p=>{
-    const dotColor = p.v>=0.9 ? '#1E8A3C' : p.v>=0.8 ? '#E3A100' : '#D64550';
+    const dotColor = p.v>=META_PCT ? '#1E8A3C' : p.v>=0.85 ? '#E3A100' : '#D64550';
     return `<div class="row" style="display:grid; grid-template-columns:1fr 2fr 44px 14px; align-items:center; gap:8px; margin-bottom:9px;">
       <span class="lbl" style="white-space:normal;">${p.cat}</span>
       <span class="track"><span class="fill" style="width:${Math.max(2,p.v*100)}%; background:${dotColor};"></span></span>
@@ -791,9 +791,9 @@ function renderTop5Oportunidades(DATA){
   const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }))
     .sort((a,b)=> a.v - b.v)
     .slice(0,5);
-  let h = '<table class="top5-table"><tr><th>#</th><th>Categoría</th><th>Cumplimiento</th><th>vs. Meta (90%)</th></tr>';
+  let h = '<table class="top5-table"><tr><th>#</th><th>Categoría</th><th>Cumplimiento</th><th>vs. Meta (95%)</th></tr>';
   pares.forEach((p,i)=>{
-    const diff = Math.round((p.v - 0.90)*100);
+    const diff = Math.round((p.v - META_PCT)*100);
     const cls = diff < 0 ? 'down' : diff > 0 ? 'up' : 'flat';
     const arrow = diff < 0 ? '↓' : diff > 0 ? '↑' : '—';
     h += `<tr><td class="num">${i+1}</td><td>${p.cat}</td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
