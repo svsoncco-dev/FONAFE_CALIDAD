@@ -150,13 +150,13 @@
   .rank-list.bottom .val{ color:var(--rose);}
   .rank-title{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); margin:0 0 8px;}
 
-  .filter-bar{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:16px 20px; margin-bottom:16px; box-shadow:0 1px 3px rgba(43,43,42,0.06); flex-wrap:wrap;}
-  .filter-left{ display:flex; align-items:flex-end; gap:22px; flex-wrap:wrap; }
-  .filter-label-group{ display:flex; align-items:center; gap:6px; padding-bottom:9px; color:#2B3168; font-weight:700; font-size:12px; letter-spacing:.05em;}
+  .filter-bar{ display:flex; align-items:center; justify-content:space-between; gap:16px; background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:10px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(43,43,42,0.06); flex-wrap:wrap;}
+  .filter-left{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .filter-label-group{ display:flex; align-items:center; gap:6px; color:#2B3168; font-weight:700; font-size:12px; letter-spacing:.05em;}
   .filter-label-group svg{ flex-shrink:0; }
-  .filter-caption{ font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-dim); font-weight:700; margin:0 0 4px;}
+  .filter-caption{ font-size:10px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-dim); font-weight:700; margin:0 0 3px;}
   .filter-group{ position:relative; }
-  .filter-btn{ background:var(--bg); border:1px solid var(--panel-border); color:var(--text); font-size:12px; font-weight:600; padding:8px 12px; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; min-width:110px; justify-content:space-between;}
+  .filter-btn{ background:var(--bg); border:1px solid var(--panel-border); color:var(--text); font-size:12px; font-weight:600; padding:6px 12px; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; min-width:110px; justify-content:space-between;}
   .filter-btn:hover{ border-color:var(--teal); }
   .filter-btn.active{ border-color:var(--teal); color:var(--teal); background:#E6F6FC; }
   .filter-panel{ display:none; position:absolute; top:calc(100% + 6px); left:0; min-width:220px; max-height:260px; overflow-y:auto; background:var(--panel); border:1px solid var(--panel-border); border-radius:10px; box-shadow:0 6px 18px rgba(43,43,42,0.12); padding:8px; z-index:20;}
@@ -166,7 +166,7 @@
   .filter-opt input{ accent-color:var(--teal); }
   .filter-empty{ font-size:12px; color:var(--text-dim); padding:6px; }
   .filter-hint{ font-size:10px; color:var(--text-dim); padding:6px 6px 2px; border-top:1px solid var(--panel-border); margin-top:4px;}
-  .filter-clear{ display:inline-flex; align-items:center; gap:6px; background:transparent; border:1px solid var(--panel-border); color:#2B3168; font-size:13px; font-weight:700; cursor:pointer; padding:8px 14px; border-radius:8px; white-space:nowrap;}
+  .filter-clear{ display:inline-flex; align-items:center; gap:6px; background:transparent; border:1px solid var(--panel-border); color:#2B3168; font-size:13px; font-weight:700; cursor:pointer; padding:7px 14px; border-radius:8px; white-space:nowrap;}
   .filter-clear:hover{ border-color:var(--teal); color:var(--teal); }
   .filter-note{ font-size:11px; color:var(--text-dim); flex-basis:100%; margin-top:2px;}
 
@@ -201,6 +201,7 @@
 
   .card{ background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:16px 16px 8px; box-shadow:0 1px 3px rgba(43,43,42,0.06); min-width:0;}
   .card h3{ margin:0 0 10px; font-size:13px; color:var(--text); font-weight:600;}
+  .card h3 .h3-sub{ font-weight:400; color:var(--text-dim); }
   .chart-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
   .chart-head h3{ margin:0 0 10px; }
   .trend-legend{ display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-dim); font-weight:600; margin-bottom:10px; white-space:nowrap;}
@@ -292,8 +293,8 @@
 <div class="kpis" id="kpiRow"></div>
 
 <div class="grid3" style="margin-bottom:16px;">
-  <div class="card"><h3>Desempeño por EDE (Puntaje final promedio)</h3><div id="rankBarsEde" class="rank-bars" style="padding:6px 4px 14px;"></div></div>
-  <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final (promedio general)</h3><span class="trend-legend"><span class="trend-swatch"></span>Meta: 9.5</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
+  <div class="card"><h3>Desempeño por EDE <span class="h3-sub">(Puntaje final promedio)</span></h3><div id="rankBarsEde" class="rank-bars" style="padding:6px 4px 14px;"></div></div>
+  <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final <span class="h3-sub">(promedio general)</span></h3><span class="trend-legend"><span class="trend-swatch"></span>Meta: 9.5</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
   <div class="card"><h3>Evaluaciones por Tipo de Llamada</h3>
     <div class="donut-wrap" style="padding:8px 0 14px;">
       <div class="donut-canvas-box"><canvas id="chTipoLlamada"></canvas><div class="donut-center"><div class="n" id="donutTotal">—</div><div class="lbl">Evaluaciones</div></div></div>
@@ -303,11 +304,11 @@
 </div>
 
 <div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr;">
-  <div class="card"><h3>Cumplimiento por Categoría (promedio general)</h3><div id="catBars" style="padding:6px 4px 14px;"></div></div>
+  <div class="card"><h3>Cumplimiento por Categoría <span class="h3-sub">(promedio general)</span></h3><div id="catBars" style="padding:6px 4px 14px;"></div></div>
   <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
   <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
-    <div class="card"><h3>Faltas Graves (Total)</h3><div id="faltasResumen"></div></div>
-    <div class="card"><h3>Ranking de Asesores <span style="font-weight:400; color:var(--text-dim); font-size:11px;">(Puntaje final promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
+    <div class="card"><h3>Faltas Graves <span class="h3-sub">(Total)</span></h3><div id="faltasResumen"></div></div>
+    <div class="card"><h3>Ranking de Asesores <span class="h3-sub" style="font-size:11px;">(Puntaje final promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
   </div>
 </div>
 
