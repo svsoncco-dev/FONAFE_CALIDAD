@@ -19,40 +19,23 @@
     --grid: rgba(43,49,104,0.08);
   }
   *{box-sizing:border-box;}
-  html,body{ height:100%; }
   body{
     margin:0; background:var(--bg); color:var(--text);
     font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 28px 32px 60px;
     overflow-x:hidden;
   }
   .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
-  .app-shell{ display:flex; min-height:100vh; }
-
-  /* ---- sidebar ---- */
-  .sidebar{ width:222px; flex-shrink:0; background:#171B3C; padding:22px 14px 20px; display:flex; flex-direction:column; position:sticky; top:0; height:100vh; }
-  .sidebar-logo{ display:flex; align-items:center; gap:9px; padding:0 8px 22px; }
-  .sidebar-logo img{ height:26px; width:auto; filter:brightness(0) invert(1); opacity:.95; }
-  .sidebar-nav{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px; }
-  .sidebar-nav a{ display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:9px; color:#AAB0D6; text-decoration:none; font-size:13.5px; font-weight:600; }
-  .sidebar-nav a svg{ flex-shrink:0; opacity:.85; }
-  .sidebar-nav a:hover{ background:rgba(255,255,255,0.06); color:#fff; }
-  .sidebar-nav a.active{ background:var(--teal); color:#fff; }
-  .sidebar-nav a.active svg{ opacity:1; }
-  .sidebar-bottom{ margin-top:auto; }
-  .sidebar-save{ display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:9px; color:#8890BA; font-size:12.5px; font-weight:600; }
-
-  .main-col{ flex:1; min-width:0; padding: 24px 32px 60px; }
-
-  header{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:16px; background:var(--panel); border:1px solid var(--panel-border); border-bottom:1px solid var(--panel-border); border-radius:12px; padding:22px 28px; box-shadow:0 1px 3px rgba(43,43,42,0.06);}
-  .header-left{ display:flex; align-items:center; gap:16px; }
-  .brand-logo{ height:48px; width:auto; opacity:.95; flex-shrink:0; }
-  h1{ margin:0; font-size:25px; font-weight:700; color:#2B3168;}
-  .sub{ color:var(--text-dim); font-size:13px; margin-top:5px;}
+  header{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:16px; background:var(--panel); border:1px solid var(--panel-border); border-bottom:1px solid var(--panel-border); border-radius:12px; padding:16px 24px; box-shadow:0 1px 3px rgba(43,43,42,0.06);}
+  .header-left{ display:flex; align-items:center; gap:14px; }
+  .brand-logo{ height:38px; width:auto; opacity:.95; flex-shrink:0; }
+  h1{ margin:0; font-size:20px; font-weight:700; color:#2B3168;}
+  .sub{ color:var(--text-dim); font-size:12px; margin-top:4px;}
   .header-right{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
   .header-date{ text-align:right; }
-  .header-date .label{ font-size:12px; color:var(--text-dim); }
-  .header-date .value{ font-size:13px; font-weight:700; color:#2B3168; margin-top:2px;}
+  .header-date .label{ font-size:11px; color:var(--text-dim); }
+  .header-date .value{ font-size:12px; font-weight:700; color:#2B3168; margin-top:2px;}
 
   .ede-strip{ display:flex; gap:8px; flex-wrap:wrap; }
   .ede-chip{ display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--panel-border); border-radius:999px; padding:6px 12px 6px 8px; box-shadow:0 1px 2px rgba(43,43,42,0.05);}
@@ -61,74 +44,6 @@
   .dot.bad{ background:var(--rose);}
   .ede-chip .name{ font-size:12px; font-weight:700;}
   .ede-chip .val{ font-size:11px; color:var(--text-dim);}
-
-  /* ---- tarjetas EDE grandes (estilo franja superior) ---- */
-  .ede-cards{ display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-bottom:16px; }
-  .ede-card{ background:var(--panel); border:1px solid var(--panel-border); border-radius:12px; padding:12px 14px; box-shadow:0 1px 3px rgba(43,43,42,0.06); min-width:0; }
-  .ede-card .top{ display:flex; align-items:center; gap:7px; margin-bottom:6px; }
-  .ede-card .dot{ width:8px; height:8px; }
-  .ede-card .ede-name{ font-size:12.5px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .ede-card .ede-pct{ font-size:19px; font-weight:800; line-height:1.1; }
-  .ede-card .ede-pct.na{ font-size:12px; font-weight:700; color:var(--rose); }
-  .ede-card .ede-q{ font-size:10.5px; color:var(--text-dim); margin-top:2px; }
-  @media(max-width:1200px){ .ede-cards{ grid-template-columns:repeat(4,1fr);} }
-  @media(max-width:640px){ .ede-cards{ grid-template-columns:repeat(2,1fr);} }
-
-  /* ---- badge cumple/no cumple ---- */
-  .kpi-head{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
-  .badge{ display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap; }
-  .badge.ok{ background:#E3F6E8; color:#1E8A3C; }
-  .badge.bad{ background:#FBE7E7; color:#C23636; }
-  .kpi .meta{ font-size:11px; color:var(--text-dim); margin-top:2px; }
-
-  /* ---- ranking / desempeño por EDE (barras horizontales tipo lista) ---- */
-  .rank-bars{ display:flex; flex-direction:column; gap:9px; }
-  .rank-bars .row{ display:grid; grid-template-columns:16px 62px 1fr 46px; align-items:center; gap:8px; }
-  .rank-bars .pos{ font-size:11px; color:var(--text-dim); font-weight:700; }
-  .rank-bars .lbl{ font-size:12px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .rank-bars .track{ background:var(--bg); border-radius:5px; height:12px; overflow:hidden; }
-  .rank-bars .fill{ display:block; height:100%; border-radius:5px; background:var(--violet); }
-  .rank-bars .val{ font-size:12px; font-weight:700; text-align:right; }
-  .rank-bars .val.na{ color:var(--rose); font-size:11px; }
-
-  /* ---- dona tipo de llamada ---- */
-  .donut-wrap{ display:flex; align-items:center; gap:18px; }
-  .donut-canvas-box{ position:relative; width:150px; height:150px; flex-shrink:0; }
-  .donut-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; }
-  .donut-center .n{ font-size:19px; font-weight:800; color:var(--violet); line-height:1.1; }
-  .donut-center .lbl{ font-size:9.5px; color:var(--text-dim); text-align:center; max-width:80px; }
-  .donut-legend{ display:flex; flex-direction:column; gap:9px; flex:1; min-width:0; }
-  .donut-legend .item{ display:flex; align-items:center; gap:8px; font-size:12px; }
-  .donut-legend .sw{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }
-  .donut-legend .name{ font-weight:700; color:var(--text); }
-  .donut-legend .sub{ color:var(--text-dim); font-size:11px; }
-
-  /* ---- top 5 oportunidades de mejora ---- */
-  .top5-table{ width:100%; border-collapse:collapse; font-size:12px; }
-  .top5-table th{ text-align:left; color:var(--text-dim); font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; padding:0 6px 8px; }
-  .top5-table td{ padding:8px 6px; border-top:1px solid var(--panel-border); vertical-align:middle; }
-  .top5-table .num{ color:var(--text-dim); font-weight:700; width:18px; }
-  .top5-table .pct{ font-weight:800; }
-  .top5-table .delta{ font-size:11px; font-weight:700; white-space:nowrap; }
-  .top5-table .delta.down{ color:var(--rose); }
-  .top5-table .delta.up{ color:#1E8A3C; }
-  .top5-table .delta.flat{ color:var(--text-dim); }
-
-  /* ---- faltas graves resumen ---- */
-  .faltas-total{ display:flex; align-items:center; gap:10px; margin:2px 0 14px; }
-  .faltas-total .n{ font-size:30px; font-weight:800; color:var(--rose); line-height:1; }
-  .faltas-total svg{ color:var(--rose); flex-shrink:0; }
-  .faltas-row{ display:flex; justify-content:space-between; align-items:center; font-size:11.5px; color:var(--text-dim); font-weight:700; margin-bottom:6px; }
-  .faltas-pill{ display:inline-flex; align-items:center; gap:6px; background:#FBE7E7; color:#C23636; font-weight:800; font-size:12px; padding:6px 12px; border-radius:8px; }
-  .faltas-pill.cat{ background:var(--bg); color:var(--text); }
-
-  /* ---- ranking de asesores (top card) ---- */
-  .top-rank-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
-  .top-rank-list li{ display:flex; align-items:center; gap:9px; cursor:pointer; }
-  .top-rank-list .medal{ width:18px; text-align:center; flex-shrink:0; }
-  .top-rank-list .name{ flex:1; font-size:12.5px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .top-rank-list .score{ font-size:12.5px; font-weight:800; color:var(--violet); }
-  .see-all-link{ display:inline-flex; align-items:center; gap:5px; color:var(--teal); font-size:12px; font-weight:700; text-decoration:none; margin-top:12px; cursor:pointer; }
 
   .rank-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
   .rank-list li{ display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:8px; background:var(--panel); border:1px solid var(--panel-border);}
@@ -176,8 +91,7 @@
   .kpi .value.teal{color:var(--teal);} .kpi .value.violet{color:var(--violet);}
   .kpi .value.amber{color:var(--amber);} .kpi .value.rose{color:var(--rose);}
 
-  html{ scroll-behavior:smooth; }
-  section{ margin-bottom:34px; scroll-margin-top:20px; }
+  section{ margin-bottom:34px; }
   .section-title{ display:flex; align-items:baseline; gap:10px; margin-bottom:14px;}
   .section-title .idx{ font-family: ui-monospace, monospace; color:var(--text-dim); font-size:12px;}
   .section-title h2{ font-size:16px; margin:0; font-weight:700; color:#2B3168;}
@@ -202,26 +116,36 @@
   footer{ margin-top:20px; color:var(--text-dim); font-size:11px; border-top:1px solid var(--panel-border); padding-top:14px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
   footer p{ margin:0 0 4px; }
   footer code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:var(--bg); border:1px solid var(--panel-border); border-radius:4px; padding:1px 5px; color:var(--text);}
+
+  #tablaEvaluaciones tbody tr{ cursor:pointer; }
+  #tablaEvaluaciones tbody tr:hover td{ background:#E6F6FC; }
+
+  .modal-overlay{ display:none; position:fixed; inset:0; background:rgba(20,24,50,0.45); z-index:100; align-items:center; justify-content:center; padding:24px; }
+  .modal-overlay.open{ display:flex; }
+  .modal-box{ background:var(--panel); border-radius:14px; width:100%; max-width:640px; max-height:86vh; overflow-y:auto; box-shadow:0 12px 40px rgba(20,24,50,0.28); }
+  .modal-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:18px 22px; border-bottom:1px solid var(--panel-border); position:sticky; top:0; background:var(--panel); border-radius:14px 14px 0 0; }
+  .modal-head h3{ margin:0; font-size:15px; font-weight:700; color:#2B3168; }
+  .modal-sub{ margin:4px 0 0; font-size:11px; color:var(--text-dim); }
+  .modal-close{ background:var(--bg); border:1px solid var(--panel-border); color:var(--text); width:28px; height:28px; border-radius:8px; cursor:pointer; font-size:13px; flex-shrink:0; }
+  .modal-close:hover{ border-color:var(--rose); color:var(--rose); }
+  .modal-body{ padding:18px 22px 22px; }
+  .modal-infogrid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; margin-bottom:16px; }
+  .modal-infogrid .item .label{ font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); font-weight:700; }
+  .modal-infogrid .item .val{ font-size:13px; font-weight:600; color:var(--text); margin-top:2px; }
+  .modal-kpis{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-bottom:18px; }
+  .modal-kpis .kpi-mini{ background:var(--bg); border:1px solid var(--panel-border); border-radius:8px; padding:8px 6px; text-align:center; }
+  .modal-kpis .kpi-mini .label{ font-size:9px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-dim); font-weight:700; }
+  .modal-kpis .kpi-mini .val{ font-size:15px; font-weight:700; margin-top:3px; }
+  .modal-detail-table{ border-collapse:collapse; width:100%; font-size:11px; }
+  .modal-detail-table th{ text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; border-bottom:1px solid var(--panel-border); }
+  .modal-detail-table td{ padding:6px 8px; border-top:1px solid var(--panel-border); }
+  .eval-badge{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:10px; font-weight:700; }
+  .eval-badge.si{ background:rgba(0,163,0,0.15); color:#0A7A0A; }
+  .eval-badge.no{ background:rgba(227,73,72,0.15); color:#B23130; }
+  .eval-badge.na{ background:rgba(122,130,150,0.15); color:#5C6377; }
 </style>
 </head>
 <body>
-
-<div class="app-shell">
-<aside class="sidebar">
-  <div class="sidebar-logo"><img src="logo.png" alt="Contact Americas"></div>
-  <ul class="sidebar-nav">
-    <li><a href="#top" class="active"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Dashboard</a></li>
-    <li><a href="#seccionEde"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>EDEs</a></li>
-    <li><a href="#seccionAsesores"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Asesores</a></li>
-    <li><a href="#seccionCategoria"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Hallazgos</a></li>
-    <li><a href="#seccionComplementarios"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>Evaluaciones</a></li>
-    <li><a href="#seccionReportes"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Reportes</a></li>
-  </ul>
-  <div class="sidebar-bottom">
-    <div class="sidebar-save"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path></svg>Filtros guardados</div>
-  </div>
-</aside>
-<div class="main-col" id="top">
 
 <header>
   <div class="header-left">
@@ -240,7 +164,7 @@
   </div>
 </header>
 
-<div class="ede-cards" id="edeCards"></div>
+<div class="ede-strip" id="edeStrip" style="margin-bottom:16px;"></div>
 
 <div style="display:none;">
   <button id="btnRecargar" type="button"></button>
@@ -280,50 +204,19 @@
 
 <div class="kpis" id="kpiRow"></div>
 
-<div class="grid3" style="margin-bottom:16px;">
-  <div class="card"><h3>Desempeño por EDE (Puntaje final promedio)</h3><div id="rankBarsEde" class="rank-bars" style="padding:6px 4px 14px;"></div></div>
-  <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final (promedio general)</h3><span class="trend-legend"><span class="trend-swatch"></span>Tendencia</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
-  <div class="card"><h3>Evaluaciones por Tipo de Llamada</h3>
-    <div class="donut-wrap" style="padding:8px 0 14px;">
-      <div class="donut-canvas-box"><canvas id="chTipoLlamada"></canvas><div class="donut-center"><div class="n" id="donutTotal">—</div><div class="lbl">Evaluaciones</div></div></div>
-      <div class="donut-legend" id="donutLegend"></div>
-    </div>
-  </div>
-</div>
-
-<div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr;">
-  <div class="card"><h3>Cumplimiento por Categoría (promedio general)</h3><div id="catBars" style="padding:6px 4px 14px;"></div></div>
-  <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
-  <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
-    <div class="card"><h3>Faltas Graves (Total)</h3><div id="faltasResumen"></div></div>
-    <div class="card"><h3>Ranking de Asesores <span style="font-weight:400; color:var(--text-dim); font-size:11px;">(Puntaje final promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
-  </div>
-</div>
-
-<section id="seccionAsesores">
+<section>
   <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
-  <div class="grid2" style="margin-top:0;">
+  <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
+  <div class="grid2 grid2-60-40" style="margin-top:16px;">
     <div class="card"><h3>Puntaje Final promedio por Asesor</h3>
       <div id="tablaPuntajeAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="puntajeAgenteNote"></p>
     </div>
-    <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
-  </div>
-
-  <div class="card" id="detalleAsesorCard" style="margin-top:16px; display:none;">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:4px;">
-      <h3 id="detalleAsesorNombre" style="margin:0; font-size:15px; color:#2B3168;">—</h3>
-      <button id="detalleAsesorClose" type="button" style="border:none; background:var(--bg); color:var(--text-dim); width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:16px; line-height:1;">✕</button>
-    </div>
-    <p id="detalleAsesorResumen" class="note" style="margin:0 0 12px;"></p>
-    <div id="detalleAsesorTabla" style="overflow-x:auto;"></div>
-    <h4 id="detalleAsesorCatTitulo" style="margin:18px 0 8px; font-size:14px; color:#2B3168; display:none;">Categorías con oportunidad de mejora</h4>
-    <div id="detalleAsesorCategorias" style="overflow-x:auto;"></div>
+    <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final <span style="font-weight:400; color:var(--text-dim);">(Promedio general)</span></h3><span class="trend-legend"><span class="trend-swatch"></span>Meta: 9.5</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
   </div>
 </section>
 
-
-<section id="seccionEde">
+<section>
   <div class="section-title"><span class="idx">02</span><h2>Indicadores</h2></div>
   <div class="card">
     <h3>Por EDE</h3>
@@ -343,7 +236,7 @@
   </div>
 </section>
 
-<section id="seccionCategoria">
+<section>
   <div class="section-title"><span class="idx">03</span><h2>Cumplimiento por Categoría</h2></div>
   <div class="card"><h3>% Cumplimiento por Categoría por EDE</h3><div class="chart-wrap tall"><canvas id="chCatGeneral"></canvas></div></div>
   <div class="card" style="margin-top:16px;">
@@ -355,53 +248,100 @@
 
 </section>
 
-<section id="seccionComplementarios">
+<section>
   <div class="section-title"><span class="idx">04</span><h2>Indicadores complementarios</h2></div>
   <div class="card"><h3>Faltas Graves por EDE</h3><div class="chart-wrap"><canvas id="chFaltas"></canvas></div></div>
 </section>
 
-<footer id="seccionReportes">
+<section>
+  <div class="section-title"><span class="idx">05</span><h2>Evaluaciones Individuales</h2></div>
+  <div class="card">
+    <h3>Listado de evaluaciones</h3>
+    <input type="text" id="evalSearch" placeholder="Buscar agente…" style="width:100%; max-width:240px; margin-bottom:10px; padding:6px 10px; border:1px solid var(--panel-border); border-radius:8px; font-size:12px;">
+    <div id="tablaEvaluaciones" style="overflow-x:auto; max-height:460px; overflow-y:auto;"></div>
+    <p class="note" id="evalNote"></p>
+  </div>
+</section>
+
+<footer>
   <div id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</div>
 </footer>
-</div>
+
+<div class="modal-overlay" id="evalModalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3 id="evalModalTitle">Evaluación</h3>
+        <p class="modal-sub" id="evalModalSub"></p>
+      </div>
+      <button class="modal-close" id="evalModalClose" type="button" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body" id="evalModalBody"></div>
+  </div>
 </div>
 
 <script>
 const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
-const META_PCT = 0.95, META_PUNTAJE = 9.5;
 Chart.defaults.color = COLORS.text;
 Chart.defaults.font.size = 11;
-
-// plugin ligero: dibuja un valor pequeño encima de cada punto de los datasets
-// que tengan showValueLabels:true (se usa en el gráfico de evolución del Puntaje Final)
-const valueLabelPlugin = {
-  id: 'valueLabelPlugin',
-  afterDatasetsDraw(chart){
-    const { ctx } = chart;
-    chart.data.datasets.forEach((dataset, i)=>{
-      if(!dataset.showValueLabels) return;
-      const meta = chart.getDatasetMeta(i);
-      if(meta.hidden) return;
-      meta.data.forEach((point, index)=>{
-        const value = dataset.data[index];
-        if(value===null || value===undefined || isNaN(value)) return;
-        ctx.save();
-        ctx.font = '700 10px -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
-        ctx.fillStyle = dataset.labelColor || COLORS.violet;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
-        const text = dataset.labelFormat ? dataset.labelFormat(value) : value;
-        ctx.fillText(text, point.x, point.y - 7);
-        ctx.restore();
-      });
-    });
-  }
-};
-Chart.register(valueLabelPlugin);
 Chart.defaults.borderColor = COLORS.grid;
 
 function pctAxis(){ return { min:0, max:1, ticks:{ callback:v=>Math.round(v*100)+"%" }, grid:{color:COLORS.grid} }; }
 function catAxis(){ return { grid:{display:false} }; }
+
+const META_PUNTAJE = 9.5;
+
+// ------- plugin: línea horizontal punteada de meta, con etiqueta -------
+const metaLinePlugin = {
+  id: 'metaLine',
+  afterDatasetsDraw(chart, args, opts){
+    if(!opts || opts.value===undefined) return;
+    const {ctx, chartArea, scales} = chart;
+    const y = scales.y.getPixelForValue(opts.value);
+    ctx.save();
+    ctx.beginPath();
+    ctx.setLineDash([5,4]);
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = opts.color || '#B9BFD4';
+    ctx.moveTo(chartArea.left, y);
+    ctx.lineTo(chartArea.right, y);
+    ctx.stroke();
+    if(opts.label){
+      ctx.setLineDash([]);
+      ctx.fillStyle = opts.color || '#8A93B8';
+      ctx.font = '600 10px -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText(opts.label, chartArea.right, y - 4);
+    }
+    ctx.restore();
+  }
+};
+
+// ------- plugin: etiqueta de valor encima de cada punto de una línea -------
+const valueLabelPlugin = {
+  id: 'valueLabels',
+  afterDatasetsDraw(chart, args, opts){
+    const idx = opts && opts.datasetIndex!==undefined ? opts.datasetIndex : 0;
+    const meta = chart.getDatasetMeta(idx);
+    const dataset = chart.data.datasets[idx];
+    if(!dataset) return;
+    const {ctx} = chart;
+    ctx.save();
+    ctx.fillStyle = (opts && opts.color) || COLORS.violet;
+    ctx.font = '700 11px -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    meta.data.forEach((point,i)=>{
+      const v = dataset.data[i];
+      if(v===null || v===undefined || isNaN(v)) return;
+      const text = (opts && opts.format) ? opts.format(v) : v;
+      ctx.fillText(text, point.x, point.y - 8);
+    });
+    ctx.restore();
+  }
+};
+Chart.register(metaLinePlugin, valueLabelPlugin);
 
 // ------- línea de tendencia (regresión lineal simple) -------
 function trendLine(values){
@@ -473,12 +413,6 @@ function mesLabelFromKey(k){
   return MES_LABEL[Number(m)-1] + " " + y;
 }
 function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
-function fmtFechaCorta(fechaStr){
-  if(!fechaStr) return '—';
-  const d = new Date(fechaStr + 'T00:00:00');
-  if(isNaN(d)) return fechaStr;
-  return d.toLocaleDateString('es-PE', {day:'2-digit', month:'short'});
-}
 
 function groupAvg(items, groupField, valueFields){
   const buckets = {};
@@ -528,18 +462,21 @@ function normalizeData(json){
       PECUF: toPct(r["PECUF (%)"]),
       PECNEG: toPct(r["PECNEG (%)"]),
       PECUM: toPct(r["PECUM (%)"]),
-      FaltaGrave: r["Falta Grave"]
+      FaltaGrave: r["Falta Grave"],
+      IdEvaluacion: r["ID Evaluación"] || null, // identifica de forma única cada evaluación individual
+      Telefono: r["Teléfono"] || null
     }))
     .filter(r=> r.EDE!==null && r.EDE!==undefined && r.EDE!=="" ); // descarta filas vacías al final de la hoja
 
   const detalleNorm = detalleRows
     .map(r=>({
-      IdEvaluacion: r["ID Evaluación"] !== undefined ? r["ID Evaluación"] : null,
       EDE: r["EDE"],
       Asesor: r["Asesor"] !== undefined ? r["Asesor"] : null, // algunas plantillas sí incluyen Asesor en Detalle
       Categoria: r["Categoría"],
       Atributo: r["Atributo"],
-      Evaluacion: r["Evaluación"]
+      Evaluacion: r["Evaluación"],
+      IdEvaluacion: r["ID Evaluación"] || null,
+      Fecha: r["Fecha Evaluación"] || null
     }))
     .filter(r=> r.EDE!==null && r.EDE!==undefined && r.EDE!=="" );
 
@@ -559,10 +496,8 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   valueFields.forEach(f=> overall[f] = avg(resumenNorm.map(r=>r[f]).filter(v=>v!==null)));
   const byEde = groupAvg(resumenNorm, "EDE", valueFields);
   const byAsesor = groupAvg(resumenNorm, "Asesor", valueFields);
-  const byFecha = groupAvg(resumenNorm, "Fecha", ["PEC","Puntaje"]);
+  const byFecha = groupAvg(resumenNorm, "Fecha", ["PEC"]);
   const pecPorFecha = fechas.map(f=> (byFecha[f] ? byFecha[f].PEC : 0));
-  const puntajePorFecha = fechas.map(f=> (byFecha[f] ? byFecha[f].Puntaje : 0));
-  const fechasLabels = fechas.map(fmtFechaCorta);
 
   // Tendencia semanal (usa la misma numeración "Semana N" que el filtro de arriba,
   // contada desde el inicio de operaciones el 20 de julio de 2026).
@@ -620,27 +555,21 @@ function buildDataFromNormRows(resumenNorm, detalleNorm){
   const mesesLabels = meses.map(mesLabelFromKey);
   const puntajeGeneral = avg(resumenNorm.map(r=>r.Puntaje).filter(v=>!isNaN(v)));
 
-  const nPorEdeMap = {};
-  edes.forEach(e=>{ nPorEdeMap[e] = resumenNorm.filter(r=>r.EDE===e).length; });
-
-  const tiposLlamada = uniq(resumenNorm.map(r=>r.TipoLlamada));
-  const conteoTipoLlamada = tiposLlamada.map(t=> resumenNorm.filter(r=>r.TipoLlamada===t).length);
-
   const faltasPorEdeMap = {};
   edes.forEach(e=>{
     faltasPorEdeMap[e] = resumenNorm.filter(r=>r.EDE===e && r.FaltaGrave!==null && r.FaltaGrave!==undefined && r.FaltaGrave!=="").length;
   });
 
   return {
-    edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha, fechasLabels, puntajePorFecha,
+    edes, asesores, overall, byEde, byAsesor, fechas, pecPorFecha,
     categorias, cumplimientoCategoria, cumplimientoCategoriaEde,
     agentesCat, cumplimientoCategoriaAgente,
     totalAgentesConDetalle: agentesConDetalle.length,
     faltasPorEde: faltasPorEdeMap,
     puntajePorEde, puntajePorAsesor, qPorAsesor, mesesLabels, puntajeGeneral,
     semanasLabelsCortos, semanasLabelsCompletos, numerosSemana, pecPorSemana, puntajePorSemana,
-    nPorEde: nPorEdeMap, tiposLlamada, conteoTipoLlamada,
-    nResumen: resumenNorm.length, nDetalle: detalleNorm.length
+    nResumen: resumenNorm.length, nDetalle: detalleNorm.length,
+    evaluaciones: resumenNorm // filas individuales (una por evaluación), ya filtradas
   };
 }
 
@@ -656,30 +585,22 @@ function renderAll(DATA){
     : `Sin resultados para los filtros seleccionados.`;
 
   const kpiRow = document.getElementById('kpiRow');
-  const kpiDefs = [["PEC","teal","PEC promedio"],["PECUF","violet","PECUF promedio"],["PECNEG","amber","PECNEG promedio"],["PECUM","rose","PECUM promedio"]];
-  kpiRow.innerHTML = kpiDefs.map(([k,c,label])=>{
-    const v = DATA.overall[k];
-    const cumple = v >= META_PCT;
-    return `<div class="kpi">
-      <div class="kpi-head"><div class="label">${label}</div><span class="badge ${cumple?'ok':'bad'}">${cumple?'Cumple ✓':'No cumple'}</span></div>
-      <div class="value ${c}">${Math.round(v*100)}%</div>
-      <div class="meta">Meta: ${Math.round(META_PCT*100)}%</div>
-    </div>`;
-  }).join("")
-    + (()=>{ const cumple = DATA.puntajeGeneral >= META_PUNTAJE; return `<div class="kpi">
-      <div class="kpi-head"><div class="label">Puntaje Final promedio</div><span class="badge ${cumple?'ok':'bad'}">${cumple?'Cumple ✓':'No cumple'}</span></div>
+  const kpiDefs = [["PEC","teal"],["PECUF","violet"],["PECNEG","amber"],["PECUM","rose"]];
+  kpiRow.innerHTML = kpiDefs.map(([k,c])=>`
+    <div class="kpi">
+      <div class="label">${k} promedio</div>
+      <div class="value ${c}">${Math.round(DATA.overall[k]*100)}%</div>
+    </div>`).join("")
+    + `<div class="kpi">
+      <div class="label">Puntaje Final promedio</div>
       <div class="value teal">${DATA.puntajeGeneral.toFixed(1)}<span style="font-size:16px;color:var(--text-dim);">/10</span></div>
-      <div class="meta">Meta: ${META_PUNTAJE.toFixed(1)}/10</div>
-    </div>`; })();
+    </div>`;
 
-  const edeCards = document.getElementById('edeCards');
-  edeCards.innerHTML = DATA.edes.map(e=>{
+  const strip = document.getElementById('edeStrip');
+  strip.innerHTML = DATA.edes.map(e=>{
     const v = DATA.byEde[e].PEC;
-    const q = DATA.nPorEde ? DATA.nPorEde[e] : null;
-    const sinDatos = v===null || v===undefined || isNaN(v);
-    const cls = sinDatos ? "bad" : v>=META_PCT ? "" : v>=0.75 ? "warn" : "bad";
-    const pctHtml = sinDatos ? `<div class="ede-pct na">Sin datos</div>` : `<div class="ede-pct" style="color:${v>=META_PCT?'#2B3168':v>=0.75?'#0B5F7D':'#D64550'}">${Math.round(v*100)}%</div>`;
-    return `<div class="ede-card"><div class="top"><span class="dot ${cls}"></span><span class="ede-name">${e}</span></div>${pctHtml}<div class="ede-q">${q!==undefined && q!==null ? q+' eval.' : ''}</div></div>`;
+    const cls = v>=0.9 ? "" : v>=0.75 ? "warn" : "bad";
+    return `<div class="ede-chip"><span class="dot ${cls}"></span><span class="name">${e}</span><span class="val mono">${Math.round(v*100)}%</span></div>`;
   }).join("");
 
   function grouped4(ctxId, labels, byGroupObj, groupKeys){
@@ -750,133 +671,30 @@ function renderAll(DATA){
 
   renderTablaPuntajeAgente(DATA);
 
-  charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
-    type:'line',
-    data:{ labels: DATA.semanasLabelsCortos, datasets:[
-      { label:'Puntaje Final', data: DATA.puntajePorSemana,
-        borderColor: COLORS.amber, backgroundColor:'rgba(11,95,125,0.08)',
-        borderWidth:2, tension:0.25, fill:true,
-        pointRadius:4, pointHoverRadius:6, pointBackgroundColor:COLORS.amber, pointBorderColor:'#fff', pointBorderWidth:1.5,
-        showValueLabels:true, labelColor:COLORS.violet, labelFormat:(v)=>Math.round(v*10)+'%'
+  {
+    const vals = DATA.puntajePorSemana.filter(v=>!isNaN(v));
+    const minData = vals.length ? Math.min(...vals) : 10;
+    const yMin = Math.max(0, Math.min(8, Math.floor(minData)));
+    charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
+      type:'line',
+      data:{ labels: DATA.semanasLabelsCortos, datasets:[
+        { label:'Puntaje Final', data: DATA.puntajePorSemana, borderColor:COLORS.violet, backgroundColor:COLORS.violet,
+          borderWidth:2.5, tension:0.35, fill:false,
+          pointRadius:5, pointHoverRadius:6, pointBackgroundColor:COLORS.violet, pointBorderColor:'#fff', pointBorderWidth:2 }
+      ]},
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        layout:{ padding:{ top:18 } },
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}},
+          metaLine:{ value: META_PUNTAJE, label:'Meta: '+META_PUNTAJE.toFixed(1), color:'#B9BFD4' },
+          valueLabels:{ color:COLORS.violet, format:(v)=>v.toFixed(1) }
+        },
+        scales:{ y:{min:yMin, max:10, ticks:{stepSize:0.5}, grid:{color:COLORS.grid}}, x:catAxis() }
       }
-    ]},
-    options:{ responsive:true, maintainAspectRatio:false, layout:{padding:{top:18}},
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{
-        title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label,
-        label:(item)=> 'Puntaje Final: ' + item.parsed.y.toFixed(1) + '/10 (' + Math.round(item.parsed.y*10) + '%)'
-      }} },
-      scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
-  }));
-
-  renderRankBarsEde(DATA);
-  renderCatBars(DATA);
-  renderDonutTipoLlamada(DATA);
-  renderTop5Oportunidades(DATA);
-  renderFaltasResumen(DATA);
-  renderRankingAsesores(DATA);
-}
-
-// ------- 01: Desempeño por EDE (lista con barras horizontales, ordenada) -------
-function renderRankBarsEde(DATA){
-  const cont = document.getElementById('rankBarsEde');
-  const pares = DATA.edes.map(e=>({ nombre:e, v: DATA.puntajePorEde[DATA.edes.indexOf(e)], n: DATA.nPorEde[e] }));
-  pares.sort((a,b)=> (b.v??-1) - (a.v??-1));
-  cont.innerHTML = pares.map((p,i)=>{
-    const sinDatos = !p.n || p.n===0 || p.v===undefined || p.v===null || isNaN(p.v);
-    const pct = sinDatos ? 0 : Math.max(2, (p.v/10)*100);
-    const color = sinDatos ? COLORS.gray : COLORS.violet;
-    return `<div class="row">
-      <span class="pos">${i+1}</span>
-      <span class="lbl">${p.nombre}</span>
-      <span class="track"><span class="fill" style="width:${pct}%; background:${color};"></span></span>
-      <span class="val ${sinDatos?'na':''}">${sinDatos?'Sin datos':p.v.toFixed(1)+'/10'}</span>
-    </div>`;
-  }).join("");
-}
-
-// ------- 03 (resumen): Cumplimiento por categoría, barras horizontales con semáforo -------
-function renderCatBars(DATA){
-  const cont = document.getElementById('catBars');
-  const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }));
-  pares.sort((a,b)=> b.v - a.v);
-  cont.innerHTML = pares.map(p=>{
-    const dotColor = p.v>=META_PCT ? '#1E8A3C' : p.v>=0.85 ? '#E3A100' : '#D64550';
-    return `<div class="row" style="display:grid; grid-template-columns:1fr 2fr 44px 14px; align-items:center; gap:8px; margin-bottom:9px;">
-      <span class="lbl" style="white-space:normal;">${p.cat}</span>
-      <span class="track"><span class="fill" style="width:${Math.max(2,p.v*100)}%; background:${dotColor};"></span></span>
-      <span class="val">${Math.round(p.v*100)}%</span>
-      <span style="width:8px; height:8px; border-radius:50%; background:${dotColor};"></span>
-    </div>`;
-  }).join("");
-}
-
-// ------- dona: Evaluaciones por Tipo de Llamada -------
-let donutChart = null;
-function renderDonutTipoLlamada(DATA){
-  if(donutChart){ donutChart.destroy(); donutChart = null; }
-  const total = DATA.conteoTipoLlamada.reduce((a,b)=>a+b,0);
-  document.getElementById('donutTotal').textContent = total.toLocaleString('es-PE');
-  const palette = [COLORS.violet, COLORS.teal, "#3FB88A", COLORS.gray, COLORS.amber, COLORS.rose];
-  donutChart = new Chart(document.getElementById('chTipoLlamada'), {
-    type:'doughnut',
-    data:{ labels: DATA.tiposLlamada, datasets:[{ data: DATA.conteoTipoLlamada, backgroundColor: DATA.tiposLlamada.map((_,i)=>palette[i%palette.length]), borderWidth:2, borderColor:'#fff' }]},
-    options:{ responsive:true, maintainAspectRatio:false, cutout:'68%', plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:(ctx)=>{ const pct = total>0 ? Math.round(ctx.parsed/total*100) : 0; return `${ctx.label}: ${ctx.parsed} (${pct}%)`; } } } } }
-  });
-  const legend = document.getElementById('donutLegend');
-  legend.innerHTML = DATA.tiposLlamada.map((t,i)=>{
-    const n = DATA.conteoTipoLlamada[i];
-    const pct = total>0 ? Math.round(n/total*100) : 0;
-    return `<div class="item"><span class="sw" style="background:${palette[i%palette.length]}"></span><div><div class="name">${t}</div><div class="sub">${n.toLocaleString('es-PE')} (${pct}%)</div></div></div>`;
-  }).join("");
-}
-
-// ------- Top 5 Oportunidades de Mejora (categorías con menor % de cumplimiento) -------
-function renderTop5Oportunidades(DATA){
-  const cont = document.getElementById('top5Wrap');
-  const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }))
-    .sort((a,b)=> a.v - b.v)
-    .slice(0,5);
-  let h = '<table class="top5-table"><tr><th>#</th><th>Categoría</th><th>Cumplimiento</th><th>vs. Meta (95%)</th></tr>';
-  pares.forEach((p,i)=>{
-    const diff = Math.round((p.v - META_PCT)*100);
-    const cls = diff < 0 ? 'down' : diff > 0 ? 'up' : 'flat';
-    const arrow = diff < 0 ? '↓' : diff > 0 ? '↑' : '—';
-    h += `<tr><td class="num">${i+1}</td><td>${p.cat}</td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
-  });
-  h += '</table>';
-  cont.innerHTML = h;
-}
-
-// ------- Faltas Graves: total + EDE y categoría con más incidencias -------
-function renderFaltasResumen(DATA){
-  const cont = document.getElementById('faltasResumen');
-  const total = Object.values(DATA.faltasPorEde).reduce((a,b)=>a+b,0);
-  const edeTop = Object.keys(DATA.faltasPorEde).sort((a,b)=>DATA.faltasPorEde[b]-DATA.faltasPorEde[a])[0];
-  const catPares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] })).sort((a,b)=>a.v-b.v);
-  const catTop = catPares[0];
-  let h = `<div class="faltas-total"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><span class="n">${total}</span></div>`;
-  if(edeTop && DATA.faltasPorEde[edeTop] > 0){
-    h += `<div class="faltas-row">EDE con más faltas</div><div class="faltas-pill" style="margin-bottom:12px;">${edeTop} · ${DATA.faltasPorEde[edeTop]}</div>`;
+    }));
   }
-  if(catTop){
-    h += `<div class="faltas-row">Categoría con más oportunidad</div><div class="faltas-pill cat">${catTop.cat} · ${Math.round(catTop.v*100)}%</div>`;
-  }
-  cont.innerHTML = h;
-}
-
-// ------- Ranking de Asesores (top 5 por puntaje final promedio) -------
-function renderRankingAsesores(DATA){
-  const cont = document.getElementById('rankingAsesores');
-  const pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i] }))
-    .filter(p=>!isNaN(p.puntaje))
-    .sort((a,b)=> b.puntaje - a.puntaje)
-    .slice(0,5);
-  const medals = ['🏆','🏆','🏆','🎖️','🎖️'];
-  cont.innerHTML = pares.map((p,i)=> `<li data-agente="${p.nombre.replace(/"/g,'&quot;')}"><span class="medal">${medals[i]||(i+1)}</span><span class="name">${p.nombre}</span><span class="score">${p.puntaje.toFixed(1)}/10</span></li>`).join("")
-    || '<li class="note" style="cursor:default;">Sin datos suficientes.</li>';
-  cont.querySelectorAll('li[data-agente]').forEach(li=>{
-    li.addEventListener('click', ()=> abrirModalAgente(li.dataset.agente));
-  });
 }
 
 // ------- tabla "% Cumplimiento por Categoría por Agente" con colores, orden y búsqueda -------
@@ -1050,7 +868,7 @@ function renderTablaPuntajeAgente(DATA){
   h += `<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel); min-width:40px;">Q</th></tr>`;
   pares.forEach(r=>{
     const t = r.puntaje/10;
-    h += `<tr><td class="agente-link" data-agente="${r.nombre.replace(/"/g,'&quot;')}" style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap; cursor:pointer; color:#2B5FE0; text-decoration:underline dotted;">${r.nombre}</td>`;
+    h += `<tr><td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap;">${r.nombre}</td>`;
     h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)};">${r.puntaje.toFixed(1)}</td>`;
     h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; color:var(--text-dim); font-weight:600;">${r.q}</td></tr>`;
   });
@@ -1065,142 +883,156 @@ function renderTablaPuntajeAgente(DATA){
       renderTablaPuntajeAgente(LAST_DATA);
     });
   });
+}
 
-  cont.querySelectorAll('.agente-link').forEach(td=>{
-    td.addEventListener('click', ()=> abrirModalAgente(td.dataset.agente));
+// ------- tabla "Evaluaciones Individuales" + modal de detalle -------
+// Cada evaluación (fila de "Resumen General") se identifica por su "ID Evaluación"
+// cuando existe en los datos; si no existe (filas antiguas), se usa EDE+Asesor como
+// clave de respaldo, que en la práctica identifica igual a una única evaluación.
+function evalMatchKey(r){ return r.IdEvaluacion ? ('ID:'+r.IdEvaluacion) : ('EA:'+r.EDE+'|'+r.Asesor); }
+
+const EVAL_COLS = [
+  {key:'Fecha', label:'Fecha'},
+  {key:'EDE', label:'EDE'},
+  {key:'Asesor', label:'Asesor'},
+  {key:'TipoLlamada', label:'Tipo de Llamada'},
+  {key:'Puntaje', label:'Puntaje'},
+  {key:'PEC', label:'PEC'},
+  {key:'PECUF', label:'PECUF'},
+  {key:'PECNEG', label:'PECNEG'},
+  {key:'PECUM', label:'PECUM'},
+  {key:'FaltaGrave', label:'Falta Grave'}
+];
+let evalSortCol = 'Fecha';
+let evalSortDir = 'desc';
+let evalSearch = '';
+let EVAL_ROWS_BY_KEY = {};
+
+function fmtFechaCorta(v){
+  const d = toDateSafe(v);
+  return d ? d.toLocaleDateString('es-PE', {day:'2-digit', month:'short', year:'numeric'}) : (v || '—');
+}
+function evalBadgeClass(v){
+  if(v==='SI') return 'si';
+  if(v==='NO') return 'no';
+  return 'na';
+}
+
+function renderTablaEvaluaciones(DATA){
+  const cont = document.getElementById('tablaEvaluaciones');
+  const noteEl = document.getElementById('evalNote');
+  let filas = DATA.evaluaciones.filter(r=>
+    r.Asesor.toLowerCase().includes(evalSearch.toLowerCase()) ||
+    r.EDE.toLowerCase().includes(evalSearch.toLowerCase())
+  );
+
+  filas = [...filas].sort((a,b)=>{
+    let va = a[evalSortCol], vb = b[evalSortCol];
+    if(evalSortCol==='Fecha'){ va = toDateSafe(va)||new Date(0); vb = toDateSafe(vb)||new Date(0); va=va.getTime(); vb=vb.getTime(); }
+    else if(typeof va === 'string'){ va = va || ''; vb = vb || ''; return evalSortDir==='asc' ? va.localeCompare(vb) : vb.localeCompare(va); }
+    else { va = va===null||va===undefined||isNaN(va) ? -1 : va; vb = vb===null||vb===undefined||isNaN(vb) ? -1 : vb; }
+    return evalSortDir==='asc' ? va-vb : vb-va;
   });
-}
 
-function abrirModalAgente(nombre){
-  const card = document.getElementById('detalleAsesorCard');
-  const titulo = document.getElementById('detalleAsesorNombre');
-  const resumenEl = document.getElementById('detalleAsesorResumen');
-  const tablaEl = document.getElementById('detalleAsesorTabla');
+  noteEl.textContent = filas.length !== DATA.evaluaciones.length
+    ? `Mostrando ${filas.length} de ${DATA.evaluaciones.length} evaluaciones. Clic en una fila para ver el detalle.`
+    : `${filas.length} evaluación(es). Clic en un encabezado para ordenar, o en una fila para ver el detalle.`;
 
-  const evals = RAW.resumenNorm
-    .filter(r=> r.Asesor === nombre)
-    .filter(r=>
-      (selectedEdes.size===0 || selectedEdes.has(r.EDE)) &&
-      (selectedMeses.size===0 || (()=>{ const info=getMesInfo(r.Fecha); return info && selectedMeses.has(info.key); })()) &&
-      (selectedSemanas.size===0 || (()=>{ const info=getSemanaInfo(r.Fecha); return info && selectedSemanas.has(info.numSemana); })())
-    )
-    .slice()
-    .sort((a,b)=> String(a.Fecha).localeCompare(String(b.Fecha)));
-
-  titulo.textContent = nombre;
-
-  const filtroActivo = selectedEdes.size>0 ? ` (filtrado por EDE: ${[...selectedEdes].join(', ')})` : '';
-
-  if(evals.length===0){
-    resumenEl.textContent = 'Sin evaluaciones registradas' + filtroActivo + '.';
-    tablaEl.innerHTML = '';
-  } else {
-    const prom = evals.reduce((s,r)=> s + (isNaN(r.Puntaje)?0:r.Puntaje), 0) / evals.length;
-    resumenEl.textContent = `${evals.length} evaluación(es) · Promedio: ${prom.toFixed(1)}/10${filtroActivo}`;
-
-    let h = '<table style="border-collapse:collapse; font-size:12px; width:100%;">';
-    h += '<tr>'
-      + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Fecha</th>'
-      + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Tipo</th>'
-      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Puntaje</th>'
-      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PEC</th>'
-      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PECUF</th>'
-      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PECNEG</th>'
-      + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">PECUM</th>'
-      + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Falta Grave</th>'
-      + '</tr>';
-    evals.forEach(r=>{
-      const t = (isNaN(r.Puntaje)?0:r.Puntaje)/10;
-      const fmtPct = v => (v===null||v===undefined||isNaN(v)) ? '—' : Math.round(v*100)+'%';
-      const falta = r.FaltaGrave ? String(r.FaltaGrave) : '—';
-      h += '<tr>'
-        + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${r.Fecha ?? '—'}</td>`
-        + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${r.TipoLlamada ?? '—'}</td>`
-        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)}; font-weight:700;">${isNaN(r.Puntaje)?'—':r.Puntaje.toFixed(1)}</td>`
-        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PEC)}; color:${textColorForPct(r.PEC)};">${fmtPct(r.PEC)}</td>`
-        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PECUF)}; color:${textColorForPct(r.PECUF)};">${fmtPct(r.PECUF)}</td>`
-        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PECNEG)}; color:${textColorForPct(r.PECNEG)};">${fmtPct(r.PECNEG)}</td>`
-        + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.PECUM)}; color:${textColorForPct(r.PECUM)};">${fmtPct(r.PECUM)}</td>`
-        + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${falta}</td>`
-        + '</tr>';
-    });
-    h += '</table>';
-    tablaEl.innerHTML = h;
-  }
-
-  card.style.display = 'block';
-  card.scrollIntoView({ behavior:'smooth', block:'start' });
-
-  renderCategoriasAgente(nombre);
-}
-
-function renderCategoriasAgente(nombre){
-  const tituloEl = document.getElementById('detalleAsesorCatTitulo');
-  const contEl = document.getElementById('detalleAsesorCategorias');
-
-  const items = RAW.detalleNorm
-    .filter(r=> r.Asesor === nombre)
-    .filter(r=> selectedEdes.size===0 || selectedEdes.has(r.EDE));
-
-  if(items.length===0){
-    tituloEl.style.display = 'none';
-    contEl.innerHTML = '';
+  if(filas.length===0){
+    cont.innerHTML = '<p class="note">Sin evaluaciones que coincidan.</p>';
     return;
   }
-  tituloEl.style.display = 'block';
 
-  // agrupa por Categoría y cuenta SI / NO / NO AMERITA
-  const porCategoria = {};
-  items.forEach(r=>{
-    const cat = r.Categoria || 'Sin categoría';
-    if(!porCategoria[cat]) porCategoria[cat] = { si:0, no:0, noAmerita:0 };
-    const ev = String(r.Evaluacion || '').toUpperCase();
-    if(ev === 'SI') porCategoria[cat].si++;
-    else if(ev === 'NO AMERITA') porCategoria[cat].noAmerita++;
-    else if(ev === 'NO') porCategoria[cat].no++;
+  EVAL_ROWS_BY_KEY = {};
+  const arrow = (col)=> evalSortCol===col ? (evalSortDir==='asc' ? ' ▲' : ' ▼') : '';
+  let h = '<table style="border-collapse:collapse; font-size:11px; width:100%;"><thead><tr>';
+  EVAL_COLS.forEach(c=>{
+    h += `<th data-col="${c.key}" style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); white-space:nowrap;">${c.label}${arrow(c.key)}</th>`;
   });
-
-  let filas = Object.keys(porCategoria).map(cat=>{
-    const c = porCategoria[cat];
-    const evaluables = c.si + c.no; // NO AMERITA no cuenta para el % de cumplimiento
-    const pct = evaluables>0 ? c.si/evaluables : null;
-    return { cat, ...c, pct };
+  h += '</tr></thead><tbody>';
+  filas.forEach(r=>{
+    const key = evalMatchKey(r);
+    EVAL_ROWS_BY_KEY[key] = r;
+    h += `<tr data-key="${key.replace(/"/g,'&quot;')}">`;
+    h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); white-space:nowrap;">${fmtFechaCorta(r.Fecha)}</td>`;
+    h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600;">${r.EDE}</td>`;
+    h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap;">${r.Asesor}</td>`;
+    h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border);">${r.TipoLlamada || '—'}</td>`;
+    h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(r.Puntaje/10)}; color:${textColorForPct(r.Puntaje/10)};">${isNaN(r.Puntaje) ? '—' : r.Puntaje.toFixed(1)}</td>`;
+    ['PEC','PECUF','PECNEG','PECUM'].forEach(k=>{
+      const v = r[k];
+      h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(v)}; color:${textColorForPct(v)};">${v===null||v===undefined||isNaN(v) ? '—' : Math.round(v*100)+'%'}</td>`;
+    });
+    h += `<td style="padding:5px 8px; border-top:1px solid var(--panel-border);">${r.FaltaGrave ? r.FaltaGrave : '—'}</td>`;
+    h += '</tr>';
   });
+  h += '</tbody></table>';
+  cont.innerHTML = h;
 
-  // primero las categorías con más incidencias (NO), luego por peor % de cumplimiento
-  filas.sort((a,b)=> b.no - a.no || (a.pct??1) - (b.pct??1));
-
-  let h = '<table style="border-collapse:collapse; font-size:12px; width:100%;">';
-  h += '<tr>'
-    + '<th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Categoría</th>'
-    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">Cumple</th>'
-    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">No Cumple</th>'
-    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">No Aplica</th>'
-    + '<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel);">% Cumplimiento</th>'
-    + '</tr>';
-  filas.forEach(f=>{
-    const tieneFallas = f.no > 0;
-    const bg = f.pct===null ? 'transparent' : colorForPct(f.pct);
-    const txt = f.pct===null ? 'var(--text-dim)' : textColorForPct(f.pct);
-    h += `<tr style="${tieneFallas ? 'background:rgba(227,73,72,0.08);' : ''}">`
-      + `<td style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:${tieneFallas?700:600}; ${tieneFallas?'color:#B3261E;':''}">${f.cat}${tieneFallas ? ' ⚠️' : ''}</td>`
-      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center;">${f.si}</td>`
-      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; font-weight:${tieneFallas?700:400}; color:${tieneFallas?'#B3261E':'inherit'};">${f.no}</td>`
-      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; color:var(--text-dim);">${f.noAmerita}</td>`
-      + `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${bg}; color:${txt}; font-weight:700;">${f.pct===null ? '—' : Math.round(f.pct*100)+'%'}</td>`
-      + '</tr>';
+  cont.querySelectorAll('th').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const col = th.dataset.col;
+      if(evalSortCol === col){ evalSortDir = evalSortDir==='asc' ? 'desc' : 'asc'; }
+      else { evalSortCol = col; evalSortDir = col==='Fecha' ? 'desc' : 'asc'; }
+      renderTablaEvaluaciones(LAST_DATA);
+    });
   });
-  h += '</table>';
-  h += '<p class="note" style="margin-top:8px; font-size:11px;">⚠️ = categoría con al menos un ítem "No Cumple" en alguna evaluación. "No Aplica" no se considera en el % de cumplimiento.</p>';
-  contEl.innerHTML = h;
+  cont.querySelectorAll('tbody tr').forEach(tr=>{
+    tr.addEventListener('click', ()=> openEvalModal(tr.dataset.key));
+  });
 }
+document.getElementById('evalSearch').addEventListener('input', (e)=>{
+  evalSearch = e.target.value;
+  if(LAST_DATA) renderTablaEvaluaciones(LAST_DATA);
+});
 
-function cerrarModalAgente(){
-  document.getElementById('detalleAsesorCard').style.display = 'none';
+function openEvalModal(key){
+  const row = EVAL_ROWS_BY_KEY[key];
+  if(!row) return;
+  const detalle = RAW.detalleNorm.filter(d=> evalMatchKey(d) === key);
+
+  document.getElementById('evalModalTitle').textContent = row.Asesor;
+  document.getElementById('evalModalSub').textContent = `${row.EDE} · ${fmtFechaCorta(row.Fecha)}${row.TipoLlamada ? ' · '+row.TipoLlamada : ''}`;
+
+  let body = '<div class="modal-infogrid">';
+  body += `<div class="item"><div class="label">EDE</div><div class="val">${row.EDE}</div></div>`;
+  body += `<div class="item"><div class="label">Fecha de evaluación</div><div class="val">${fmtFechaCorta(row.Fecha)}</div></div>`;
+  body += `<div class="item"><div class="label">Tipo de llamada</div><div class="val">${row.TipoLlamada || '—'}</div></div>`;
+  body += `<div class="item"><div class="label">Falta grave</div><div class="val">${row.FaltaGrave ? row.FaltaGrave : 'Ninguna'}</div></div>`;
+  if(row.Telefono){ body += `<div class="item"><div class="label">Teléfono</div><div class="val">${row.Telefono}</div></div>`; }
+  if(row.IdEvaluacion){ body += `<div class="item"><div class="label">ID Evaluación</div><div class="val mono" style="font-size:11px;">${row.IdEvaluacion}</div></div>`; }
+  body += '</div>';
+
+  body += '<div class="modal-kpis">';
+  body += `<div class="kpi-mini"><div class="label">Puntaje</div><div class="val" style="color:var(--teal);">${isNaN(row.Puntaje)?'—':row.Puntaje.toFixed(1)}</div></div>`;
+  [['PEC','teal'],['PECUF','violet'],['PECNEG','amber'],['PECUM','rose']].forEach(([k,c])=>{
+    const v = row[k];
+    body += `<div class="kpi-mini"><div class="label">${k}</div><div class="val" style="color:var(--${c});">${v===null||v===undefined||isNaN(v)?'—':Math.round(v*100)+'%'}</div></div>`;
+  });
+  body += '</div>';
+
+  if(detalle.length){
+    body += '<table class="modal-detail-table"><thead><tr><th>Categoría</th><th>Atributo</th><th>Evaluación</th></tr></thead><tbody>';
+    detalle.forEach(d=>{
+      body += `<tr><td>${d.Categoria||'—'}</td><td>${d.Atributo||'—'}</td><td><span class="eval-badge ${evalBadgeClass(d.Evaluacion)}">${d.Evaluacion||'—'}</span></td></tr>`;
+    });
+    body += '</tbody></table>';
+    if(!row.IdEvaluacion){
+      body += '<p class="note" style="margin-top:10px;">Esta evaluación no tiene un ID único en los datos originales; el detalle mostrado corresponde a la evaluación registrada para este agente en esta EDE.</p>';
+    }
+  } else {
+    body += '<p class="note">No hay detalle de categorías registrado para esta evaluación.</p>';
+  }
+
+  document.getElementById('evalModalBody').innerHTML = body;
+  document.getElementById('evalModalOverlay').classList.add('open');
 }
-
-document.getElementById('detalleAsesorClose').addEventListener('click', cerrarModalAgente);
-document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') cerrarModalAgente(); });
+function closeEvalModal(){ document.getElementById('evalModalOverlay').classList.remove('open'); }
+document.getElementById('evalModalClose').addEventListener('click', closeEvalModal);
+document.getElementById('evalModalOverlay').addEventListener('click', (e)=>{
+  if(e.target.id === 'evalModalOverlay') closeEvalModal();
+});
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeEvalModal(); });
 
 // ------- filtros por EDE y Agente -------
 let RAW = { resumenNorm: SAMPLE_RESUMEN_NORM, detalleNorm: SAMPLE_DETALLE_NORM };
@@ -1336,10 +1168,7 @@ function updateFilterButtons(){
   const btnAg = document.getElementById('btnAgenteFilter');
   const btnMes = document.getElementById('btnMesFilter');
   const btnSem = document.getElementById('btnSemanaFilter');
-  const edeLabel = selectedEdes.size
-    ? (selectedEdes.size <= 2 ? [...selectedEdes].join(', ') : selectedEdes.size + ' seleccionadas')
-    : 'Todas';
-  btnEde.textContent = edeLabel + ' ▾';
+  btnEde.textContent = (selectedEdes.size ? selectedEdes.size + ' seleccionada(s)' : 'Todas') + ' ▾';
   btnAg.textContent = (selectedAgentes.size ? selectedAgentes.size + ' seleccionado(s)' : 'Todos') + ' ▾';
   btnMes.textContent = (selectedMeses.size ? selectedMeses.size + ' seleccionado(s)' : 'Todos') + ' ▾';
   btnSem.textContent = (selectedSemanas.size ? selectedSemanas.size + ' seleccionada(s)' : 'Todas') + ' ▾';
@@ -1501,4 +1330,3 @@ cargarDesdeGitHub();
 </script>
 </body>
 </html>
-
