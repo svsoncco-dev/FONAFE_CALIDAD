@@ -752,8 +752,8 @@ function renderAll(DATA){
 
   charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
     type:'line',
-    data:{ labels: DATA.fechasLabels, datasets:[
-      { label:'Puntaje Final', data: DATA.puntajePorFecha,
+    data:{ labels: DATA.semanasLabelsCortos, datasets:[
+      { label:'Puntaje Final', data: DATA.puntajePorSemana,
         borderColor: COLORS.amber, backgroundColor:'rgba(11,95,125,0.08)',
         borderWidth:2, tension:0.25, fill:true,
         pointRadius:4, pointHoverRadius:6, pointBackgroundColor:COLORS.amber, pointBorderColor:'#fff', pointBorderWidth:1.5,
@@ -761,7 +761,10 @@ function renderAll(DATA){
       }
     ]},
     options:{ responsive:true, maintainAspectRatio:false, layout:{padding:{top:18}},
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:(item)=> 'Puntaje Final: ' + item.parsed.y.toFixed(1) + '/10 (' + Math.round(item.parsed.y*10) + '%)'}} },
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{
+        title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label,
+        label:(item)=> 'Puntaje Final: ' + item.parsed.y.toFixed(1) + '/10 (' + Math.round(item.parsed.y*10) + '%)'
+      }} },
       scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
   }));
 
