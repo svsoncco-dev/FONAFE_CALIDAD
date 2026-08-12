@@ -875,8 +875,9 @@ function renderTop5Oportunidades(DATA){
     const diff = Math.round((p.v - META_PCT)*100);
     const cls = diff < 0 ? 'down' : diff > 0 ? 'up' : 'flat';
     const arrow = diff < 0 ? '↓' : diff > 0 ? '↑' : '—';
-    h += `<tr class="top5-row" data-cat="${p.cat.replace(/"/g,'&quot;')}" style="cursor:pointer;"><td class="num">${i+1}</td><td>${p.cat} <span class="top5-caret" style="font-size:10px; color:var(--text-dim);">▾</span></td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
-    h += `<tr class="top5-detalle" data-catdetalle="${p.cat.replace(/"/g,'&quot;')}" style="display:none;"><td colspan="4" style="padding:0 6px 12px;"><div class="top5-subwrap"></div></td></tr>`;
+    const esPrimero = i===0;
+    h += `<tr class="top5-row" data-cat="${p.cat.replace(/"/g,'&quot;')}" style="cursor:pointer;"><td class="num">${i+1}</td><td>${p.cat} <span class="top5-caret" style="font-size:10px; color:var(--text-dim);">${esPrimero?'▴':'▾'}</span></td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
+    h += `<tr class="top5-detalle" data-catdetalle="${p.cat.replace(/"/g,'&quot;')}" style="${esPrimero?'':'display:none;'}"><td colspan="4" style="padding:0 6px 12px;"><div class="top5-subwrap"></div></td></tr>`;
   });
   h += '</table>';
   cont.innerHTML = h;
@@ -895,28 +896,40 @@ function renderTop5Oportunidades(DATA){
       }
     });
   });
+
+  // el primer puesto (mayor oportunidad de mejora) se muestra expandido de entrada
+  const primerDetalle = cont.querySelector('.top5-detalle');
+  if(primerDetalle){
+    renderSubatributos(primerDetalle.querySelector('.top5-subwrap'), DATA, primerDetalle.dataset.catdetalle);
+    primerDetalle.dataset.rendered = '1';
+  }
 }
 
 // ------- desglose por subatributo (ítem) dentro de una categoría -------
 function renderSubatributos(cont, DATA, categoria){
-  const items = (DATA.detalleNorm || []).filter(r=> r.Categoria === categoria);
+  const itemsCat = (DATA.detalleNorm || []).filter(r=> r.Categoria === categoria);
 
-  if(items.length===0){
+  if(itemsCat.length===0){
     cont.innerHTML = '<p class="note" style="margin:6px 0 0;">Sin ítems registrados para esta categoría.</p>';
     return;
   }
 
-  const tieneDescripcion = items.some(r=> r.Descripcion && String(r.Descripcion).trim() !== '');
+  // solo se consideran los ítems que sí traen descripción (evaluaciones
+  // enviadas después de que el formulario empezó a mandar ese dato).
+  // Las evaluaciones antiguas sin descripción se excluyen del desglose
+  // en vez de mostrarse con una etiqueta genérica tipo "(PECNEG sin descripción)".
+  const items = itemsCat.filter(r=> r.Descripcion && String(r.Descripcion).trim() !== '');
+  const antiguos = itemsCat.length - items.length;
 
-  if(!tieneDescripcion){
-    cont.innerHTML = '<p class="note" style="margin:6px 0 0;">Los datos actuales no incluyen el detalle por subatributo (ítem) todavía. Aparecerá aquí automáticamente en cuanto se registren evaluaciones nuevas con ese detalle.</p>';
+  if(items.length===0){
+    cont.innerHTML = '<p class="note" style="margin:6px 0 0;">Los datos actuales no incluyen el detalle por subatributo (ítem) todavía. Aparecerá aquí automáticamente conforme se registren evaluaciones nuevas con ese detalle.</p>';
     return;
   }
 
   // agrupa por Descripción del ítem y cuenta SI / NO / NO AMERITA
   const porItem = {};
   items.forEach(r=>{
-    const key = r.Descripcion && String(r.Descripcion).trim() !== '' ? r.Descripcion : `(${r.Atributo || 'ítem'} sin descripción)`;
+    const key = r.Descripcion;
     if(!porItem[key]) porItem[key] = { si:0, no:0, noAmerita:0 };
     const ev = String(r.Evaluacion || '').toUpperCase();
     if(ev === 'SI') porItem[key].si++;
@@ -931,8 +944,10 @@ function renderSubatributos(cont, DATA, categoria){
     return { desc, ...c, pct };
   }).filter(f=> f.no > 0);
 
+  const notaAntiguos = antiguos>0 ? `<p class="note" style="margin:8px 0 0; font-size:10.5px;">ℹ️ ${antiguos} ítem(s) de evaluaciones anteriores a la actualización del formulario no tienen descripción y no se incluyen en este desglose.</p>` : '';
+
   if(filas.length===0){
-    cont.innerHTML = '<p class="note" style="margin:6px 0 0;">Sin incidencias registradas en los subatributos de esta categoría.</p>';
+    cont.innerHTML = '<p class="note" style="margin:6px 0 0;">Sin incidencias registradas en los subatributos de esta categoría.</p>' + notaAntiguos;
     return;
   }
 
@@ -951,7 +966,7 @@ function renderSubatributos(cont, DATA, categoria){
       + '</tr>';
   });
   h += '</table>';
-  cont.innerHTML = h;
+  cont.innerHTML = h + notaAntiguos;
 }
 
 // ------- Faltas Graves: total + EDE y categoría con más incidencias -------
