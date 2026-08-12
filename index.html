@@ -344,7 +344,7 @@
 </div>
 
 <div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr;">
-  <div class="card"><h3 style="margin-bottom:16px; text-align:center;">Normativa<span style="font-size:26px; line-height:1; font-weight:800; color:var(--violet); display:block; text-align:center; margin-top:4px;">ATNA</span></h3><div id="atnaWrap"></div></div>
+  <div class="card"><h3 style="margin-bottom:16px;">Normativa<span style="font-size:26px; line-height:1; font-weight:800; color:var(--violet); display:block; text-align:center; margin-top:4px;">ATNA</span></h3><div id="atnaWrap"></div></div>
   <div class="card"><h3>Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
   <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
     <div class="card" style="flex-shrink:0;"><h3>Faltas Graves <span class="h3-sub">(Total)</span></h3><div id="faltasResumen"></div></div>
@@ -416,6 +416,18 @@
   <div id="footerNote">Panel de muestra. Carga tu consolidado arriba para ver los datos reales de las 7 EDEs de la campaña.</div>
 </footer>
 </div>
+</div>
+
+<div class="top5-overlay" id="top5Overlay"></div>
+<div class="top5-panel" id="top5Panel">
+  <div class="top5-panel-head">
+    <div>
+      <div class="top5-panel-title" id="top5PanelTitulo">Categoría</div>
+      <div class="top5-panel-sub" id="top5PanelSub"></div>
+    </div>
+    <button class="top5-panel-close" id="top5PanelClose" type="button">✕</button>
+  </div>
+  <div class="top5-panel-body" id="top5PanelBody"></div>
 </div>
 
 <script>
@@ -1727,17 +1739,6 @@ populateFilters();
 applyFiltersAndRender();
 cargarDesdeGitHub();
 </script>
-<div class="top5-overlay" id="top5Overlay"></div>
-<div class="top5-panel" id="top5Panel">
-  <div class="top5-panel-head">
-    <div>
-      <div class="top5-panel-title" id="top5PanelTitulo">Categoría</div>
-      <div class="top5-panel-sub" id="top5PanelSub"></div>
-    </div>
-    <button class="top5-panel-close" id="top5PanelClose" type="button">✕</button>
-  </div>
-  <div class="top5-panel-body" id="top5PanelBody"></div>
-</div>
 </body>
 </html>
 
