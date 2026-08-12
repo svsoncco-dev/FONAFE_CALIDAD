@@ -127,16 +127,16 @@
   .top5-table{ width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
   .top5-table th{ text-align:left; color:var(--text-dim); font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; padding:0 6px 8px; }
   .top5-table td{ padding:8px 6px; border-top:1px solid var(--panel-border); vertical-align:middle; }
-  .top5-table col.c-num{ width:30px; } .top5-table col.c-cat{ width:auto; } .top5-table col.c-pct{ width:100px; } .top5-table col.c-delta{ width:128px; }
+  .top5-table col.c-num{ width:30px; } .top5-table col.c-cat{ width:auto; } .top5-table col.c-pct{ width:112px; } .top5-table col.c-delta{ width:128px; }
   .top5-table .num{ color:var(--text-dim); font-weight:700; }
   .top5-table th:nth-child(3), .top5-table .pct{ text-align:center; }
   .top5-table .pct{ font-weight:800; }
-  .top5-table .delta{ font-size:11px; font-weight:700; white-space:nowrap; }
+  .top5-table .delta{ font-size:11px; font-weight:700; white-space:nowrap; text-align:center; }
   .top5-table .delta.down{ color:var(--rose); }
   .top5-table .delta.up{ color:#1E8A3C; }
   .top5-table .delta.flat{ color:var(--text-dim); }
-  .top5-table th:nth-child(4){ white-space:nowrap; }
-  .top5-sub-grid{ display:grid; grid-template-columns:30px 1fr 100px 128px; align-items:baseline; padding:5px 0; border-top:1px dashed var(--panel-border); }
+  .top5-table th:nth-child(4){ white-space:nowrap; text-align:center; }
+  .top5-sub-grid{ display:grid; grid-template-columns:30px 1fr 112px 128px; align-items:baseline; padding:5px 0; border-top:1px dashed var(--panel-border); }
   .top5-sub-grid .desc{ grid-column: 2 / span 2; }
 
   /* ---- faltas graves resumen ---- */
