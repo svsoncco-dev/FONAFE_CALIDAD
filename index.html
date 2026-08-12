@@ -294,8 +294,8 @@
 <div class="kpis" id="kpiRow"></div>
 
 <div class="grid3" style="margin-bottom:16px;">
-  <div class="card"><h3>Desempeño por EDE <span class="h3-sub">(Puntaje final promedio)</span></h3><div id="rankBarsEde" class="rank-bars" style="padding:6px 4px 14px;"></div></div>
-  <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del Puntaje Final <span class="h3-sub">(promedio general)</span></h3><span class="trend-legend"><span class="trend-swatch"></span>Meta: 9.5</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
+  <div class="card"><h3>Desempeño por EDE <span class="h3-sub">(PEC promedio)</span></h3><div id="rankBarsEde" class="rank-bars" style="padding:6px 4px 14px;"></div></div>
+  <div class="card" style="display:flex; flex-direction:column;"><div class="chart-head"><h3>Evolución del PEC <span class="h3-sub">(promedio general)</span></h3><span class="trend-legend"><span class="trend-swatch"></span>Meta: 95%</span></div><div class="chart-wrap short" style="margin:auto 0;"><canvas id="chPuntajeFecha"></canvas></div></div>
   <div class="card"><h3>Evaluaciones por Tipo de Llamada</h3>
     <div class="donut-wrap" style="padding:8px 0 14px;">
       <div class="donut-canvas-box"><canvas id="chTipoLlamada"></canvas><div class="donut-center"><div class="n" id="donutTotal">—</div><div class="lbl">Evaluaciones</div></div></div>
@@ -309,18 +309,18 @@
   <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
   <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
     <div class="card"><h3>Faltas Graves <span class="h3-sub">(Total)</span></h3><div id="faltasResumen"></div></div>
-    <div class="card"><h3>Ranking de Asesores <span class="h3-sub" style="font-size:11px;">(Puntaje final promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
+    <div class="card"><h3>Ranking de Asesores <span class="h3-sub" style="font-size:11px;">(PEC promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
   </div>
 </div>
 
 <section id="seccionAsesores">
-  <div class="section-title"><span class="idx">01</span><h2>Puntaje Final</h2></div>
+  <div class="section-title"><span class="idx">01</span><h2>PEC</h2></div>
   <div class="grid2" style="margin-top:0;">
-    <div class="card"><h3>Puntaje Final promedio por Asesor</h3>
+    <div class="card"><h3>PEC promedio por Asesor</h3>
       <div id="tablaPuntajeAgente" style="overflow-x:auto; max-height:340px; overflow-y:auto;"></div>
       <p class="note" id="puntajeAgenteNote"></p>
     </div>
-    <div class="card"><h3>Puntaje Final promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
+    <div class="card"><h3>PEC promedio por EDE</h3><div class="chart-wrap"><canvas id="chPuntajeEde"></canvas></div></div>
   </div>
 
   <div class="card" id="detalleAsesorCard" style="margin-top:16px; display:none;">
@@ -696,12 +696,7 @@ function renderAll(DATA){
       <div class="value ${c}">${Math.round(v*100)}%</div>
       <div class="meta">Meta: ${Math.round(META_PCT*100)}%</div>
     </div>`;
-  }).join("")
-    + (()=>{ const cumple = DATA.puntajeGeneral >= META_PUNTAJE; return `<div class="kpi">
-      <div class="kpi-head"><div class="label">Puntaje Final promedio</div>${cumple?'<span class="badge ok">Cumple ✓</span>':''}</div>
-      <div class="value teal">${DATA.puntajeGeneral.toFixed(1)}<span style="font-size:16px;color:var(--text-dim);">/10</span></div>
-      <div class="meta">Meta: ${META_PUNTAJE.toFixed(1)}/10</div>
-    </div>`; })();
+  }).join("");
 
   const edeCards = document.getElementById('edeCards');
   edeCards.innerHTML = DATA.edes.map(e=>{
@@ -775,20 +770,20 @@ function renderAll(DATA){
 
   charts.push(new Chart(document.getElementById('chPuntajeEde'), {
     type:'bar',
-    data:{ labels: DATA.edes, datasets:[{ data: DATA.puntajePorEde, backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:50 }]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{min:0,max:10, grid:{color:COLORS.grid}}, x:catAxis() } }
+    data:{ labels: DATA.edes, datasets:[{ data: DATA.edes.map(e=> DATA.byEde[e] ? DATA.byEde[e].PEC : 0), backgroundColor:COLORS.teal, borderRadius:4, maxBarThickness:50 }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:pctAxis(), x:catAxis() } }
   }));
 
   renderTablaPuntajeAgente(DATA);
 
   {
-    const vals = DATA.puntajePorSemana.filter(v=>!isNaN(v));
-    const minData = vals.length ? Math.min(...vals) : 10;
-    const yMin = Math.max(0, Math.min(8, Math.floor(minData)));
+    const vals = DATA.pecPorSemana.filter(v=>!isNaN(v));
+    const minData = vals.length ? Math.min(...vals) : 1;
+    const yMin = Math.max(0, Math.min(0.8, Math.floor(minData*20)/20));
     charts.push(new Chart(document.getElementById('chPuntajeFecha'), {
       type:'line',
       data:{ labels: DATA.semanasLabelsCortos, datasets:[
-        { label:'Puntaje Final', data: DATA.puntajePorSemana, borderColor:COLORS.violet, backgroundColor:COLORS.violet,
+        { label:'PEC', data: DATA.pecPorSemana, borderColor:COLORS.violet, backgroundColor:COLORS.violet,
           borderWidth:2.5, tension:0.35, fill:false,
           pointRadius:4, pointHoverRadius:6, pointBackgroundColor:COLORS.violet, pointBorderColor:'#fff', pointBorderWidth:2 }
       ]},
@@ -797,11 +792,11 @@ function renderAll(DATA){
         layout:{ padding:{ top:20, left:14, right:14 } },
         plugins:{
           legend:{display:false},
-          tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label}},
-          metaLine:{ value: META_PUNTAJE, label:'Meta: '+META_PUNTAJE.toFixed(1), color:'#B9BFD4' },
-          valueLabels:{ color:COLORS.violet, format:(v)=>v.toFixed(1) }
+          tooltip:{callbacks:{title:(items)=> DATA.semanasLabelsCompletos[DATA.numerosSemana[items[0].dataIndex]] || items[0].label, label:(ctx)=> `PEC: ${Math.round(ctx.parsed.y*100)}%`}},
+          metaLine:{ value: META_PCT, label:'Meta: '+Math.round(META_PCT*100)+'%', color:'#B9BFD4' },
+          valueLabels:{ color:COLORS.violet, format:(v)=>Math.round(v*100)+'%' }
         },
-        scales:{ y:{min:yMin, max:10, ticks:{stepSize:0.5}, grid:{color:COLORS.grid}}, x:{...catAxis(), ticks:{padding:6}} }
+        scales:{ y:{min:yMin, max:1, ticks:{stepSize:0.05, callback:v=>Math.round(v*100)+'%'}, grid:{color:COLORS.grid}}, x:{...catAxis(), ticks:{padding:6}} }
       }
     }));
   }
@@ -817,17 +812,17 @@ function renderAll(DATA){
 // ------- 01: Desempeño por EDE (lista con barras horizontales, ordenada) -------
 function renderRankBarsEde(DATA){
   const cont = document.getElementById('rankBarsEde');
-  const pares = DATA.edes.map(e=>({ nombre:e, v: DATA.puntajePorEde[DATA.edes.indexOf(e)], n: DATA.nPorEde[e] }));
+  const pares = DATA.edes.map(e=>({ nombre:e, v: DATA.byEde[e] ? DATA.byEde[e].PEC : null, n: DATA.nPorEde[e] }));
   pares.sort((a,b)=> (b.v??-1) - (a.v??-1));
   cont.innerHTML = pares.map((p,i)=>{
     const sinDatos = !p.n || p.n===0 || p.v===undefined || p.v===null || isNaN(p.v);
-    const pct = sinDatos ? 0 : Math.max(2, (p.v/10)*100);
+    const pct = sinDatos ? 0 : Math.max(2, p.v*100);
     const color = sinDatos ? COLORS.gray : COLORS.violet;
     return `<div class="row">
       <span class="pos">${i+1}</span>
       <span class="lbl">${p.nombre}</span>
       <span class="track"><span class="fill" style="width:${pct}%; background:${color};"></span></span>
-      <span class="val ${sinDatos?'na':''}">${sinDatos?'Sin datos':p.v.toFixed(1)+'/10'}</span>
+      <span class="val ${sinDatos?'na':''}">${sinDatos?'Sin datos':Math.round(p.v*100)+'%'}</span>
     </div>`;
   }).join("");
 }
@@ -905,12 +900,12 @@ function renderFaltasResumen(DATA){
 // ------- Ranking de Asesores (top 5 por puntaje final promedio) -------
 function renderRankingAsesores(DATA){
   const cont = document.getElementById('rankingAsesores');
-  const pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i] }))
-    .filter(p=>!isNaN(p.puntaje))
-    .sort((a,b)=> b.puntaje - a.puntaje)
+  const pares = DATA.asesores.map(a=>({ nombre:a, pec: DATA.byAsesor[a] ? DATA.byAsesor[a].PEC : NaN }))
+    .filter(p=>!isNaN(p.pec))
+    .sort((a,b)=> b.pec - a.pec)
     .slice(0,5);
   const medals = ['🏆','🏆','🏆','🎖️','🎖️'];
-  cont.innerHTML = pares.map((p,i)=> `<li data-agente="${p.nombre.replace(/"/g,'&quot;')}"><span class="medal">${medals[i]||(i+1)}</span><span class="name">${p.nombre}</span><span class="score">${p.puntaje.toFixed(1)}/10</span></li>`).join("")
+  cont.innerHTML = pares.map((p,i)=> `<li data-agente="${p.nombre.replace(/"/g,'&quot;')}"><span class="medal">${medals[i]||(i+1)}</span><span class="name">${p.nombre}</span><span class="score">${Math.round(p.pec*100)}%</span></li>`).join("")
     || '<li class="note" style="cursor:default;">Sin datos suficientes.</li>';
   cont.querySelectorAll('li[data-agente]').forEach(li=>{
     li.addEventListener('click', ()=> abrirModalAgente(li.dataset.agente));
@@ -1063,11 +1058,11 @@ let puntajeSearch = '';
 function renderTablaPuntajeAgente(DATA){
   const cont = document.getElementById('tablaPuntajeAgente');
   const noteEl = document.getElementById('puntajeAgenteNote');
-  let pares = DATA.asesores.map((a,i)=>({ nombre:a, puntaje: DATA.puntajePorAsesor[i], q: DATA.qPorAsesor[i] }))
+  let pares = DATA.asesores.map((a,i)=>({ nombre:a, pec: DATA.byAsesor[a] ? DATA.byAsesor[a].PEC : NaN, q: DATA.qPorAsesor[i] }))
     .filter(r=> r.nombre.toLowerCase().includes(puntajeSearch.toLowerCase()));
 
   pares.sort((a,b)=>{
-    const cmp = puntajeSortByValue ? (a.puntaje - b.puntaje) : a.nombre.localeCompare(b.nombre);
+    const cmp = puntajeSortByValue ? ((a.pec??-1) - (b.pec??-1)) : a.nombre.localeCompare(b.nombre);
     return puntajeSortDir==='asc' ? cmp : -cmp;
   });
 
@@ -1084,12 +1079,12 @@ function renderTablaPuntajeAgente(DATA){
   const arrowPuntaje = puntajeSortByValue ? (puntajeSortDir==='asc' ? ' ▲' : ' ▼') : '';
   let h = '<table style="border-collapse:collapse; font-size:11px; width:100%;">';
   h += `<tr><th data-col="nombre" style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel);">Agente${arrowNombre}</th>`;
-  h += `<th data-col="puntaje" style="padding:6px 4px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); min-width:90px;">Puntaje Final${arrowPuntaje}</th>`;
+  h += `<th data-col="puntaje" style="padding:6px 4px; color:var(--text-dim); font-weight:700; cursor:pointer; position:sticky; top:0; background:var(--panel); min-width:90px;">PEC${arrowPuntaje}</th>`;
   h += `<th style="padding:6px 4px; color:var(--text-dim); font-weight:700; position:sticky; top:0; background:var(--panel); min-width:40px;">Q</th></tr>`;
   pares.forEach(r=>{
-    const t = r.puntaje/10;
+    const sinDatos = r.pec===undefined || r.pec===null || isNaN(r.pec);
     h += `<tr><td class="agente-link" data-agente="${r.nombre.replace(/"/g,'&quot;')}" style="padding:5px 8px; border-top:1px solid var(--panel-border); font-weight:600; white-space:nowrap; cursor:pointer; color:#2B5FE0; text-decoration:underline dotted;">${r.nombre}</td>`;
-    h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${colorForPct(t)}; color:${textColorForPct(t)};">${r.puntaje.toFixed(1)}</td>`;
+    h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; background:${sinDatos?'transparent':colorForPct(r.pec)}; color:${sinDatos?'var(--text-dim)':textColorForPct(r.pec)};">${sinDatos?'—':Math.round(r.pec*100)+'%'}</td>`;
     h += `<td style="padding:5px 4px; border-top:1px solid var(--panel-border); text-align:center; color:var(--text-dim); font-weight:600;">${r.q}</td></tr>`;
   });
   h += '</table>';
