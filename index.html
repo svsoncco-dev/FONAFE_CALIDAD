@@ -137,6 +137,15 @@
   .top5-table .delta.flat{ color:var(--text-dim); }
   .top5-table th:nth-child(4){ white-space:nowrap; text-align:center; }
   .top5-sub-grid{ display:grid; grid-template-columns:30px 1fr 112px 128px; align-items:baseline; padding:5px 0; border-top:1px dashed var(--panel-border); }
+  .top5-overlay{ display:none; position:fixed; inset:0; background:rgba(20,22,40,0.35); z-index:90; }
+  .top5-overlay.open{ display:block; }
+  .top5-panel{ position:fixed; top:0; right:0; height:100%; width:420px; max-width:90vw; background:var(--panel); box-shadow:-8px 0 24px rgba(43,43,42,0.18); z-index:91; transform:translateX(100%); transition:transform .28s ease; display:flex; flex-direction:column; }
+  .top5-panel.open{ transform:translateX(0); }
+  .top5-panel-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:18px 20px; border-bottom:1px solid var(--panel-border); flex-shrink:0; }
+  .top5-panel-title{ font-size:15px; font-weight:800; color:var(--text); }
+  .top5-panel-sub{ font-size:11px; color:var(--text-dim); font-weight:600; margin-top:2px; }
+  .top5-panel-close{ background:var(--bg); border:1px solid var(--panel-border); color:var(--text-dim); width:30px; height:30px; border-radius:8px; font-size:16px; cursor:pointer; flex-shrink:0; line-height:1; }
+  .top5-panel-body{ padding:16px 20px 24px; overflow-y:auto; flex:1; }
 
   /* ---- Cumplimiento ATNA ---- */
   .atna-summary{ display:flex; align-items:center; justify-content:space-between; margin:6px 0 16px; padding:12px 14px; background:var(--bg); border-radius:10px; flex-wrap:wrap; gap:8px;}
@@ -335,8 +344,8 @@
 </div>
 
 <div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr;">
-  <div class="card"><h3 style="margin-bottom:16px;">NORMATIVA <span style="font-size:65px; line-height:0.8; font-weight:800; color:var(--violet); vertical-align:middle; display:inline-block;">ATNA</span></h3><div id="atnaWrap"></div></div>
-  <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
+  <div class="card"><h3 style="margin-bottom:16px; text-align:center;">Normativa<span style="font-size:26px; line-height:1; font-weight:800; color:var(--violet); display:block; text-align:center; margin-top:4px;">ATNA</span></h3><div id="atnaWrap"></div></div>
+  <div class="card"><h3>Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
   <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
     <div class="card" style="flex-shrink:0;"><h3>Faltas Graves <span class="h3-sub">(Total)</span></h3><div id="faltasResumen"></div></div>
     <div class="card" style="flex:1; display:flex; flex-direction:column;"><h3>Ranking de Asesores <span class="h3-sub" style="font-size:11px;">(PEC promedio)</span></h3><ul class="top-rank-list" id="rankingAsesores"></ul><a class="see-all-link" id="verRankingCompleto" href="#seccionAsesores">Ver ranking completo →</a></div>
@@ -968,27 +977,35 @@ function renderTop5Oportunidades(DATA){
     const diff = Math.round((p.v - META_PCT)*100);
     const cls = diff < 0 ? 'down' : diff > 0 ? 'up' : 'flat';
     const arrow = diff < 0 ? '↓' : diff > 0 ? '↑' : '—';
-    h += `<tr class="top5-row" data-cat="${p.cat.replace(/"/g,'&quot;')}" style="cursor:pointer;"><td class="num">${i+1}</td><td>${p.cat} <span class="top5-caret" style="font-size:10px; color:var(--text-dim);">▾</span></td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
-    h += `<tr class="top5-detalle" data-catdetalle="${p.cat.replace(/"/g,'&quot;')}" style="display:none;"><td colspan="4" style="padding:0 6px 12px;"><div class="top5-subwrap"></div></td></tr>`;
+    h += `<tr class="top5-row" data-cat="${p.cat.replace(/"/g,'&quot;')}" data-pct="${Math.round(p.v*100)}" style="cursor:pointer;"><td class="num">${i+1}</td><td>${p.cat} <span style="font-size:10px; color:var(--text-dim);">›</span></td><td class="pct">${Math.round(p.v*100)}%</td><td class="delta ${cls}">${diff>0?'+':''}${diff} pp ${arrow}</td></tr>`;
   });
   h += '</table>';
   cont.innerHTML = h;
 
   cont.querySelectorAll('.top5-row').forEach(row=>{
-    row.addEventListener('click', ()=>{
-      const cat = row.dataset.cat;
-      const detRow = cont.querySelector(`.top5-detalle[data-catdetalle="${CSS.escape(cat)}"]`);
-      const caret = row.querySelector('.top5-caret');
-      const abrir = detRow.style.display === 'none';
-      detRow.style.display = abrir ? '' : 'none';
-      if(caret) caret.textContent = abrir ? '▴' : '▾';
-      if(abrir && !detRow.dataset.rendered){
-        renderSubatributos(detRow.querySelector('.top5-subwrap'), DATA, cat);
-        detRow.dataset.rendered = '1';
-      }
-    });
+    row.addEventListener('click', ()=> abrirPanelOportunidad(DATA, row.dataset.cat, row.dataset.pct));
   });
 }
+
+// ------- panel volador de detalle de oportunidad de mejora -------
+function abrirPanelOportunidad(DATA, categoria, pct){
+  const overlay = document.getElementById('top5Overlay');
+  const panel = document.getElementById('top5Panel');
+  document.getElementById('top5PanelTitulo').textContent = categoria;
+  document.getElementById('top5PanelSub').textContent = `Cumplimiento actual: ${pct}% · Meta: ${Math.round(META_PCT*100)}%`;
+  const body = document.getElementById('top5PanelBody');
+  body.innerHTML = '<div class="top5-subwrap"></div>';
+  renderSubatributos(body.querySelector('.top5-subwrap'), DATA, categoria);
+  overlay.classList.add('open');
+  panel.classList.add('open');
+}
+function cerrarPanelOportunidad(){
+  document.getElementById('top5Overlay').classList.remove('open');
+  document.getElementById('top5Panel').classList.remove('open');
+}
+document.getElementById('top5Overlay').addEventListener('click', cerrarPanelOportunidad);
+document.getElementById('top5PanelClose').addEventListener('click', cerrarPanelOportunidad);
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') cerrarPanelOportunidad(); });
 
 // mapa de descripciones largas -> versión corta para mostrar en el desglose
 // (el texto completo sigue viniendo del dato "Descripcion"; esto solo acorta la visualización)
@@ -1710,6 +1727,17 @@ populateFilters();
 applyFiltersAndRender();
 cargarDesdeGitHub();
 </script>
+<div class="top5-overlay" id="top5Overlay"></div>
+<div class="top5-panel" id="top5Panel">
+  <div class="top5-panel-head">
+    <div>
+      <div class="top5-panel-title" id="top5PanelTitulo">Categoría</div>
+      <div class="top5-panel-sub" id="top5PanelSub"></div>
+    </div>
+    <button class="top5-panel-close" id="top5PanelClose" type="button">✕</button>
+  </div>
+  <div class="top5-panel-body" id="top5PanelBody"></div>
+</div>
 </body>
 </html>
 
