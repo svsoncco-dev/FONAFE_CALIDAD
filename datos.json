@@ -613,6 +613,24 @@
       "PECNEG (%)": "100.0%",
       "PECUM (%)": "100.0%",
       "Falta Grave": ""
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Evaluador": "SANDRA SONCCO",
+      "Fecha Evaluación": "2026-08-12",
+      "Teléfono": "951554487",
+      "Suministro": "1100110011",
+      "Tipo de Llamada": "DENUNCIAS",
+      "Motivo de Llamada": "FALTA DE SERVICIO EN EL PREDIO",
+      "Puntaje Final (/10)": 9.7,
+      "PEC (%)": "96.6%",
+      "PECUF (%)": "90.0%",
+      "PECNEG (%)": "100.0%",
+      "PECUM (%)": "100.0%",
+      "Falta Grave": "",
+      "Comentarios del Evaluador": "Sigamos mejorando"
     }
   ],
   "Detalle": [
@@ -11904,7 +11922,286 @@
       "Categoría": "Cumplimiento Normativo",
       "Atributo": "PECNEG",
       "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Saludar según protocolo",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Identificación del asesor hacia el usuario",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Mostrar tono de voz adecuado",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Mostrar amabilidad y empatía durante toda la atención",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Muestra interés y disposición para atender el requerimiento",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Pedir disculpas por el malestar ocasionado",
+      "Evaluación": "NO"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "NONE",
+      "Descripción del Ítem": "Solicita y agradece tiempos de espera",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Actitud de Servicio",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Saludo de despedida y buenos deseos",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Identificar la necesidad del cliente, realizando preguntas de sondeo.",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Consulta si cliente cuenta o no con el servicio",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Sondeo de Necesidades",
+      "Atributo": "PECUF",
+      "Descripción del Ítem": "Solicita datos del usuario",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Número de suministro",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Nombre del usuario",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "DNI del usuario",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Confirmar con el usuario los datos del suministro (a nombre de quien se encuentra, dirección del suministro y SER al que pertenece)",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Solicitar número de teléfono y correo electrónico",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Solicita motivo de llamada",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Asigna tipificación correcta",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Redacta petitorio de acuerdo a la tipificación de atención",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Lee al usuario el petitorio registrado",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Realizar la pregunta de conformidad de manera correcta u consulta adicional, sobre lo registrado",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Registro correcto y completo de la ATC en el SIELSE",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Sin fallas ortográficas y/o redacción incoherente",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Informar al usuario las acciones a efectuar o efectuadas para la atención de su requerimiento",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Informar tiempo estimado o plazo de atención del requerimiento",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Indica corte Programado/no programado",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Información Final brindada al usuario",
+      "Atributo": "PECUM",
+      "Descripción del Ítem": "Informar código de llamada (correlativo del sistema comercial)",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Imagen Corporativa",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Evita comentarios negativos en contra de la EDE",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Orientación hacia la Solución de Problemas",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Se orienta hacia la solución del problema brindando alternativas.",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Identificación de la Normativa según tipología de atención",
+      "Evaluación": "NO AMERITA"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Conocimiento del plazo de atención según cada normativa",
+      "Evaluación": "SI"
+    },
+    {
+      "ID Evaluación": "ELPU_KHEYLA_GUTIERREZ_2026-08-12_v6l29r",
+      "EDE": "ELPU",
+      "Asesor": "KHEYLA GUTIERREZ",
+      "Categoría": "Cumplimiento Normativo",
+      "Atributo": "PECNEG",
+      "Descripción del Ítem": "Procedimiento o gestión a realizarse por tipo de atención (Reclamo / Denuncia / Solicitudes / Consulta)",
+      "Evaluación": "SI"
     }
   ],
-  "updatedAt": "2026-08-10T15:25:37.482Z"
+  "updatedAt": "2026-08-12T21:20:37.093Z"
 }
