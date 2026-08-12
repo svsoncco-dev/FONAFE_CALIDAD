@@ -137,6 +137,23 @@
   .top5-table .delta.flat{ color:var(--text-dim); }
   .top5-table th:nth-child(4){ white-space:nowrap; text-align:center; }
   .top5-sub-grid{ display:grid; grid-template-columns:30px 1fr 112px 128px; align-items:baseline; padding:5px 0; border-top:1px dashed var(--panel-border); }
+
+  /* ---- Cumplimiento ATNA ---- */
+  .atna-summary{ display:flex; align-items:center; justify-content:space-between; margin:6px 0 16px; padding:12px 14px; background:var(--bg); border-radius:10px; flex-wrap:wrap; gap:8px;}
+  .atna-lbl{ font-size:10.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:.04em; font-weight:700; margin-bottom:2px;}
+  .atna-big{ font-size:28px; font-weight:800; color:var(--teal); line-height:1;}
+  .atna-mid{ text-align:center; }
+  .atna-delta{ font-size:13px; font-weight:800; }
+  .atna-delta.neg{ color:var(--rose); } .atna-delta.pos{ color:#1E8A3C; }
+  .atna-n{ font-size:11px; color:var(--text-dim); margin-top:2px;}
+  .atna-meta{ text-align:right; font-size:11px; color:var(--text-dim); font-weight:600; line-height:1.4;}
+  .atna-sec-lbl{ font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--rose); font-weight:800; margin:4px 0 10px;}
+  .atna-err-row{ display:flex; align-items:center; gap:10px; padding:8px 0; border-top:1px dashed var(--panel-border);}
+  .atna-err-row:first-of-type{ border-top:none; }
+  .atna-err-num{ width:16px; font-size:11px; font-weight:800; color:var(--text-dim); flex-shrink:0;}
+  .atna-err-desc{ flex:1; font-size:12px; color:var(--text); line-height:1.3;}
+  .atna-err-pct{ font-size:12px; font-weight:700; color:var(--text-dim); flex-shrink:0; width:38px; text-align:right;}
+  .atna-err-badge{ flex-shrink:0; font-size:11px; font-weight:800; color:#B3261E; background:rgba(227,73,72,0.12); border-radius:10px; padding:2px 9px; white-space:nowrap;}
   .top5-sub-grid .desc{ grid-column: 2 / span 2; }
 
   /* ---- faltas graves resumen ---- */
@@ -318,7 +335,7 @@
 </div>
 
 <div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr; align-items:start;">
-  <div class="card"><h3>Cumplimiento por Categoría <span class="h3-sub">(promedio general)</span></h3><div id="catBars" style="padding:6px 4px 14px;"></div></div>
+  <div class="card"><h3>Cumplimiento ATNA <span class="h3-sub">(protocolo de atención)</span></h3><div id="atnaWrap"></div></div>
   <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
   <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
     <div class="card"><h3>Faltas Graves <span class="h3-sub">(Total)</span></h3><div id="faltasResumen"></div></div>
@@ -394,7 +411,27 @@
 
 <script>
 const COLORS = { teal:"#1CADE4", violet:"#2B3168", amber:"#0B5F7D", rose:"#D64550", gray:"#7A8296", text:"#7A8296", grid:"rgba(43,49,104,0.08)" };
-const META_PCT = 0.95, META_PUNTAJE = 9.5;
+const META_PCT = 0.95, META_PUNTAJE = 9.5, META_ATNA = 0.98;
+
+// subatributos (por "Descripción del Ítem") que componen la normativa ATNA
+const ATNA_ITEMS = [
+  "Saludar según protocolo",
+  "Identificación del asesor hacia el usuario",
+  "Pedir disculpas por el malestar ocasionado",
+  "Solicita y agradece tiempos de espera",
+  "Saludo de despedida y buenos deseos",
+  "Solicita datos del usuario",
+  "Número de suministro",
+  "Nombre del usuario",
+  "DNI del usuario",
+  "Confirmar con el usuario los datos del suministro (a nombre de quien se encuentra, dirección del suministro y SER al que pertenece)",
+  "Solicitar número de teléfono y correo electrónico",
+  "Solicita motivo de llamada",
+  "Realizar la pregunta de conformidad de manera correcta u consulta adicional, sobre lo registrado",
+  "Informar al usuario las acciones a efectuar o efectuadas para la atención de su requerimiento",
+  "Informar tiempo estimado o plazo de atención del requerimiento",
+  "Informar código de llamada (correlativo del sistema comercial)"
+];
 Chart.defaults.color = COLORS.text;
 Chart.defaults.font.size = 11;
 Chart.defaults.borderColor = COLORS.grid;
@@ -820,7 +857,7 @@ function renderAll(DATA){
   }
 
   renderRankBarsEde(DATA);
-  renderCatBars(DATA);
+  renderAtna(DATA);
   renderDonutTipoLlamada(DATA);
   renderTop5Oportunidades(DATA);
   renderFaltasResumen(DATA);
@@ -845,20 +882,59 @@ function renderRankBarsEde(DATA){
   }).join("");
 }
 
-// ------- 03 (resumen): Cumplimiento por categoría, barras horizontales con semáforo -------
-function renderCatBars(DATA){
-  const cont = document.getElementById('catBars');
-  const pares = DATA.categorias.map((c,i)=>({ cat:c, v: DATA.cumplimientoCategoria[i] }));
-  pares.sort((a,b)=> b.v - a.v);
-  cont.innerHTML = pares.map(p=>{
-    const dotColor = p.v>=META_PCT ? '#1E8A3C' : p.v>=0.85 ? '#E3A100' : '#D64550';
-    return `<div class="row" style="display:grid; grid-template-columns:1.9fr .7fr 42px 14px; align-items:center; gap:10px; margin-bottom:12px;">
-      <span class="lbl" style="white-space:normal; line-height:1.25; font-size:12px; font-weight:400; color:var(--text);">${p.cat}</span>
-      <span class="track"><span class="fill" style="width:${Math.max(2,p.v*100)}%; background:${dotColor};"></span></span>
-      <span class="val" style="font-size:13px; font-weight:700; color:#2B3168;">${Math.round(p.v*100)}%</span>
-      <span style="width:8px; height:8px; border-radius:50%; background:${dotColor};"></span>
-    </div>`;
-  }).join("");
+// ------- 03 (resumen): Cumplimiento ATNA — resumen + top 5 subatributos con más errores -------
+function renderAtna(DATA){
+  const cont = document.getElementById('atnaWrap');
+  const items = (DATA.detalleNorm || []).filter(r=> r.Descripcion && ATNA_ITEMS.includes(r.Descripcion));
+
+  if(items.length===0){
+    cont.innerHTML = '<p class="note" style="margin:6px 0 0;">Los datos actuales no incluyen el detalle por subatributo (ítem) todavía, así que ATNA no se puede calcular aún. Aparecerá aquí automáticamente conforme se registren evaluaciones nuevas con ese detalle.</p>';
+    return;
+  }
+
+  const porItem = {};
+  ATNA_ITEMS.forEach(desc=> porItem[desc] = { si:0, no:0 });
+  items.forEach(r=>{
+    const ev = String(r.Evaluacion || '').toUpperCase();
+    if(!porItem[r.Descripcion]) return;
+    if(ev === 'SI') porItem[r.Descripcion].si++;
+    else if(ev === 'NO') porItem[r.Descripcion].no++;
+  });
+
+  let totalSi=0, totalNo=0;
+  const filas = Object.keys(porItem).map(desc=>{
+    const c = porItem[desc];
+    totalSi += c.si; totalNo += c.no;
+    const evaluables = c.si + c.no;
+    return { desc, ...c, pct: evaluables>0 ? c.si/evaluables : null };
+  });
+
+  const evaluablesTotal = totalSi + totalNo;
+  const pctGeneral = evaluablesTotal>0 ? totalSi/evaluablesTotal : null;
+  const deltaPct = pctGeneral!==null ? Math.round(pctGeneral*100) - Math.round(META_ATNA*100) : null;
+  const evaluados = filas.filter(f=> (f.si+f.no) > 0).length;
+
+  const top5Errores = filas.filter(f=> f.no > 0).sort((a,b)=> b.no - a.no).slice(0,5);
+
+  let h = `<div class="atna-summary">
+    <div><div class="atna-lbl">Cumplimiento</div><div class="atna-big">${pctGeneral!==null ? Math.round(pctGeneral*100)+'%' : '—'}</div></div>
+    <div class="atna-mid"><div class="atna-delta ${deltaPct>=0?'pos':'neg'}">${deltaPct===null?'—':(deltaPct>0?'+':'')+deltaPct+' pp '+(deltaPct>0?'↑':deltaPct<0?'↓':'—')}</div><div class="atna-n">vs. meta</div></div>
+    <div class="atna-meta">Meta: ${Math.round(META_ATNA*100)}%<br>${evaluados} subatributos evaluados</div>
+  </div>`;
+
+  if(top5Errores.length===0){
+    h += '<p class="note" style="margin:6px 0 0;">Sin incidencias registradas en los subatributos de ATNA.</p>';
+  }else{
+    h += '<div class="atna-sec-lbl">⚠ Subatributos con más errores</div>';
+    h += top5Errores.map((f,i)=> `<div class="atna-err-row">
+      <span class="atna-err-num">${i+1}</span>
+      <span class="atna-err-desc">${shortDesc(f.desc)}</span>
+      <span class="atna-err-pct">${f.pct!==null ? Math.round(f.pct*100)+'%' : '—'}</span>
+      <span class="atna-err-badge">${f.no}×</span>
+    </div>`).join("");
+  }
+
+  cont.innerHTML = h;
 }
 
 // ------- dona: Evaluaciones por Tipo de Llamada -------
