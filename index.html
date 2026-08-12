@@ -92,6 +92,14 @@
   .badge.ok{ background:#E3F6E8; color:#1E8A3C; }
   .badge.bad{ background:#FBE7E7; color:#C23636; }
   .kpi .meta{ font-size:10px; color:var(--text-dim); margin-top:1px; }
+  .kpi .meta-tag{ font-size:10px; color:var(--text-dim); font-weight:600; white-space:nowrap; }
+  .kpi .bar-track{ position:relative; height:7px; border-radius:4px; background:#EAEDF4; margin-top:10px; }
+  .kpi .bar-fill{ height:100%; border-radius:4px; }
+  .kpi .bar-fill.teal{ background:var(--teal); } .kpi .bar-fill.violet{ background:var(--violet); }
+  .kpi .bar-fill.amber{ background:var(--amber); } .kpi .bar-fill.rose{ background:var(--rose); }
+  .kpi .bar-meta-mark{ position:absolute; top:-2px; bottom:-2px; width:2px; background:#2B3168; opacity:.35; }
+  .kpi .bar-foot{ display:flex; justify-content:flex-end; align-items:center; margin-top:6px; font-size:10.5px; color:var(--text-dim); font-weight:700;}
+  .kpi .bar-foot.neg{ color:#C23636; } .kpi .bar-foot.pos{ color:#1E8A3C; }
 
   /* ---- ranking / desempeño por EDE (barras horizontales tipo lista) ---- */
   .rank-bars{ display:flex; flex-direction:column; gap:9px; }
@@ -181,7 +189,7 @@
   .btn-file{ position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:8px; background:var(--teal); color:#fff; font-size:12px; font-weight:700; padding:9px 16px; border-radius:8px; cursor:pointer; border:none;}
   .btn-file input{ position:absolute; inset:0; opacity:0; cursor:pointer; }
 
-  .kpis{ display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:0 0 20px;}
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:0 0 20px;}
   .kpi{ background:var(--panel); border:1px solid var(--panel-border); border-radius:11px; padding:11px 14px; box-shadow:0 1px 3px rgba(43,43,42,0.06);}
   .kpi .label{ font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); font-weight:700;}
   .kpi .value{ font-size:23px; font-weight:700; margin-top:4px;}
@@ -304,7 +312,7 @@
   </div>
 </div>
 
-<div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr;">
+<div class="grid3" style="margin-bottom:16px; grid-template-columns:1.1fr 1.1fr .9fr; align-items:start;">
   <div class="card"><h3>Cumplimiento por Categoría <span class="h3-sub">(promedio general)</span></h3><div id="catBars" style="padding:6px 4px 14px;"></div></div>
   <div class="card"><h3>Top 5 Oportunidades de Mejora</h3><div id="top5Wrap"></div></div>
   <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
@@ -692,10 +700,14 @@ function renderAll(DATA){
   kpiRow.innerHTML = kpiDefs.map(([k,c,label])=>{
     const v = DATA.overall[k];
     const cumple = v >= META_PCT;
+    const pct = Math.round(v*100);
+    const metaPct = Math.round(META_PCT*100);
+    const delta = pct - metaPct;
     return `<div class="kpi">
-      <div class="kpi-head"><div class="label">${label}</div>${cumple?'<span class="badge ok">Cumple ✓</span>':''}</div>
-      <div class="value ${c}">${Math.round(v*100)}%</div>
-      <div class="meta">Meta: ${Math.round(META_PCT*100)}%</div>
+      <div class="kpi-head"><div class="label">${label}</div><span class="meta-tag">Meta: ${metaPct}%</span></div>
+      <div class="value ${c}">${pct}%</div>
+      <div class="bar-track"><div class="bar-fill ${c}" style="width:${Math.min(100,Math.max(0,pct))}%;"></div><div class="bar-meta-mark" style="left:${Math.min(100,metaPct)}%;"></div></div>
+      <div class="bar-foot ${delta>=0?'pos':'neg'}">${delta>0?'+':''}${delta} pp ${delta>0?'↑':delta<0?'↓':'—'}</div>
     </div>`;
   }).join("");
 
